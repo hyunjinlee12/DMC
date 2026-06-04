@@ -1,0 +1,23 @@
+# VASP large binary / intermediate outputs
+WAVECAR
+CHGCAR
+CHG
+PROCAR
+PCDAT
+EIGENVAL
+DOSCAR
+REPORT
+XDATCAR
+vasprun.xml
+POTCAR
+
+# VASP job logs
+vasp_*.out
+vasp_*.err
+
+# Python
+__pycache__/
+*.pyc
+
+# Claude Code internal
+.claude/projects/

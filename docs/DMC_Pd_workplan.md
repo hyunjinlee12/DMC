@@ -33,6 +33,24 @@ Surface model hierarchy: S1 → S2 → S3 → S4 (산화 진행 축)
 - 최종 에너지 경향성: VASP PBE+D3, 필요 시 VASPsol (LSOL=.TRUE., EB_K=32.6, TAU=0).
 - ENCUT=520, PREC=Accurate, LASPH=.TRUE., ADDGRID=.TRUE., ISPIN=2.
 
+### 1-1. Bulk 구조 레퍼런스
+
+| Material | Phase | Space Group | MP-ID | ICSD | k-mesh (adopted) |
+|----------|-------|-------------|-------|------|-------------------|
+| Pd | fcc | Fm-3m (#225) | mp-2 | — | 12×12×12 |
+| PdO | tetragonal | P4₂/mmc (#131) | mp-1336 | — | 8×8×6 |
+| PdO₂ | rutile | P4₂/mnm (#136) | mp-1018886 | 647283 | 6×6×8 |
+
+### 1-2. 물질별 INCAR 차이
+
+| Tag | Pd (금속) | PdO · PdO₂ (산화물) | 비고 |
+|-----|-----------|---------------------|------|
+| ISMEAR | 1 | 0 | 금속 = Methfessel-Paxton; 산화물 = Gaussian |
+| SIGMA | 0.10 | 0.05 | 산화물은 band gap → 좁은 smearing |
+| ISIF | 3 (bulk) / 2 (slab) | 3 (bulk) / 2 (slab) | bulk: full cell relax; slab: ionic only |
+| IVDW | 12 | 12 | D3-BJ (전 물질 공통) |
+| LDIPOL | — (bulk) / .TRUE. (slab) | — (bulk) / .TRUE. (slab) | asymmetric slab 전용, IDIPOL=3 |
+
 ---
 
 # PHASE 1 — Surface model validation + Adsorption map

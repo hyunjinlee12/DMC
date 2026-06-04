@@ -1,0 +1,37 @@
+#!/bin/bash
+# G1 convergence tests: 34 jobs total
+
+sbatch -J "cv_Pd_encut_400" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/encut_400" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_Pd_encut_450" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/encut_450" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_Pd_encut_500" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/encut_500" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_Pd_encut_520" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/encut_520" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_Pd_encut_550" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/encut_550" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_Pd_encut_600" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/encut_600" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_Pd_kpts_6x6x6" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/kpts_6x6x6" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_Pd_kpts_8x8x8" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/kpts_8x8x8" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_Pd_kpts_10x10x10" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/kpts_10x10x10" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_Pd_kpts_12x12x12" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/kpts_12x12x12" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_Pd_kpts_14x14x14" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/kpts_14x14x14" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_Pd_kpts_16x16x16" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/Pd/kpts_16x16x16" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO_encut_400" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO/encut_400" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO_encut_450" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO/encut_450" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO_encut_500" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO/encut_500" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO_encut_520" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO/encut_520" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO_encut_550" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO/encut_550" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO_encut_600" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO/encut_600" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO_kpts_4x4x3" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO/kpts_4x4x3" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO_kpts_6x6x4" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO/kpts_6x6x4" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO_kpts_8x8x6" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO/kpts_8x8x6" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO_kpts_10x10x8" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO/kpts_10x10x8" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO_kpts_12x12x10" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO/kpts_12x12x10" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO2_encut_400" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO2/encut_400" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO2_encut_450" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO2/encut_450" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO2_encut_500" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO2/encut_500" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO2_encut_520" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO2/encut_520" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO2_encut_550" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO2/encut_550" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO2_encut_600" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO2/encut_600" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO2_kpts_4x4x4" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO2/kpts_4x4x4" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO2_kpts_4x4x6" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO2/kpts_4x4x6" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO2_kpts_6x6x8" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO2/kpts_6x6x8" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO2_kpts_8x8x10" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO2/kpts_8x8x10" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh
+sbatch -J "cv_PdO2_kpts_10x10x12" --ntasks-per-node=4 --chdir="/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G1_bulk/convergence/PdO2/kpts_10x10x12" /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp.sh

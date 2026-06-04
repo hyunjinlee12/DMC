@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 from mp_api.client import MPRester
 from pymatgen.core import Structure
+from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.io.ase import AseAtomsAdaptor
 import ase.io
 
@@ -73,7 +74,8 @@ def fetch_structures():
                       f"gap={doc.band_gap:.2f} eV")
 
             best = filtered[0]
-            struct = best.structure.get_conventional_standard_structure()
+            sga = SpacegroupAnalyzer(best.structure)
+            struct = sga.get_conventional_standard_structure()
 
             outname = f"{name}_bulk_{best.material_id}"
             poscar_path = STRUCTURES_DIR / f"{outname}.vasp"

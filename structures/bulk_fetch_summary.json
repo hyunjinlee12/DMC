@@ -1,0 +1,38 @@
+{
+  "Pd": {
+    "mp_id": "mp-2",
+    "spacegroup": "Fm-3m",
+    "e_hull": 0.0,
+    "lattice_abc": [
+      3.9173015749846063,
+      3.9173015749846063,
+      3.9173015749846063
+    ],
+    "n_atoms": 4,
+    "poscar": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/structures/Pd_bulk_mp-2.vasp"
+  },
+  "PdO": {
+    "mp_id": "mp-1336",
+    "spacegroup": "P4_2/mmc",
+    "e_hull": 0.0,
+    "lattice_abc": [
+      3.05360411,
+      3.05360411,
+      5.37125679
+    ],
+    "n_atoms": 4,
+    "poscar": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/structures/PdO_bulk_mp-1336.vasp"
+  },
+  "PdO2": {
+    "mp_id": "mp-1018886",
+    "spacegroup": "P4_2/mnm",
+    "e_hull": 0.0,
+    "lattice_abc": [
+      4.522230460002831,
+      4.522230460002831,
+      3.14627363
+    ],
+    "n_atoms": 6,
+    "poscar": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/structures/PdO2_bulk_mp-1018886.vasp"
+  }
+}
