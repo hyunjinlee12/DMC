@@ -21,3 +21,11 @@ __pycache__/
 
 # Claude Code internal
 .claude/projects/
+.claude/settings.local.json
+
+# Large ASE trajectory dumps (regeneratable from pipeline scripts)
+# (Per-surface SetA/SetB/SetTS/side/rejected are hundreds of MB; keep summary.json instead.)
+calculations/G3_adsorption*/**/*.traj
+
+# Large generated reports (regeneratable)
+*.tar.gz
