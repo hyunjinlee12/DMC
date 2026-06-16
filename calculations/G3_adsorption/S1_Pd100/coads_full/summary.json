@@ -1,0 +1,12 @@
+{
+  "total_pairs_enumerated": 37632,
+  "SetA_reactive_2.1-4.0": 9353,
+  "SetTS_1.7-2.1": 924,
+  "SetB_thermo_>=5.0": 13141,
+  "side_path": 156,
+  "ambiguous_4.0-5.0": 9480,
+  "steric_rejected": 4578,
+  "distance_min": 0.5382522729418414,
+  "distance_max": 7.70464013167563,
+  "distance_mean": 4.25060538745291
+}

@@ -1,0 +1,9 @@
+{
+  "total": 87,
+  "smiles": "Cl[C]=O",
+  "fix_note": "guideline Cl[C-]#[O+] failed RDKit valence; corrected to Cl[C]=O (brackets prevent implicit H)",
+  "fragment_atoms": {
+    "C": 1,
+    "O": 1
+  }
+}

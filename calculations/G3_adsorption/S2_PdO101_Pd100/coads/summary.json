@@ -1,0 +1,23 @@
+{
+  "total_pairs_generated": 400,
+  "SetA_reactive_2.1-4.0": 89,
+  "SetB_thermo_>=5.0": 177,
+  "SetTS_1.7-2.1": 5,
+  "side_path_<1.7": 1,
+  "rejected_steric": 51,
+  "distance_min": 0.5840545546701558,
+  "distance_max": 8.422620946824429,
+  "distance_mean": 4.6438875785889016,
+  "cutoffs": {
+    "side": 1.7,
+    "TS_low": 1.7,
+    "TS_high": 2.1,
+    "A_low": 2.1,
+    "A_high": 4.0,
+    "amb_high": 5.0,
+    "steric_heavy": 1.6,
+    "steric_H": 1.1
+  },
+  "co_smiles": "Cl[C]=O",
+  "ch3o_smiles": "ClOC"
+}

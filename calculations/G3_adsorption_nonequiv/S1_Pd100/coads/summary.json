@@ -1,0 +1,19 @@
+{
+  "surface": "S1",
+  "n_sites_total": 112,
+  "n_sites_nonequivalent": 7,
+  "n_CO": 7,
+  "n_CH3O": 21,
+  "total_pairs": 147,
+  "primary_pass": 147,
+  "final_counts": {
+    "SetA_reactive": 48,
+    "SetTS_guess": 28,
+    "SetB_thermo": 0,
+    "side_path": 3,
+    "rejected_steric": 69
+  },
+  "distance_min": 0.5682385694367909,
+  "distance_max": 4.605514241053175,
+  "distance_mean": 2.293839725636724
+}

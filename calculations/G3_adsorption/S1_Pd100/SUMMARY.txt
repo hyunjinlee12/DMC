@@ -1,0 +1,63 @@
+================================================================================
+S1 Pd(100) G3 Adsorbate Sampling — COMPLETE
+================================================================================
+
+Date: 2026-06-10
+Tasks: T1.10 (site map) + T1.11 (CO*) + T1.12 (CH3O*) + T1.13 (co-ads)
+Status: ✓ Steps 1-4 complete, awaiting advisor review before MLIP/DFT
+
+COUNTS
+------
+Site map:     112 sites (16 atop + 32 bridge + 64 3-fold)
+CO*:          112 candidates
+CH3O*:        336 candidates
+Co-ads total: 441 pairs
+
+Co-ads classification:
+  - Set A (reactive, 2.3-4.0 Å):      64 structures
+  - Set B (thermo, ≥5.0 Å):          310 structures  
+  - Set TS (TS-like, 1.7-2.3 Å):       8 structures
+  - side-path (< 1.7 Å):               9 structures
+
+DISTANCE STATISTICS (C_CO···O_CH3O)
+-----------------------------------
+Set A:    2.32 – 3.99 Å  (mean 3.35 Å, median 3.43 Å)
+Set B:    5.01 – 15.67 Å (mean 7.88 Å, median 7.45 Å)
+Set TS:   1.72 – 2.26 Å
+side:     1.06 – 1.61 Å
+
+All classifications 100% within expected ranges ✓
+
+CRITICAL ISSUE — CHO* vs CO*
+-----------------------------
+⚠ The working SMILES ClC=O generates CHO* (formyl, 3 atoms), not CO* (2 atoms).
+  This is a DIFFERENT intermediate from the intended CO*.
+  
+  Impact: Phase 2 mechanism will be CHO* + CH3O* → ?, not CO* + CH3O* → DMC.
+  
+  DECISION REQUIRED before proceeding to DFT:
+    A. Accept CHO* (adjust mechanism interpretation)
+    B. Find alternative CO* SMILES or manual construction
+    C. Use Fragment API to build CO* from coordinates
+  
+  See report/SMILES_note.md for full analysis.
+
+OUTPUT FILES
+------------
+/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/
+  ├── site_map/sites.json
+  ├── CO/candidates.traj (112), summary.json, grid.png
+  ├── CH3O/candidates.traj (336), summary.json, grid.png
+  ├── coads/SetA.traj (64), SetB.traj (310), SetTS.traj (8), side.traj (9)
+  ├── coads/distance_hist.png, SetA_grid.png, SetB_grid.png, summary.json
+  └── report/S1_G3_checkpoint.txt, env_check.md, SMILES_note.md
+
+NEXT STEPS (pending approval)
+------------------------------
+1. Resolve CHO* vs CO* issue (advisor decision)
+2. T1.14: MACE MLIP ranking (if proceeding with current structures)
+3. T1.15: DFT shortlist selection
+4. T1.16-17: VASP adsorption calculations
+5. Scale to S2/S3/S4 surfaces
+
+================================================================================

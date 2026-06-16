@@ -1,0 +1,355 @@
+
+============================================================
+Processing S1_Pd100
+============================================================
+CO candidates: 112
+CH3O candidates: 336
+Total pair combinations: 37632
+
+Step 1: Enumerating all pairs and computing C_CO-O_CH3O distances...
+Total pairs enumerated: 37632
+
+Step 2: Applying site-pair primary filter...
+Primary pool (≤ 4.5 Å): 19503
+Thermo pool (≥ 5.0 Å): 13141
+Ambiguous (4.5-5.0 Å, excluded): 4988
+
+Step 3: Applying max_per_pair=2 filter...
+After max_per_pair=2: 13814 (from 19503)
+Thermo pool after max_per_pair=2: 9600 (from 13141)
+
+Step 4: Checking steric clashes...
+Primary pool after steric filter: 10715 (rejected: 3099)
+Thermo pool after steric filter: 9600 (rejected: 0)
+
+Step 5: Classifying into Sets...
+
+Final classification:
+  Set A (reactive, 2.1-4.0 Å): 6338
+  Set TS (TS guess, 1.7-2.3 Å): 1097
+  Set B (thermo, ≥5.0 Å): 9600
+  Side-path (<1.7 Å): 95
+  Rejected (steric): 3099
+  (Note: 461 structures in both Set A and Set TS, 2.1-2.3 Å overlap)
+
+Building merged structures...
+  Saved 6338 to SetA.traj
+  Saved 1097 to SetTS.traj
+  Saved 9600 to SetB.traj
+  Saved 95 to side.traj
+  Saved 3099 to rejected.traj
+
+Saved summary to summary.json
+
+Generating visualizations...
+  Saved distance_hist.png
+  Saved SetA_grid.png
+  Saved SetB_grid.png
+  Saved report.md
+
+============================================================
+Completed S1_Pd100
+============================================================
+
+
+============================================================
+Processing S2_PdO101_Pd100
+============================================================
+CO candidates: 166
+CH3O candidates: 498
+Total pair combinations: 82668
+
+Step 1: Enumerating all pairs and computing C_CO-O_CH3O distances...
+Total pairs enumerated: 82668
+
+Step 2: Applying site-pair primary filter...
+Primary pool (≤ 4.5 Å): 33545
+Thermo pool (≥ 5.0 Å): 40946
+Ambiguous (4.5-5.0 Å, excluded): 8177
+
+Step 3: Applying max_per_pair=2 filter...
+After max_per_pair=2: 23948 (from 33545)
+Thermo pool after max_per_pair=2: 29147 (from 40946)
+
+Step 4: Checking steric clashes...
+Primary pool after steric filter: 19013 (rejected: 4935)
+Thermo pool after steric filter: 29147 (rejected: 0)
+
+Step 5: Classifying into Sets...
+
+Final classification:
+  Set A (reactive, 2.1-4.0 Å): 11598
+  Set TS (TS guess, 1.7-2.3 Å): 1625
+  Set B (thermo, ≥5.0 Å): 29147
+  Side-path (<1.7 Å): 183
+  Rejected (steric): 4935
+  (Note: 594 structures in both Set A and Set TS, 2.1-2.3 Å overlap)
+
+Building merged structures...
+  Saved 11598 to SetA.traj
+  Saved 1625 to SetTS.traj
+  Saved 29147 to SetB.traj
+  Saved 183 to side.traj
+  Saved 4935 to rejected.traj
+
+Saved summary to summary.json
+
+Generating visualizations...
+  Saved distance_hist.png
+  Saved SetA_grid.png
+  Saved SetB_grid.png
+  Saved report.md
+
+============================================================
+Completed S2_PdO101_Pd100
+============================================================
+
+
+============================================================
+Processing S3_PdO100
+============================================================
+CO candidates: 135
+CH3O candidates: 405
+Total pair combinations: 54675
+
+Step 1: Enumerating all pairs and computing C_CO-O_CH3O distances...
+Total pairs enumerated: 54675
+
+Step 2: Applying site-pair primary filter...
+Primary pool (≤ 4.5 Å): 25412
+Thermo pool (≥ 5.0 Å): 22592
+Ambiguous (4.5-5.0 Å, excluded): 6671
+
+Step 3: Applying max_per_pair=2 filter...
+After max_per_pair=2: 17887 (from 25412)
+Thermo pool after max_per_pair=2: 16110 (from 22592)
+
+Step 4: Checking steric clashes...
+Primary pool after steric filter: 13889 (rejected: 3998)
+Thermo pool after steric filter: 16110 (rejected: 0)
+
+Step 5: Classifying into Sets...
+
+Final classification:
+  Set A (reactive, 2.1-4.0 Å): 8281
+  Set TS (TS guess, 1.7-2.3 Å): 1441
+  Set B (thermo, ≥5.0 Å): 16110
+  Side-path (<1.7 Å): 177
+  Rejected (steric): 3998
+  (Note: 489 structures in both Set A and Set TS, 2.1-2.3 Å overlap)
+
+Building merged structures...
+  Saved 8281 to SetA.traj
+  Saved 1441 to SetTS.traj
+  Saved 16110 to SetB.traj
+  Saved 177 to side.traj
+  Saved 3998 to rejected.traj
+
+Saved summary to summary.json
+
+Generating visualizations...
+  Saved distance_hist.png
+  Saved SetA_grid.png
+  Saved SetB_grid.png
+  Saved report.md
+
+============================================================
+Completed S3_PdO100
+============================================================
+
+
+============================================================
+Processing S3b_PdO100_PdOterm
+============================================================
+CO candidates: 87
+CH3O candidates: 261
+Total pair combinations: 22707
+
+Step 1: Enumerating all pairs and computing C_CO-O_CH3O distances...
+Total pairs enumerated: 22707
+
+Step 2: Applying site-pair primary filter...
+Primary pool (≤ 4.5 Å): 10342
+Thermo pool (≥ 5.0 Å): 9664
+Ambiguous (4.5-5.0 Å, excluded): 2701
+
+Step 3: Applying max_per_pair=2 filter...
+After max_per_pair=2: 7500 (from 10342)
+Thermo pool after max_per_pair=2: 7157 (from 9664)
+
+Step 4: Checking steric clashes...
+Primary pool after steric filter: 6199 (rejected: 1301)
+Thermo pool after steric filter: 7157 (rejected: 0)
+
+Step 5: Classifying into Sets...
+
+Final classification:
+  Set A (reactive, 2.1-4.0 Å): 3764
+  Set TS (TS guess, 1.7-2.3 Å): 469
+  Set B (thermo, ≥5.0 Å): 7157
+  Side-path (<1.7 Å): 78
+  Rejected (steric): 1301
+  (Note: 173 structures in both Set A and Set TS, 2.1-2.3 Å overlap)
+
+Building merged structures...
+  Saved 3764 to SetA.traj
+  Saved 469 to SetTS.traj
+  Saved 7157 to SetB.traj
+  Saved 78 to side.traj
+  Saved 1301 to rejected.traj
+
+Saved summary to summary.json
+
+Generating visualizations...
+  Saved distance_hist.png
+  Saved SetA_grid.png
+  Saved SetB_grid.png
+  Saved report.md
+
+============================================================
+Completed S3b_PdO100_PdOterm
+============================================================
+
+
+============================================================
+Processing S4_PdO2_110
+============================================================
+CO candidates: 129
+CH3O candidates: 387
+Total pair combinations: 49923
+
+Step 1: Enumerating all pairs and computing C_CO-O_CH3O distances...
+Total pairs enumerated: 49923
+
+Step 2: Applying site-pair primary filter...
+Primary pool (≤ 4.5 Å): 24654
+Thermo pool (≥ 5.0 Å): 20051
+Ambiguous (4.5-5.0 Å, excluded): 5218
+
+Step 3: Applying max_per_pair=2 filter...
+After max_per_pair=2: 17439 (from 24654)
+Thermo pool after max_per_pair=2: 14270 (from 20051)
+
+Step 4: Checking steric clashes...
+Primary pool after steric filter: 13027 (rejected: 4412)
+Thermo pool after steric filter: 14270 (rejected: 0)
+
+Step 5: Classifying into Sets...
+
+Final classification:
+  Set A (reactive, 2.1-4.0 Å): 7975
+  Set TS (TS guess, 1.7-2.3 Å): 1182
+  Set B (thermo, ≥5.0 Å): 14270
+  Side-path (<1.7 Å): 120
+  Rejected (steric): 4412
+  (Note: 442 structures in both Set A and Set TS, 2.1-2.3 Å overlap)
+
+Building merged structures...
+  Saved 7975 to SetA.traj
+  Saved 1182 to SetTS.traj
+  Saved 14270 to SetB.traj
+  Saved 120 to side.traj
+  Saved 4412 to rejected.traj
+
+Saved summary to summary.json
+
+Generating visualizations...
+  Saved distance_hist.png
+  Saved SetA_grid.png
+  Saved SetB_grid.png
+  Saved report.md
+
+============================================================
+Completed S4_PdO2_110
+============================================================
+
+
+============================================================
+OVERALL SUMMARY
+============================================================
+
+S1_Pd100:
+  Total pairs enumerated: 37632
+  After primary filter: 19503
+  After max_per_pair: 13814
+  After steric: 10715
+  Final counts:
+    SetA_reactive: 6338
+    SetTS_guess: 1097
+    SetB_thermo: 9600
+    side_path: 95
+    rejected_steric: 3099
+  Target (150-500): ✗ outside
+
+S2_PdO101_Pd100:
+  Total pairs enumerated: 82668
+  After primary filter: 33545
+  After max_per_pair: 23948
+  After steric: 19013
+  Final counts:
+    SetA_reactive: 11598
+    SetTS_guess: 1625
+    SetB_thermo: 29147
+    side_path: 183
+    rejected_steric: 4935
+  Target (150-500): ✗ outside
+
+S3_PdO100:
+  Total pairs enumerated: 54675
+  After primary filter: 25412
+  After max_per_pair: 17887
+  After steric: 13889
+  Final counts:
+    SetA_reactive: 8281
+    SetTS_guess: 1441
+    SetB_thermo: 16110
+    side_path: 177
+    rejected_steric: 3998
+  Target (150-500): ✗ outside
+
+S3b_PdO100_PdOterm:
+  Total pairs enumerated: 22707
+  After primary filter: 10342
+  After max_per_pair: 7500
+  After steric: 6199
+  Final counts:
+    SetA_reactive: 3764
+    SetTS_guess: 469
+    SetB_thermo: 7157
+    side_path: 78
+    rejected_steric: 1301
+  Target (150-500): ✗ outside
+
+S4_PdO2_110:
+  Total pairs enumerated: 49923
+  After primary filter: 24654
+  After max_per_pair: 17439
+  After steric: 13027
+  Final counts:
+    SetA_reactive: 7975
+    SetTS_guess: 1182
+    SetB_thermo: 14270
+    side_path: 120
+    rejected_steric: 4412
+  Target (150-500): ✗ outside
+
+Saved combined summary to coads_guide_summary.json
+
+All surfaces processed!
+
+ated: 49923
+  After primary filter: 6192
+  After max_per_pair: 4128
+  After steric: 0
+  Final counts:
+    SetA_reactive: 0
+    SetTS_guess: 0
+    SetB_thermo: 0
+    side_path: 0
+    rejected_steric: 28122
+  Target (150-500): ✗ outside
+
+Saved combined summary to coads_guide_summary.json
+
+All surfaces processed!
+

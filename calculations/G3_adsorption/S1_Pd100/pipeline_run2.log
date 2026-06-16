@@ -1,0 +1,60 @@
+Traceback (most recent call last):
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/generate_adsorbates.py", line 169, in <module>
+    co_structs = surface.get_populated_sites(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/autoadsorbate/autoadsorbate.py", line 505, in get_populated_sites
+    c_trj += conformer_to_site(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/autoadsorbate/Surf.py", line 1636, in conformer_to_site
+    if conformer.info["smiles"][:3] == "S1S":
+       ~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'smiles'
+================================================================================
+S1 Pd(100) - G3 Adsorbate Sampling Pipeline
+================================================================================
+
+[Step 0] Environment Check
+----------------------------------------
+AutoAdsorbate version: 0.2.5
+
+Testing SMILES:
+  ClC=O           → RDKit OK
+  Cl[C]=O         → RDKit OK
+  ClCO            → RDKit OK
+  ClOC            → RDKit OK
+
+Selected CO* SMILES: ClC=O
+Selected CH3O* SMILES: ClOC
+Saved: report/env_check.md
+
+[Step 1] T1.10 - Site Map Generation
+----------------------------------------
+Loaded S1 slab: 80 atoms, Pd80
+Cell (a,b,c): 11.00, 11.00, 27.78 Å
+
+Creating Surface object (this may take 1-2 minutes)...
+Surface object created successfully
+
+Extracting site information...
+Total sites detected: 112
+Site type distribution: {'atop': 16, 'bridge': 32, '3-fold': 64}
+Saved: site_map/sites.json
+
+Generating site map overlay (not implemented - requires matplotlib/PIL overlay)...
+(Skipping overlay image for this dry-run; site data saved)
+
+[Step 1 Complete]
+  Total sites: 112
+
+[Step 2] T1.11 - CO* Candidate Generation
+----------------------------------------
+Creating CO* fragment from SMILES: ClC=O
+(to_initialize=1, mode='all', overlap_thr=1.25)
+Initializing Fragment (may take 30-60s)...
+User requested to_initialize = 1 conformers.
+After pruning with 0.5; len(conformer_trj) = 1 unique conformers are found.
+Fragment created: 1 conformers
+
+Populating sites with CO* (mode='all')...
+(This may take 5-10 minutes for ~60 sites × 1 conformer)
+ERROR: CO* population failed: 'smiles'

@@ -1,0 +1,15 @@
+{
+  "total_pairs": 400,
+  "SetA_reactive_2.1-4.0": 98,
+  "SetTS_1.7-2.1": 13,
+  "SetB_thermo_>=5.0": 161,
+  "side_path_<1.7": 1,
+  "ambiguous_4.0-5.0": 87,
+  "steric_rejected": 40,
+  "distance_min": 0.3466026489383181,
+  "distance_max": 7.968358237711812,
+  "distance_mean": 4.47949815848707,
+  "co_smiles": "Cl[C]=O",
+  "ch3o_smiles": "ClOC",
+  "note": "guide-compliant: Set A 2.1-4.0, TS 1.7-2.1 (non-overlap), steric heavy<1.6 H<1.1"
+}

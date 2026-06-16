@@ -1,0 +1,9 @@
+{
+  "total_generated": 441,
+  "SetA_reactive": 64,
+  "SetB_thermo": 310,
+  "SetTS_ts_like": 8,
+  "side_product": 9,
+  "distance_range": "1.06-15.67 \u00c5",
+  "note": "Sampling limited to ~400 pairs for dry-run efficiency"
+}

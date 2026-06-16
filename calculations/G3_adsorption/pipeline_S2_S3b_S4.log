@@ -1,0 +1,152 @@
+Traceback (most recent call last):
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'position'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/generate_S2_S3b_S4.py", line 592, in main
+    surface, site_summary = generate_site_map(surface_name, slab_path, n_sub)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/generate_S2_S3b_S4.py", line 143, in generate_site_map
+    site_pos = np.array([site_df.iloc[i]['position'] for i in range(len(site_df))])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/generate_S2_S3b_S4.py", line 143, in <listcomp>
+    site_pos = np.array([site_df.iloc[i]['position'] for i in range(len(site_df))])
+                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/series.py", line 959, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/series.py", line 1046, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'position'
+Traceback (most recent call last):
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'position'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/generate_S2_S3b_S4.py", line 592, in main
+    surface, site_summary = generate_site_map(surface_name, slab_path, n_sub)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/generate_S2_S3b_S4.py", line 143, in generate_site_map
+    site_pos = np.array([site_df.iloc[i]['position'] for i in range(len(site_df))])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/generate_S2_S3b_S4.py", line 143, in <listcomp>
+    site_pos = np.array([site_df.iloc[i]['position'] for i in range(len(site_df))])
+                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/series.py", line 959, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/series.py", line 1046, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'position'
+Traceback (most recent call last):
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'position'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/generate_S2_S3b_S4.py", line 592, in main
+    surface, site_summary = generate_site_map(surface_name, slab_path, n_sub)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/generate_S2_S3b_S4.py", line 143, in generate_site_map
+    site_pos = np.array([site_df.iloc[i]['position'] for i in range(len(site_df))])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/generate_S2_S3b_S4.py", line 143, in <listcomp>
+    site_pos = np.array([site_df.iloc[i]['position'] for i in range(len(site_df))])
+                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/series.py", line 959, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/series.py", line 1046, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'position'
+
+================================================================================
+G3 Adsorption Sampling Pipeline: S2, S3b, S4
+================================================================================
+
+Surfaces to process: 3
+  - S2_PdO101_Pd100: 112 substrate atoms
+  - S3b_PdO100_PdOterm: 104 substrate atoms
+  - S4_PdO2_110: 144 substrate atoms
+
+Cutoffs (guideline-compliant):
+  side-path: < 1.7 Å
+  Set TS: 1.7 – 2.1 Å
+  Set A (reactive): 2.1 – 4.0 Å
+  ambiguous (reject): 4.0 – 5.0 Å
+  Set B (thermo): ≥ 5.0 Å
+  steric reject: heavy-heavy < 1.6 Å OR H-heavy < 1.1 Å
+
+============================================================
+[S2_PdO101_Pd100] Step 1: Site map generation
+============================================================
+  Slab loaded: 112 atoms
+  Formula: O16Pd96
+  Total sites detected: 166
+  Site type distribution: {'bridge': 75, 'atop': 27, '3-fold-hollow': 58, '4-fold-hollow': 6}
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/site_map/sites.json
+
+❌ ERROR in S2_PdO101_Pd100: 'position'
+
+============================================================
+[S3b_PdO100_PdOterm] Step 1: Site map generation
+============================================================
+  Slab loaded: 104 atoms
+  Formula: O48Pd56
+  Total sites detected: 87
+  Site type distribution: {'5-fold': 4, '3-fold-hollow': 23, 'bridge': 44, 'atop': 16}
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/site_map/sites.json
+
+❌ ERROR in S3b_PdO100_PdOterm: 'position'
+
+============================================================
+[S4_PdO2_110] Step 1: Site map generation
+============================================================
+  Slab loaded: 144 atoms
+  Formula: O96Pd48
+  Total sites detected: 129
+  Site type distribution: {'3-fold-hollow': 42, 'bridge': 61, 'atop': 24, '4-fold-hollow': 2}
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/site_map/sites.json
+
+❌ ERROR in S4_PdO2_110: 'position'
+
+================================================================================
+PIPELINE COMPLETE — Summary
+================================================================================
+
+✅ All surfaces processed. Checkpoint stop (NO MLIP, NO DFT).
+
+Output base: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption
+

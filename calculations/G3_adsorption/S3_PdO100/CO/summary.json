@@ -1,0 +1,8 @@
+{
+  "total": 135,
+  "smiles": "Cl[C]=O",
+  "fragment_atoms": {
+    "C": 1,
+    "O": 1
+  }
+}

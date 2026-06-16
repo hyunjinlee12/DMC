@@ -1,0 +1,113 @@
+================================================================================
+S1 Pd(100) - G3 Adsorbate Sampling Pipeline
+================================================================================
+
+[Step 0] Environment Check
+----------------------------------------
+AutoAdsorbate version: 0.2.5
+
+Testing SMILES:
+  ClC=O           → RDKit OK
+  Cl[C]=O         → RDKit OK
+  ClCO            → RDKit OK
+  ClOC            → RDKit OK
+
+Selected CO* SMILES: ClC=O
+Selected CH3O* SMILES: ClOC
+Saved: report/env_check.md
+
+[Step 1] T1.10 - Site Map Generation
+----------------------------------------
+Loaded S1 slab: 80 atoms, Pd80
+Cell (a,b,c): 11.00, 11.00, 27.78 Å
+
+Creating Surface object (this may take 1-2 minutes)...
+Surface object created successfully
+
+Extracting site information...
+Total sites detected: 112
+Site type distribution: {'atop': 16, 'bridge': 32, '3-fold': 64}
+Saved: site_map/sites.json
+
+Generating site map overlay (not implemented - requires matplotlib/PIL overlay)...
+(Skipping overlay image for this dry-run; site data saved)
+
+[Step 1 Complete]
+  Total sites: 112
+
+[Step 2] T1.11 - CO* Candidate Generation
+----------------------------------------
+Creating CO* fragment from SMILES: ClC=O
+(to_initialize=1, mode='all', overlap_thr=1.25)
+Initializing Fragment (may take 30-60s)...
+User requested to_initialize = 1 conformers.
+After pruning with 0.5; len(conformer_trj) = 1 unique conformers are found.
+Fragment created: 1 conformers
+
+Populating sites with CO* (mode='all')...
+(This may take 5-10 minutes for ~60 sites × 1 conformer)
+Generated 112 CO* structures
+Saved: CO/candidates.traj (112 structures)
+Site distribution: {'unknown': 112}
+Saved: CO/summary.json
+
+Generating CO* grid image...
+Saved: CO/grid.png
+
+[Step 2 Complete]
+  CO* candidates: 112
+  Target: 100-300 (actual: 112)
+
+[Step 3] T1.12 - CH3O* Candidate Generation
+----------------------------------------
+Creating CH3O* fragment from SMILES: ClOC
+(to_initialize=20, mode='all', sample_rotation=True, conformers_per_site_cap=3)
+Initializing Fragment (may take 2-3 minutes due to multiple conformers)...
+User requested to_initialize = 20 conformers.
+After pruning with 0.5; len(conformer_trj) = 1 unique conformers are found.
+Fragment created: 1 conformers
+
+Populating sites with CH3O* (mode='all', rotation sampling)...
+(This may take 10-20 minutes for ~60 sites × ~3 conformers)
+Generated 336 CH3O* structures
+Saved: CH3O/candidates.traj (336 structures)
+Site distribution: {'unknown': 336}
+Saved: CH3O/summary.json
+
+Generating CH3O* grid image...
+Saved: CH3O/grid.png
+
+[Step 3 Complete]
+  CH3O* candidates: 336
+  Target: 100-300 (actual: 336)
+
+[Step 4] T1.13 - CO* + CH3O* Co-adsorption
+----------------------------------------
+Generating co-adsorption structures with custom site-pair wrapper...
+Classification cutoffs (workplan):
+  - site-pair distance: ≤4.5 Å (primary), 4.5-5.5 Å (loose)
+  - C_CO···O_CH3O reactive: 2.1-4.0 Å
+  - C_CO···O_CH3O TS-guess: 1.7-2.3 Å
+  - C_CO···O_CH3O thermo: ≥5.0 Å
+  - steric reject: heavy-heavy <1.6 Å, H-heavy <1.1-1.2 Å
+
+Loaded: 112 CO* + 336 CH3O* structures
+
+Generating co-adsorption pairs...
+(This may take 10-30 minutes for systematic pairing)
+Sampling: 23 CO* × 21 CH3O* = 483 pairs
+Traceback (most recent call last):
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/generate_adsorbates.py", line 441, in <module>
+    combined.append(Atoms(sym, positions=[pos]))
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/ase/atoms.py", line 829, in append
+    self.extend(self.__class__([atom]))
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/ase/atoms.py", line 1873, in __init__
+    super().__init__(symbols, *args, **kwargs)
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/ase/atoms.py", line 101, in __init__
+    numbers = symbols2numbers(symbols)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyunjin/.conda/envs/pddmc/lib/python3.11/site-packages/ase/symbols.py", line 29, in symbols2numbers
+    numbers.append(int(s))
+                   ^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'Atoms'

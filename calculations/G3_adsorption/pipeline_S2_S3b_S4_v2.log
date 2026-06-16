@@ -1,0 +1,220 @@
+================================================================================
+G3 Adsorption Sampling Pipeline: S2, S3b, S4
+================================================================================
+
+Surfaces to process: 3
+  - S2_PdO101_Pd100: 112 substrate atoms
+  - S3b_PdO100_PdOterm: 104 substrate atoms
+  - S4_PdO2_110: 144 substrate atoms
+
+Cutoffs (guideline-compliant):
+  side-path: < 1.7 Å
+  Set TS: 1.7 – 2.1 Å
+  Set A (reactive): 2.1 – 4.0 Å
+  ambiguous (reject): 4.0 – 5.0 Å
+  Set B (thermo): ≥ 5.0 Å
+  steric reject: heavy-heavy < 1.6 Å OR H-heavy < 1.1 Å
+
+============================================================
+[S2_PdO101_Pd100] Step 1: Site map generation
+============================================================
+  Slab loaded: 112 atoms
+  Formula: O16Pd96
+  Total sites detected: 166
+  Site type distribution: {'bridge': 75, 'atop': 27, '3-fold-hollow': 58, '4-fold-hollow': 6}
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/site_map/sites.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/site_map/overlay.png
+
+============================================================
+[S2_PdO101_Pd100] Step 2: CO* candidate generation
+============================================================
+  Fragment: Cl[C]=O ...
+User requested to_initialize = 1 conformers.
+After pruning with 0.5; len(conformer_trj) = 1 unique conformers are found.
+  CO* candidates generated: 166
+  First structure adsorbate atoms: ['C', 'O']
+  ✅ OK: pure C+O fragment, no H
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/CO/candidates.traj
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/CO/summary.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/CO/grid.png
+
+============================================================
+[S2_PdO101_Pd100] Step 3: CH3O* candidate generation
+============================================================
+  Fragment: ClOC ...
+User requested to_initialize = 20 conformers.
+After pruning with 0.5; len(conformer_trj) = 1 unique conformers are found.
+  CH3O* candidates generated: 498
+  First structure adsorbate atoms: Counter({'H': 3, 'O': 1, 'C': 1})
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/CH3O/candidates.traj
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/CH3O/summary.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/CH3O/grid.png
+
+============================================================
+[S2_PdO101_Pd100] Step 4: Co-adsorption generation
+============================================================
+  Pair sampling: 20 CO × 20 CH3O = 400 pairs
+  ✅ Classification complete:
+    Set A (2.1–4.0 Å, reactive): 0
+    Set B (≥5.0 Å, thermo):      0
+    Set TS (1.7–2.1 Å):          0
+    side-path (<1.7 Å):          0
+    rejected (steric):           400
+    distance range: 0.58–8.42 Å, mean 4.64
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/coads/summary.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/coads/distance_hist.png
+
+============================================================
+[S2_PdO101_Pd100] Step 5: Report generation
+============================================================
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/report/summary.md
+
+============================================================
+[S3b_PdO100_PdOterm] Step 1: Site map generation
+============================================================
+  Slab loaded: 104 atoms
+  Formula: O48Pd56
+  Total sites detected: 87
+  Site type distribution: {'5-fold': 4, '3-fold-hollow': 23, 'bridge': 44, 'atop': 16}
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/site_map/sites.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/site_map/overlay.png
+
+============================================================
+[S3b_PdO100_PdOterm] Step 2: CO* candidate generation
+============================================================
+  Fragment: Cl[C]=O ...
+User requested to_initialize = 1 conformers.
+After pruning with 0.5; len(conformer_trj) = 1 unique conformers are found.
+  CO* candidates generated: 87
+  First structure adsorbate atoms: ['C', 'O']
+  ✅ OK: pure C+O fragment, no H
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/CO/candidates.traj
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/CO/summary.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/CO/grid.png
+
+============================================================
+[S3b_PdO100_PdOterm] Step 3: CH3O* candidate generation
+============================================================
+  Fragment: ClOC ...
+User requested to_initialize = 20 conformers.
+After pruning with 0.5; len(conformer_trj) = 1 unique conformers are found.
+  CH3O* candidates generated: 261
+  First structure adsorbate atoms: Counter({'H': 3, 'O': 1, 'C': 1})
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/CH3O/candidates.traj
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/CH3O/summary.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/CH3O/grid.png
+
+============================================================
+[S3b_PdO100_PdOterm] Step 4: Co-adsorption generation
+============================================================
+  Pair sampling: 20 CO × 20 CH3O = 400 pairs
+  ✅ Classification complete:
+    Set A (2.1–4.0 Å, reactive): 0
+    Set B (≥5.0 Å, thermo):      0
+    Set TS (1.7–2.1 Å):          0
+    side-path (<1.7 Å):          0
+    rejected (steric):           400
+    distance range: 0.62–7.78 Å, mean 4.44
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/coads/summary.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/coads/distance_hist.png
+
+============================================================
+[S3b_PdO100_PdOterm] Step 5: Report generation
+============================================================
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/report/summary.md
+
+============================================================
+[S4_PdO2_110] Step 1: Site map generation
+============================================================
+  Slab loaded: 144 atoms
+  Formula: O96Pd48
+  Total sites detected: 129
+  Site type distribution: {'3-fold-hollow': 42, 'bridge': 61, 'atop': 24, '4-fold-hollow': 2}
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/site_map/sites.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/site_map/overlay.png
+
+============================================================
+[S4_PdO2_110] Step 2: CO* candidate generation
+============================================================
+  Fragment: Cl[C]=O ...
+User requested to_initialize = 1 conformers.
+After pruning with 0.5; len(conformer_trj) = 1 unique conformers are found.
+  CO* candidates generated: 129
+  First structure adsorbate atoms: ['C', 'O']
+  ✅ OK: pure C+O fragment, no H
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/CO/candidates.traj
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/CO/summary.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/CO/grid.png
+
+============================================================
+[S4_PdO2_110] Step 3: CH3O* candidate generation
+============================================================
+  Fragment: ClOC ...
+User requested to_initialize = 20 conformers.
+After pruning with 0.5; len(conformer_trj) = 1 unique conformers are found.
+  CH3O* candidates generated: 387
+  First structure adsorbate atoms: Counter({'H': 3, 'O': 1, 'C': 1})
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/CH3O/candidates.traj
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/CH3O/summary.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/CH3O/grid.png
+
+============================================================
+[S4_PdO2_110] Step 4: Co-adsorption generation
+============================================================
+  Pair sampling: 20 CO × 20 CH3O = 400 pairs
+  ✅ Classification complete:
+    Set A (2.1–4.0 Å, reactive): 0
+    Set B (≥5.0 Å, thermo):      0
+    Set TS (1.7–2.1 Å):          0
+    side-path (<1.7 Å):          0
+    rejected (steric):           400
+    distance range: 0.48–7.76 Å, mean 4.43
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/coads/summary.json
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/coads/distance_hist.png
+
+============================================================
+[S4_PdO2_110] Step 5: Report generation
+============================================================
+  Saved: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/report/summary.md
+
+================================================================================
+PIPELINE COMPLETE — Summary
+================================================================================
+
+S2_PdO101_Pd100:
+  Sites: 166
+  CO*: 166
+  CH3O*: 498
+  Co-ads SetA: 0
+  Co-ads SetB: 0
+  Co-ads SetTS: 0
+  Co-ads side: 0
+  Co-ads rejected: 400
+  Distance range: 0.58–8.42 Å
+
+S3b_PdO100_PdOterm:
+  Sites: 87
+  CO*: 87
+  CH3O*: 261
+  Co-ads SetA: 0
+  Co-ads SetB: 0
+  Co-ads SetTS: 0
+  Co-ads side: 0
+  Co-ads rejected: 400
+  Distance range: 0.62–7.78 Å
+
+S4_PdO2_110:
+  Sites: 129
+  CO*: 129
+  CH3O*: 387
+  Co-ads SetA: 0
+  Co-ads SetB: 0
+  Co-ads SetTS: 0
+  Co-ads side: 0
+  Co-ads rejected: 400
+  Distance range: 0.48–7.76 Å
+
+✅ All surfaces processed. Checkpoint stop (NO MLIP, NO DFT).
+
+Output base: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption
+

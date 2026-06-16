@@ -1,0 +1,10 @@
+{
+  "total_pairs": 400,
+  "SetA_reactive": 108,
+  "SetB_thermo": 161,
+  "SetTS": 25,
+  "side_path": 19,
+  "distance_min": 0.3466026489383181,
+  "distance_max": 7.968358237711812,
+  "distance_mean": 4.47949815848707
+}

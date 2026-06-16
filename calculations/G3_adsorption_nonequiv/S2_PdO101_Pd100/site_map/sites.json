@@ -1,0 +1,11 @@
+{
+  "n_total": 166,
+  "n_nonequivalent": 51,
+  "redundancy": 3.2549019607843137,
+  "connectivity": {
+    "1": 9,
+    "2": 21,
+    "3": 18,
+    "4": 3
+  }
+}

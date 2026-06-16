@@ -1,0 +1,122 @@
+G3 Adsorption Sampling — Complete File List for S2, S3b, S4
+============================================================
+
+Base directory: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/
+
+## S2_PdO101_Pd100 (PdO(101)/Pd(100) interface)
+
+site_map/
+  sites.json              — 166 sites (bridge:75, atop:27, 3-fold:58, 4-fold:6)
+  overlay.png             — top-view visualization
+
+CO/
+  candidates.traj         — 166 CO* structures
+  summary.json            — metadata
+  grid.png                — 5×5 visualization
+
+CH3O/
+  candidates.traj         — 498 CH3O* structures
+  summary.json            — metadata
+  grid.png                — 5×5 visualization
+
+coads/
+  SetA.traj               — 89 reactive pairs (2.1–4.0 Å)
+  SetB.traj               — 177 thermodynamic pairs (≥5.0 Å)
+  SetTS.traj              — 5 TS-guess pairs (1.7–2.1 Å)
+  side.traj               — 1 side-path structure (<1.7 Å)
+  rejected.traj           — 51 steric clashes
+  summary.json            — classification stats
+  distance_hist.png       — C–O distance histogram
+  SetA_grid.png           — Set A visualization
+  SetB_grid.png           — Set B visualization
+
+report/
+  summary.md              — per-surface markdown report
+
+---
+
+## S3b_PdO100_PdOterm (PdO(100) PdO-termination)
+
+site_map/
+  sites.json              — 87 sites (bridge:44, 3-fold:23, atop:16, 5-fold:4)
+  overlay.png
+
+CO/
+  candidates.traj         — 87 CO* structures
+  summary.json
+  grid.png
+
+CH3O/
+  candidates.traj         — 261 CH3O* structures
+  summary.json
+  grid.png
+
+coads/
+  SetA.traj               — 100 reactive pairs
+  SetB.traj               — 162 thermodynamic pairs
+  SetTS.traj              — 15 TS-guess pairs
+  side.traj               — 2 side-path structures
+  rejected.traj           — 36 steric clashes
+  summary.json
+  distance_hist.png
+  SetA_grid.png
+  SetB_grid.png
+
+report/
+  summary.md
+
+---
+
+## S4_PdO2_110 (PdO₂(110) rutile-like)
+
+site_map/
+  sites.json              — 129 sites (bridge:61, 3-fold:42, atop:24, 4-fold:2)
+  overlay.png
+
+CO/
+  candidates.traj         — 129 CO* structures
+  summary.json
+  grid.png
+
+CH3O/
+  candidates.traj         — 387 CH3O* structures
+  summary.json
+  grid.png
+
+coads/
+  SetA.traj               — 104 reactive pairs
+  SetB.traj               — 167 thermodynamic pairs
+  SetTS.traj              — 7 TS-guess pairs
+  side.traj               — 0 side-path structures (empty file not created)
+  rejected.traj           — 47 steric clashes
+  summary.json
+  distance_hist.png
+  SetA_grid.png
+  SetB_grid.png
+
+report/
+  summary.md
+
+---
+
+## Pipeline & Summary Files
+
+generate_S2_S3b_S4.py       — unified pipeline script (corrected steric check)
+pipeline_corrected.log      — final execution log
+diagnose_steric.py          — diagnostic script for steric rejection analysis
+SUMMARY_S2_S3b_S4.md        — comprehensive summary (this summary)
+FILES_S2_S3b_S4.txt         — file list (this file)
+
+---
+
+Total structures generated:
+  - S2: 166 CO + 498 CH3O + 323 coads valid = 987 structures
+  - S3b: 87 CO + 261 CH3O + 279 coads valid = 627 structures
+  - S4: 129 CO + 387 CH3O + 278 coads valid = 794 structures
+  - **Grand total: 2,408 unique structures** (excluding rejected)
+
+Trajectory format: ASE (readable with `ase.io.read(file, index=':')`)
+Visualization: PNG (120–150 dpi)
+Metadata: JSON (UTF-8, indent=2)
+
+Checkpoint: ✅ STRUCTURE GENERATION COMPLETE — NO MLIP, NO DFT performed.

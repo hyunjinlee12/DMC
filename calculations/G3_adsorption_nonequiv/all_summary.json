@@ -1,0 +1,97 @@
+{
+  "S1": {
+    "surface": "S1",
+    "n_sites_total": 112,
+    "n_sites_nonequivalent": 7,
+    "n_CO": 7,
+    "n_CH3O": 21,
+    "total_pairs": 147,
+    "primary_pass": 147,
+    "final_counts": {
+      "SetA_reactive": 48,
+      "SetTS_guess": 28,
+      "SetB_thermo": 0,
+      "side_path": 3,
+      "rejected_steric": 69
+    },
+    "distance_min": 0.5682385694367909,
+    "distance_max": 4.605514241053175,
+    "distance_mean": 2.293839725636724
+  },
+  "S2": {
+    "surface": "S2",
+    "n_sites_total": 166,
+    "n_sites_nonequivalent": 51,
+    "n_CO": 51,
+    "n_CH3O": 153,
+    "total_pairs": 7803,
+    "primary_pass": 5728,
+    "final_counts": {
+      "SetA_reactive": 2103,
+      "SetTS_guess": 407,
+      "SetB_thermo": 2824,
+      "side_path": 37,
+      "rejected_steric": 1107
+    },
+    "distance_min": 0.18637257752366246,
+    "distance_max": 8.651991110014773,
+    "distance_mean": 4.229438694504763
+  },
+  "S3": {
+    "surface": "S3",
+    "n_sites_total": 135,
+    "n_sites_nonequivalent": 21,
+    "n_CO": 21,
+    "n_CH3O": 63,
+    "total_pairs": 1323,
+    "primary_pass": 1226,
+    "final_counts": {
+      "SetA_reactive": 432,
+      "SetTS_guess": 123,
+      "SetB_thermo": 222,
+      "side_path": 11,
+      "rejected_steric": 259
+    },
+    "distance_min": 0.5497471575534562,
+    "distance_max": 7.499627688826012,
+    "distance_mean": 3.544381965025198
+  },
+  "S3b": {
+    "surface": "S3b",
+    "n_sites_total": 87,
+    "n_sites_nonequivalent": 14,
+    "n_CO": 14,
+    "n_CH3O": 42,
+    "total_pairs": 588,
+    "primary_pass": 571,
+    "final_counts": {
+      "SetA_reactive": 234,
+      "SetTS_guess": 49,
+      "SetB_thermo": 78,
+      "side_path": 6,
+      "rejected_steric": 119
+    },
+    "distance_min": 0.3950290247143116,
+    "distance_max": 6.410005774133656,
+    "distance_mean": 3.366281843613147
+  },
+  "S4": {
+    "surface": "S4",
+    "n_sites_total": 129,
+    "n_sites_nonequivalent": 24,
+    "n_CO": 24,
+    "n_CH3O": 72,
+    "total_pairs": 1728,
+    "primary_pass": 1549,
+    "final_counts": {
+      "SetA_reactive": 664,
+      "SetTS_guess": 160,
+      "SetB_thermo": 236,
+      "side_path": 15,
+      "rejected_steric": 422
+    },
+    "distance_min": 0.270728843955836,
+    "distance_max": 7.000929234968756,
+    "distance_mean": 3.2794202649430932
+  }
+}

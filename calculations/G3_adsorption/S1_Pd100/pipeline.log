@@ -1,0 +1,32 @@
+================================================================================
+S1 Pd(100) - G3 Adsorbate Sampling Pipeline
+================================================================================
+
+[Step 0] Environment Check
+----------------------------------------
+AutoAdsorbate version: 0.2.5
+
+Testing SMILES:
+  ClC=O           → RDKit OK
+  Cl[C]=O         → RDKit OK
+  ClCO            → RDKit OK
+  ClOC            → RDKit OK
+
+Selected CO* SMILES: ClC=O
+Selected CH3O* SMILES: ClOC
+Saved: report/env_check.md
+
+[Step 1] T1.10 - Site Map Generation
+----------------------------------------
+Loaded S1 slab: 80 atoms, Pd80
+Cell (a,b,c): 11.00, 11.00, 27.78 Å
+
+Creating Surface object (this may take 1-2 minutes)...
+Surface object created successfully
+
+Extracting site information...
+Traceback (most recent call last):
+  File "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/generate_adsorbates.py", line 106, in <module>
+    sites = surface.sites
+            ^^^^^^^^^^^^^
+AttributeError: 'Surface' object has no attribute 'sites'

@@ -1,0 +1,212 @@
+{
+  "S1_Pd100": {
+    "surface": "S1_Pd100",
+    "n_co_candidates": 112,
+    "n_ch3o_candidates": 336,
+    "total_pairs_enumerated": 37632,
+    "after_primary_filter": 19503,
+    "after_max_per_pair": 13814,
+    "after_steric": 10715,
+    "thermo_pool_initial": 13141,
+    "thermo_after_max_per_pair": 9600,
+    "thermo_after_steric": 9600,
+    "final_counts": {
+      "SetA_reactive": 6338,
+      "SetTS_guess": 1097,
+      "SetB_thermo": 9600,
+      "side_path": 95,
+      "rejected_steric": 3099
+    },
+    "overlap_SetA_SetTS": 461,
+    "distances": {
+      "SetA": {
+        "min": 2.1003079331968277,
+        "max": 3.9998659200508,
+        "mean": 3.2409534603315815
+      },
+      "SetTS": {
+        "min": 1.7000447597926258,
+        "max": 2.2999651370438676,
+        "mean": 2.0429041619952932
+      },
+      "SetB": {
+        "min": 5.000117022239001,
+        "max": 7.704640131675631,
+        "mean": 5.776965825475053
+      },
+      "side": {
+        "min": 1.6000675926426549,
+        "max": 1.699781288013452,
+        "mean": 1.6587725929751755
+      }
+    }
+  },
+  "S2_PdO101_Pd100": {
+    "surface": "S2_PdO101_Pd100",
+    "n_co_candidates": 166,
+    "n_ch3o_candidates": 498,
+    "total_pairs_enumerated": 82668,
+    "after_primary_filter": 33545,
+    "after_max_per_pair": 23948,
+    "after_steric": 19013,
+    "thermo_pool_initial": 40946,
+    "thermo_after_max_per_pair": 29147,
+    "thermo_after_steric": 29147,
+    "final_counts": {
+      "SetA_reactive": 11598,
+      "SetTS_guess": 1625,
+      "SetB_thermo": 29147,
+      "side_path": 183,
+      "rejected_steric": 4935
+    },
+    "overlap_SetA_SetTS": 594,
+    "distances": {
+      "SetA": {
+        "min": 2.1006558731415046,
+        "max": 3.9999753513790846,
+        "mean": 3.2454654661555153
+      },
+      "SetTS": {
+        "min": 1.7003136201460762,
+        "max": 2.2999371397333963,
+        "mean": 2.0152233377754336
+      },
+      "SetB": {
+        "min": 5.000010867583015,
+        "max": 8.736332278941374,
+        "mean": 6.14311193024335
+      },
+      "side": {
+        "min": 1.6003671874994403,
+        "max": 1.6996896056694675,
+        "mean": 1.6533866460392583
+      }
+    }
+  },
+  "S3_PdO100": {
+    "surface": "S3_PdO100",
+    "n_co_candidates": 135,
+    "n_ch3o_candidates": 405,
+    "total_pairs_enumerated": 54675,
+    "after_primary_filter": 25412,
+    "after_max_per_pair": 17887,
+    "after_steric": 13889,
+    "thermo_pool_initial": 22592,
+    "thermo_after_max_per_pair": 16110,
+    "thermo_after_steric": 16110,
+    "final_counts": {
+      "SetA_reactive": 8281,
+      "SetTS_guess": 1441,
+      "SetB_thermo": 16110,
+      "side_path": 177,
+      "rejected_steric": 3998
+    },
+    "overlap_SetA_SetTS": 489,
+    "distances": {
+      "SetA": {
+        "min": 2.1002592706953775,
+        "max": 3.9997005653844035,
+        "mean": 3.231750299510179
+      },
+      "SetTS": {
+        "min": 1.7004342677872089,
+        "max": 2.2999930150075065,
+        "mean": 2.005524579209671
+      },
+      "SetB": {
+        "min": 5.000218637170531,
+        "max": 8.155779990955926,
+        "mean": 5.96897544343991
+      },
+      "side": {
+        "min": 1.601456409543627,
+        "max": 1.6994832826055788,
+        "mean": 1.6543995255682036
+      }
+    }
+  },
+  "S3b_PdO100_PdOterm": {
+    "surface": "S3b_PdO100_PdOterm",
+    "n_co_candidates": 87,
+    "n_ch3o_candidates": 261,
+    "total_pairs_enumerated": 22707,
+    "after_primary_filter": 10342,
+    "after_max_per_pair": 7500,
+    "after_steric": 6199,
+    "thermo_pool_initial": 9664,
+    "thermo_after_max_per_pair": 7157,
+    "thermo_after_steric": 7157,
+    "final_counts": {
+      "SetA_reactive": 3764,
+      "SetTS_guess": 469,
+      "SetB_thermo": 7157,
+      "side_path": 78,
+      "rejected_steric": 1301
+    },
+    "overlap_SetA_SetTS": 173,
+    "distances": {
+      "SetA": {
+        "min": 2.101524768098266,
+        "max": 3.99941816165183,
+        "mean": 3.2716734373537735
+      },
+      "SetTS": {
+        "min": 1.7014428514074085,
+        "max": 2.2993171091396514,
+        "mean": 2.0203480659314765
+      },
+      "SetB": {
+        "min": 5.000210969825808,
+        "max": 8.143314414898654,
+        "mean": 5.907144006864257
+      },
+      "side": {
+        "min": 1.6027428383356572,
+        "max": 1.6997146386551554,
+        "mean": 1.6526526677684081
+      }
+    }
+  },
+  "S4_PdO2_110": {
+    "surface": "S4_PdO2_110",
+    "n_co_candidates": 129,
+    "n_ch3o_candidates": 387,
+    "total_pairs_enumerated": 49923,
+    "after_primary_filter": 24654,
+    "after_max_per_pair": 17439,
+    "after_steric": 13027,
+    "thermo_pool_initial": 20051,
+    "thermo_after_max_per_pair": 14270,
+    "thermo_after_steric": 14270,
+    "final_counts": {
+      "SetA_reactive": 7975,
+      "SetTS_guess": 1182,
+      "SetB_thermo": 14270,
+      "side_path": 120,
+      "rejected_steric": 4412
+    },
+    "overlap_SetA_SetTS": 442,
+    "distances": {
+      "SetA": {
+        "min": 2.100643231917438,
+        "max": 3.999525872565832,
+        "mean": 3.241239486532422
+      },
+      "SetTS": {
+        "min": 1.700440088436069,
+        "max": 2.2994843536992233,
+        "mean": 2.0182251061797527
+      },
+      "SetB": {
+        "min": 5.000053907019572,
+        "max": 7.997108663817455,
+        "mean": 6.04502136545429
+      },
+      "side": {
+        "min": 1.6010391261792811,
+        "max": 1.6998076612195006,
+        "mean": 1.6515932419874977
+      }
+    }
+  }
+}

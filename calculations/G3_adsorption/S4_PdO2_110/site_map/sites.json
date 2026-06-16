@@ -1,0 +1,11 @@
+{
+  "total_sites": 129,
+  "site_types": {
+    "3-fold-hollow": 42,
+    "bridge": 61,
+    "atop": 24,
+    "4-fold-hollow": 2
+  },
+  "slab_atoms": 144,
+  "slab_formula": "O96Pd48"
+}
