@@ -1,0 +1,82 @@
+{
+  "S1_CO": {
+    "E_relaxed": -406.6898706828402,
+    "d_min_relaxed": 1.9888632913796866,
+    "rate_ms_step": 196.69338808221332,
+    "n_atoms": 82,
+    "n_steps_taken": 59,
+    "converged": true
+  },
+  "S1_CH3O": {
+    "E_relaxed": -416.63961001156935,
+    "d_min_relaxed": 2.1106666192560803,
+    "rate_ms_step": 215.3125054696027,
+    "n_atoms": 85,
+    "n_steps_taken": 68,
+    "converged": true
+  },
+  "S2_CO": {
+    "E_relaxed": -574.5140085007935,
+    "d_min_relaxed": 1.9413590249314543,
+    "rate_ms_step": 287.39778353617737,
+    "n_atoms": 114,
+    "n_steps_taken": 52,
+    "converged": true
+  },
+  "S2_CH3O": {
+    "E_relaxed": -584.7484993898807,
+    "d_min_relaxed": 2.063773567851805,
+    "rate_ms_step": 297.53559919504016,
+    "n_atoms": 117,
+    "n_steps_taken": 65,
+    "converged": true
+  },
+  "S3_CO": {
+    "E_relaxed": -677.9668941255262,
+    "d_min_relaxed": 3.5027464644387702,
+    "rate_ms_step": 386.80474574749286,
+    "n_atoms": 130,
+    "n_steps_taken": 26,
+    "converged": true
+  },
+  "S3_CH3O": {
+    "E_relaxed": -687.962633392371,
+    "d_min_relaxed": 1.5080817374674356,
+    "rate_ms_step": 392.12572006952195,
+    "n_atoms": 133,
+    "n_steps_taken": 42,
+    "converged": true
+  },
+  "S3b_CO": {
+    "E_relaxed": -536.2337892036852,
+    "d_min_relaxed": 3.2525825085472944,
+    "rate_ms_step": 283.6388021707535,
+    "n_atoms": 106,
+    "n_steps_taken": 80,
+    "converged": false
+  },
+  "S3b_CH3O": {
+    "E_relaxed": -548.8311464052834,
+    "d_min_relaxed": 2.0827593034152283,
+    "rate_ms_step": 293.3439165353775,
+    "n_atoms": 109,
+    "n_steps_taken": 80,
+    "converged": false
+  },
+  "S4_CO": {
+    "E_relaxed": -737.9078127169088,
+    "d_min_relaxed": 3.3390671441936184,
+    "rate_ms_step": 496.5880030677432,
+    "n_atoms": 146,
+    "n_steps_taken": 63,
+    "converged": true
+  },
+  "S4_CH3O": {
+    "E_relaxed": -749.0730297800355,
+    "d_min_relaxed": 3.7871929045935246,
+    "rate_ms_step": 510.56282731551164,
+    "n_atoms": 149,
+    "n_steps_taken": 79,
+    "converged": true
+  }
+}

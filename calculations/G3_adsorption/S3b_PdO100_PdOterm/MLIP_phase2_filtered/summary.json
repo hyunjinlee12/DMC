@@ -1,0 +1,31 @@
+{
+  "surface": "S3b",
+  "sdir": "S3b_PdO100_PdOterm",
+  "n_input": 3764,
+  "n_unconverged_dropped": 2,
+  "n_fragmented_dropped": 2126,
+  "n_collapsed_dropped": 0,
+  "n_bond_broken_dropped": 6,
+  "n_survivors": 1630,
+  "n_unique_after_dedup": 1581,
+  "n_shortlist_setA_band": 3,
+  "E_range_meV": 1407.1504302952462,
+  "shortlist_d_reactive": [
+    2.8945345289455884,
+    3.246230097650042,
+    3.6633553353875903
+  ],
+  "shortlist_E_meV": [
+    554.1800585708643,
+    136.59478610725273,
+    121.71235528069246
+  ],
+  "drop_reasons": {
+    "fragmented": 2126,
+    "collapsed": 0,
+    "CO_bond_broken": 0,
+    "methoxy_OC_broken": 0,
+    "CH_broken": 6,
+    "unconverged": 2
+  }
+}

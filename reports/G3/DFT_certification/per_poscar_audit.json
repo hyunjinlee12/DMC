@@ -1,0 +1,7 @@
+[
+  {
+    "path": "calculations/G3_adsorption/DFT_shortlist/S1/single_CO/00_single_CO_rank0_idx00064.vasp",
+    "kind": "single_CO",
+    "n_atoms": 82,
+    "ads_indices": {
+      "C_CO": 

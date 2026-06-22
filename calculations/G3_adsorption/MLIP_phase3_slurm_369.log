@@ -1,0 +1,17 @@
+==========================================
+  T1.14 Phase 3 — MACE-MH + D3 ranking
+  SLURM job:  369
+  Node:       jbnu-gpu2
+  GPU:        0
+  Start:      Fri Jun 19 09:32:22 PM KST 2026
+==========================================
+=== Phase 3 — surfaces: ['S1', 'S2', 'S3', 'S3b', 'S4']  SetB sub=100/surface ===
+  S1  slab=True SetTS=1097 SetB=9600
+  S2  slab=True SetTS=1625 SetB=29147
+  S3  slab=True SetTS=1441 SetB=16110
+  S3b  slab=True SetTS=469 SetB=7157
+  S4  slab=True SetTS=1182 SetB=14270
+Loading MACE-MH calculator...
+Using Materials Project MACE for MACECalculator with /home/hyunjin/.cache/mace/macemh1model
+Using float64 for MACECalculator, which is slower but more accurate. Recommended for geometry optimization.
+

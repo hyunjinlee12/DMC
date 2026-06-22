@@ -1,0 +1,42 @@
+{
+  "surface": "S2_PdO101_Pd100",
+  "n_co_candidates": 166,
+  "n_ch3o_candidates": 498,
+  "total_pairs_enumerated": 82668,
+  "after_primary_filter": 33545,
+  "after_max_per_pair": 23948,
+  "after_steric": 19013,
+  "thermo_pool_initial": 40946,
+  "thermo_after_max_per_pair": 29147,
+  "thermo_after_steric": 29147,
+  "final_counts": {
+    "SetA_reactive": 11598,
+    "SetTS_guess": 1625,
+    "SetB_thermo": 29147,
+    "side_path": 183,
+    "rejected_steric": 4935
+  },
+  "overlap_SetA_SetTS": 594,
+  "distances": {
+    "SetA": {
+      "min": 2.1006558731415046,
+      "max": 3.9999753513790846,
+      "mean": 3.2454654661555153
+    },
+    "SetTS": {
+      "min": 1.7003136201460762,
+      "max": 2.2999371397333963,
+      "mean": 2.0152233377754336
+    },
+    "SetB": {
+      "min": 5.000010867583015,
+      "max": 8.736332278941374,
+      "mean": 6.14311193024335
+    },
+    "side": {
+      "min": 1.6003671874994403,
+      "max": 1.6996896056694675,
+      "mean": 1.6533866460392583
+    }
+  }
+}

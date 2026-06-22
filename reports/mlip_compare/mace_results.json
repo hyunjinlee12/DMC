@@ -1,0 +1,82 @@
+{
+  "S1_CO": {
+    "E_relaxed": -405.71128469228506,
+    "d_min_relaxed": 1.9730077376263,
+    "rate_ms_step": 71.72988142286029,
+    "n_atoms": 82,
+    "n_steps_taken": 56,
+    "converged": true
+  },
+  "S1_CH3O": {
+    "E_relaxed": -415.86937556386147,
+    "d_min_relaxed": 2.096872349766684,
+    "rate_ms_step": 56.634301569924425,
+    "n_atoms": 85,
+    "n_steps_taken": 67,
+    "converged": true
+  },
+  "S2_CO": {
+    "E_relaxed": -575.3252063779747,
+    "d_min_relaxed": 2.019650712483535,
+    "rate_ms_step": 61.632478938383215,
+    "n_atoms": 114,
+    "n_steps_taken": 51,
+    "converged": true
+  },
+  "S2_CH3O": {
+    "E_relaxed": -585.4630090284828,
+    "d_min_relaxed": 2.053450949429192,
+    "rate_ms_step": 62.209129333496094,
+    "n_atoms": 117,
+    "n_steps_taken": 69,
+    "converged": true
+  },
+  "S3_CO": {
+    "E_relaxed": -687.8471267021039,
+    "d_min_relaxed": 3.1687958450316875,
+    "rate_ms_step": 70.90683166797345,
+    "n_atoms": 130,
+    "n_steps_taken": 26,
+    "converged": true
+  },
+  "S3_CH3O": {
+    "E_relaxed": -697.7991478014789,
+    "d_min_relaxed": 1.5102961415141933,
+    "rate_ms_step": 75.12901379511906,
+    "n_atoms": 133,
+    "n_steps_taken": 39,
+    "converged": true
+  },
+  "S3b_CO": {
+    "E_relaxed": -547.4900629389725,
+    "d_min_relaxed": 1.8109723800039137,
+    "rate_ms_step": 61.58932814231285,
+    "n_atoms": 106,
+    "n_steps_taken": 52,
+    "converged": true
+  },
+  "S3b_CH3O": {
+    "E_relaxed": -557.9873483625222,
+    "d_min_relaxed": 2.06427359742333,
+    "rate_ms_step": 62.50206530094146,
+    "n_atoms": 109,
+    "n_steps_taken": 80,
+    "converged": false
+  },
+  "S4_CO": {
+    "E_relaxed": -754.5595916592943,
+    "d_min_relaxed": 3.3216267053193036,
+    "rate_ms_step": 88.77171874046326,
+    "n_atoms": 146,
+    "n_steps_taken": 80,
+    "converged": false
+  },
+  "S4_CH3O": {
+    "E_relaxed": -765.4937828204633,
+    "d_min_relaxed": 1.981346265820166,
+    "rate_ms_step": 90.80021679401398,
+    "n_atoms": 149,
+    "n_steps_taken": 80,
+    "converged": false
+  }
+}

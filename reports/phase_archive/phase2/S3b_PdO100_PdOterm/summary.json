@@ -1,0 +1,18 @@
+{
+  "surface": "S3b",
+  "sdir": "S3b_PdO100_PdOterm",
+  "n_raw": 3764,
+  "n_records": 3764,
+  "n_converged": 3762,
+  "n_unique_after_dedup": 3764,
+  "n_shortlist": 3,
+  "E_range_meV": 2299.6139115749656,
+  "time_seconds": 17436.24520945549,
+  "time_per_struct": 4.632371203362245,
+  "mace_config": {
+    "model": "mh-1",
+    "head": "oc20_usemppbe",
+    "dtype": "float64",
+    "cueq": true
+  }
+}

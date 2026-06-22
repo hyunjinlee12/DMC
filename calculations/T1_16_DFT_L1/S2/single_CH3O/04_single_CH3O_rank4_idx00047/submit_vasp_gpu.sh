@@ -1,0 +1,1 @@
+/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/scripts/submit_vasp_gpu.sh

@@ -1,0 +1,95 @@
+[
+  {
+    "kind": "single_CO",
+    "rank": 0,
+    "orig_idx": 64,
+    "E_MACE": -405.7190491925288,
+    "dE_rel_meV": 0,
+    "d_min": 1.9706440711383437,
+    "n_atoms": 82,
+    "n_ads": 2
+  },
+  {
+    "kind": "single_CO",
+    "rank": 1,
+    "orig_idx": 99,
+    "E_MACE": -405.5313195426056,
+    "dE_rel_meV": 0,
+    "d_min": 2.264229226464016,
+    "n_atoms": 82,
+    "n_ads": 2
+  },
+  {
+    "kind": "single_CO",
+    "rank": 2,
+    "orig_idx": 58,
+    "E_MACE": -405.41155775818356,
+    "dE_rel_meV": 0,
+    "d_min": 1.872132394944227,
+    "n_atoms": 82,
+    "n_ads": 2
+  },
+  {
+    "kind": "single_CH3O",
+    "rank": 0,
+    "orig_idx": 48,
+    "E_MACE": -415.87339027332945,
+    "dE_rel_meV": 0,
+    "d_min": 2.107842662692687,
+    "n_atoms": 85,
+    "n_ads": 5
+  },
+  {
+    "kind": "single_CH3O",
+    "rank": 1,
+    "orig_idx": 331,
+    "E_MACE": -415.8640411650941,
+    "dE_rel_meV": 0,
+    "d_min": 2.47132686769882,
+    "n_atoms": 85,
+    "n_ads": 5
+  },
+  {
+    "kind": "single_CH3O",
+    "rank": 2,
+    "orig_idx": 333,
+    "E_MACE": -415.83305783478903,
+    "dE_rel_meV": 0,
+    "d_min": 2.3396166544547583,
+    "n_atoms": 85,
+    "n_ads": 5
+  },
+  {
+    "kind": "coads_SetA",
+    "rank": 0,
+    "orig_idx": 487,
+    "E_MACE": -432.0193219865356,
+    "dE_rel_meV": 31.828566489991772,
+    "d_min": 1.9761206305437147,
+    "d_reactive": 2.989373523266858,
+    "n_atoms": 87,
+    "n_ads": 7
+  },
+  {
+    "kind": "coads_SetA",
+    "rank": 1,
+    "orig_idx": 767,
+    "E_MACE": -432.0511505530256,
+    "dE_rel_meV": 0.0,
+    "d_min": 1.9785346654468212,
+    "d_reactive": 3.100568187991728,
+    "n_atoms": 87,
+    "n_ads": 7
+  },
+  {
+    "kind": "coads_SetA",
+    "rank": 2,
+    "orig_idx": 4132,
+    "E_MACE": -432.04894849177344,
+    "dE_rel_meV": 2.2020612521487237,
+    "d_min": 1.9723396714601935,
+    "d_reactive": 3.921652242692406,
+    "n_atoms": 87,
+    "n_ads": 7
+  }
+]

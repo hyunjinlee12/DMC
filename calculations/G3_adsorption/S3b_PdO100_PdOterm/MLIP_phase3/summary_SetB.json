@@ -1,0 +1,8 @@
+{
+  "surface": "S3b",
+  "pool": "SetB",
+  "n_raw": 100,
+  "n_converged": 100,
+  "n_unique": 100,
+  "time_seconds": 450.5488541126251
+}

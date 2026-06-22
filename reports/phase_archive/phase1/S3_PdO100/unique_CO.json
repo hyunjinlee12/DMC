@@ -1,0 +1,122 @@
+[
+  {
+    "idx": 123,
+    "E": -687.9499342381896,
+    "dE_rel": 0.0,
+    "converged": true,
+    "n_steps": 40,
+    "d_min": 2.458158014962602,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 22,
+    "E": -687.9449909037323,
+    "dE_rel": 4.943334457266246,
+    "converged": true,
+    "n_steps": 31,
+    "d_min": 2.461872681941103,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 42,
+    "E": -687.9344328452765,
+    "dE_rel": 15.501392913051859,
+    "converged": true,
+    "n_steps": 60,
+    "d_min": 2.4627749043813663,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 49,
+    "E": -687.9217749537544,
+    "dE_rel": 28.15928443521898,
+    "converged": true,
+    "n_steps": 38,
+    "d_min": 2.4872867743344487,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 40,
+    "E": -687.9149332883935,
+    "dE_rel": 35.00094979608548,
+    "converged": true,
+    "n_steps": 50,
+    "d_min": 3.1966700496047467,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 20,
+    "E": -687.8629616893809,
+    "dE_rel": 86.97254880871697,
+    "converged": true,
+    "n_steps": 34,
+    "d_min": 2.9711315324550247,
+    "site_type": "bridge",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 128,
+    "E": -687.8549591995682,
+    "dE_rel": 94.97503862144185,
+    "converged": true,
+    "n_steps": 27,
+    "d_min": 3.0864669877923783,
+    "site_type": "bridge",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 76,
+    "E": -687.8449726911805,
+    "dE_rel": 104.9615470091112,
+    "converged": true,
+    "n_steps": 30,
+    "d_min": 3.1574520022920054,
+    "site_type": "bridge",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 6,
+    "E": -687.83431981845,
+    "dE_rel": 115.61441973958608,
+    "converged": true,
+    "n_steps": 23,
+    "d_min": 4.375155811601817,
+    "site_type": "hollow",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 96,
+    "E": -687.8241970168092,
+    "dE_rel": 125.73722138040466,
+    "converged": true,
+    "n_steps": 24,
+    "d_min": 3.1000955482096075,
+    "site_type": "bridge",
+    "fingerprint": [
+      1.15
+    ]
+  }
+]

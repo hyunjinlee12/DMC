@@ -1,0 +1,8 @@
+{
+  "surface": "S2",
+  "pool": "SetTS",
+  "n_raw": 1625,
+  "n_converged": 1617,
+  "n_unique": 1623,
+  "time_seconds": 7523.146062135696
+}

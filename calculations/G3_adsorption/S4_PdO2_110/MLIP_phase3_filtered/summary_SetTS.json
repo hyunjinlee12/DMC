@@ -1,0 +1,17 @@
+{
+  "surface": "S4",
+  "pool": "SetTS",
+  "n_input": 1182,
+  "n_survivors": 615,
+  "n_unique": 490,
+  "E_range_meV": 4591.871115037748,
+  "drops": {
+    "fragmented": 337,
+    "collapsed": 0,
+    "CO_bond_broken": 0,
+    "methoxy_OC_broken": 2,
+    "CH_broken": 89,
+    "unconverged": 139,
+    "setb_too_close": 0
+  }
+}

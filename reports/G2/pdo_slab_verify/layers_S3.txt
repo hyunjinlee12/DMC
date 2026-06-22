@@ -1,0 +1,15 @@
+S3 — 128 atoms (Pd:64 O:64, O/Pd=1.00)
+8 layers, thickness 10.62 Å, vacuum 20.07 Å
+Pd-O bonds: 240, mean 2.034 Å, range [1.966, 2.088]
+Charge-weighted dipole-z (proxy): -97.73
+
+layer   z_mean  z_range n_atoms  composition
+-----------------------------------------------------------------
+    0     1.50     0.00       8  Pd:8
+    1     3.03     0.00      24  O:16, Pd:8
+    2     4.57     0.00       8  Pd:8
+    3     6.11     0.01      24  O:16, Pd:8
+    4     7.65     0.00       8  Pd:8
+    5     9.15     0.03      24  O:16, Pd:8
+    6    10.75     0.00       8  Pd:8
+    7    12.07     0.14      24  O:16, Pd:8

@@ -1,0 +1,31 @@
+{
+  "surface": "S1",
+  "sdir": "S1_Pd100",
+  "n_input": 6338,
+  "n_unconverged_dropped": 63,
+  "n_fragmented_dropped": 3166,
+  "n_collapsed_dropped": 0,
+  "n_bond_broken_dropped": 0,
+  "n_survivors": 3109,
+  "n_unique_after_dedup": 1985,
+  "n_shortlist_setA_band": 3,
+  "E_range_meV": 763.1262014396611,
+  "shortlist_d_reactive": [
+    2.989373523266858,
+    3.100568187991728,
+    3.921652242692406
+  ],
+  "shortlist_E_meV": [
+    31.828566489991772,
+    0.0,
+    2.2020612521487237
+  ],
+  "drop_reasons": {
+    "fragmented": 3166,
+    "collapsed": 0,
+    "CO_bond_broken": 0,
+    "methoxy_OC_broken": 0,
+    "CH_broken": 0,
+    "unconverged": 63
+  }
+}

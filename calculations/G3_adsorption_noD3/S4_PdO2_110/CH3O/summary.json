@@ -1,0 +1,14 @@
+{
+  "total": 387,
+  "smiles": "ClOC",
+  "fragment_atoms": {
+    "O": 1,
+    "C": 1,
+    "H": 3
+  },
+  "generation_params": {
+    "to_initialize": 20,
+    "sample_rotation": true,
+    "conformers_per_site_cap": 3
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "surface": "S4_PdO2_110",
+  "adsorbates": {
+    "CO": {
+      "n_raw": 129,
+      "n_converged": 90,
+      "n_unique": 52,
+      "n_top3": 3,
+      "top3_indices": [
+        7,
+        80,
+        33
+      ],
+      "E_range_meV": 3183.5,
+      "avg_steps": 116.5,
+      "time_sec": 1119.5,
+      "top1_site_type": "atop"
+    },
+    "CH3O": {
+      "n_raw": 387,
+      "n_converged": 359,
+      "n_unique": 291,
+      "n_top3": 3,
+      "top3_indices": [
+        65,
+        120,
+        112
+      ],
+      "E_range_meV": 5764.8,
+      "avg_steps": 106.2,
+      "time_sec": 3129.8,
+      "top1_site_type": "unknown"
+    }
+  }
+}

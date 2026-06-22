@@ -1,0 +1,777 @@
+[
+  {
+    "kind": "single_CO",
+    "surface": "S1",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S1/single_CO/00_single_CO_rank0_idx00064.vasp",
+    "C_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.836565805173217,
+      "nearest_species": "Pd",
+      "z_above": 1.8121313006924602
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S1",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S1/single_CO/01_single_CO_rank1_idx00099.vasp",
+    "C_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.841342746766282,
+      "nearest_species": "Pd",
+      "z_above": 1.7267725940063894
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S1",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S1/single_CO/02_single_CO_rank2_idx00058.vasp",
+    "C_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.8507642446553527,
+      "nearest_species": "Pd",
+      "z_above": 1.6598275843914791
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S1",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S1/single_CH3O/00_single_CH3O_rank0_idx00048.vasp",
+    "O_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.1120191790704093,
+      "nearest_species": "Pd",
+      "z_above": 1.534355564504084
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S1",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S1/single_CH3O/01_single_CH3O_rank1_idx00331.vasp",
+    "O_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.9826993416113676,
+      "nearest_species": "Pd",
+      "z_above": 1.963344928398529
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S1",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S1/single_CH3O/02_single_CH3O_rank2_idx00333.vasp",
+    "O_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.9783003125829368,
+      "nearest_species": "Pd",
+      "z_above": 1.9633639495926172
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S1",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S1/coads_SetA/00_coads_SetA_rank0_idx00487.vasp",
+    "C_CO_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 1.976120630543714,
+      "nearest_species": "Pd",
+      "z_above": 1.366754864025248
+    },
+    "O_methoxy_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.082817006194138,
+      "nearest_species": "Pd",
+      "z_above": 1.4796797826043466
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S1",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S1/coads_SetA/01_coads_SetA_rank1_idx00767.vasp",
+    "C_CO_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 1.9785346654468223,
+      "nearest_species": "Pd",
+      "z_above": 1.3737507783218401
+    },
+    "O_methoxy_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.0974808280115838,
+      "nearest_species": "Pd",
+      "z_above": 1.5025311353737258
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S1",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S1/coads_SetA/02_coads_SetA_rank2_idx04132.vasp",
+    "C_CO_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 1.9723396714601955,
+      "nearest_species": "Pd",
+      "z_above": 1.3867180189435775
+    },
+    "O_methoxy_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.099051885752979,
+      "nearest_species": "Pd",
+      "z_above": 1.5032731290530084
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/single_CO/00_single_CO_rank0_idx00059.vasp",
+    "C_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.8987427383005961,
+      "nearest_species": "Pd",
+      "z_above": 1.0739018316625213
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/single_CO/01_single_CO_rank1_idx00081.vasp",
+    "C_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.5160738486739262,
+      "nearest_species": "Pd",
+      "z_above": 1.7077313680474475
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/single_CO/02_single_CO_rank2_idx00130.vasp",
+    "C_anchor": {
+      "site": "physisorbed (>2.6 \u00c5)",
+      "n": 0,
+      "n_Pd": 0,
+      "n_O": 0,
+      "nearest_d": null,
+      "nearest_species": null,
+      "z_above": 2.9520925639324034
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/single_CO/03_single_CO_rank3_idx00014.vasp",
+    "C_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.0204015126298747,
+      "nearest_species": "Pd",
+      "z_above": 0.5207894945629228
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/single_CO/04_single_CO_rank4_idx00020.vasp",
+    "C_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.9019588895092019,
+      "nearest_species": "Pd",
+      "z_above": 1.0896904720699645
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/single_CH3O/00_single_CH3O_rank0_idx00019.vasp",
+    "O_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.1158824991207963,
+      "nearest_species": "Pd",
+      "z_above": 0.47842233098310416
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/single_CH3O/01_single_CH3O_rank1_idx00297.vasp",
+    "O_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.0591876832884863,
+      "nearest_species": "Pd",
+      "z_above": 1.1999443104580383
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/single_CH3O/02_single_CH3O_rank2_idx00082.vasp",
+    "O_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.093458508032333,
+      "nearest_species": "Pd",
+      "z_above": 0.5130360473472049
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/single_CH3O/03_single_CH3O_rank3_idx00048.vasp",
+    "O_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.123105218597777,
+      "nearest_species": "Pd",
+      "z_above": 0.48420446864293076
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/single_CH3O/04_single_CH3O_rank4_idx00047.vasp",
+    "O_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.123171655968813,
+      "nearest_species": "Pd",
+      "z_above": 0.4847843721714895
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/coads_SetA/00_coads_SetA_rank0_idx07672.vasp",
+    "C_CO_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.9152747754672732,
+      "nearest_species": "Pd",
+      "z_above": 1.1737642147342306
+    },
+    "O_methoxy_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.064271268969618,
+      "nearest_species": "Pd",
+      "z_above": 1.1627224668054605
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/coads_SetA/01_coads_SetA_rank1_idx08079.vasp",
+    "C_CO_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.8993402032717859,
+      "nearest_species": "Pd",
+      "z_above": 1.1013875544262355
+    },
+    "O_methoxy_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.025623121226297,
+      "nearest_species": "Pd",
+      "z_above": 1.0421208599673886
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/coads_SetA/02_coads_SetA_rank2_idx10461.vasp",
+    "C_CO_anchor": {
+      "site": "atop_O",
+      "n": 1,
+      "n_Pd": 0,
+      "n_O": 1,
+      "nearest_d": 1.180444152762719,
+      "nearest_species": "O",
+      "z_above": -0.15380255532929787
+    },
+    "O_methoxy_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.0181243538024853,
+      "nearest_species": "Pd",
+      "z_above": -1.2241155619405237
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S2",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S2/coads_SetA/03_coads_SetA_rank3_idx02538.vasp",
+    "C_CO_anchor": {
+      "site": "atop_O",
+      "n": 1,
+      "n_Pd": 0,
+      "n_O": 1,
+      "nearest_d": 1.1810280854376671,
+      "nearest_species": "O",
+      "z_above": -0.15149449320371033
+    },
+    "O_methoxy_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.0707670057334453,
+      "nearest_species": "Pd",
+      "z_above": -1.4892057673369479
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S3",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3/single_CO/00_single_CO_rank0_idx00123.vasp",
+    "C_anchor": {
+      "site": "physisorbed (>2.6 \u00c5)",
+      "n": 0,
+      "n_Pd": 0,
+      "n_O": 0,
+      "nearest_d": null,
+      "nearest_species": null,
+      "z_above": 2.7686485740697915
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S3",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3/single_CO/01_single_CO_rank1_idx00040.vasp",
+    "C_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.486671077250308,
+      "nearest_species": "Pd",
+      "z_above": 2.344087540093364
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S3",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3/single_CO/02_single_CO_rank2_idx00020.vasp",
+    "C_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.469888020096146,
+      "nearest_species": "Pd",
+      "z_above": 2.33104459129593
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S3",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3/single_CH3O/00_single_CH3O_rank0_idx00315.vasp",
+    "O_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.995280936389363,
+      "nearest_species": "Pd",
+      "z_above": 1.9233861356888902
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S3",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3/single_CH3O/01_single_CH3O_rank1_idx00369.vasp",
+    "O_anchor": {
+      "site": "atop_O",
+      "n": 1,
+      "n_Pd": 0,
+      "n_O": 1,
+      "nearest_d": 1.507710874777784,
+      "nearest_species": "O",
+      "z_above": 1.3783874753716994
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S3",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3/single_CH3O/02_single_CH3O_rank2_idx00126.vasp",
+    "O_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.9956955561384782,
+      "nearest_species": "Pd",
+      "z_above": 1.9236460896403003
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S3",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3/coads_SetA/00_coads_SetA_rank0_idx03458.vasp",
+    "C_CO_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.2820260844122546,
+      "nearest_species": "Pd",
+      "z_above": 2.1613183549232584
+    },
+    "O_methoxy_anchor": {
+      "site": "atop_O",
+      "n": 1,
+      "n_Pd": 0,
+      "n_O": 1,
+      "nearest_d": 2.221698040096592,
+      "nearest_species": "O",
+      "z_above": 2.1413616041194103
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S3",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3/coads_SetA/01_coads_SetA_rank1_idx03481.vasp",
+    "C_CO_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.465345985113737,
+      "nearest_species": "Pd",
+      "z_above": 2.3418300222589163
+    },
+    "O_methoxy_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.9960507948149835,
+      "nearest_species": "Pd",
+      "z_above": 1.922485996149062
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S3",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3/coads_SetA/02_coads_SetA_rank2_idx02834.vasp",
+    "C_CO_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.4986025248186534,
+      "nearest_species": "Pd",
+      "z_above": 2.362257286106516
+    },
+    "O_methoxy_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.9967624130732704,
+      "nearest_species": "Pd",
+      "z_above": 1.9293345108929483
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S3b",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3b/single_CO/00_single_CO_rank0_idx00056.vasp",
+    "C_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.8023193136813551,
+      "nearest_species": "Pd",
+      "z_above": 1.7421852896778418
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S3b",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3b/single_CO/01_single_CO_rank1_idx00084.vasp",
+    "C_anchor": {
+      "site": "physisorbed (>2.6 \u00c5)",
+      "n": 0,
+      "n_Pd": 0,
+      "n_O": 0,
+      "nearest_d": null,
+      "nearest_species": null,
+      "z_above": 3.1265074744866563
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S3b",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3b/single_CO/02_single_CO_rank2_idx00041.vasp",
+    "C_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.803816170198471,
+      "nearest_species": "Pd",
+      "z_above": 1.6050790453658763
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S3b",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3b/single_CH3O/00_single_CH3O_rank0_idx00198.vasp",
+    "O_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.96493286906684,
+      "nearest_species": "Pd",
+      "z_above": 1.4754496753105801
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S3b",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3b/single_CH3O/01_single_CH3O_rank1_idx00016.vasp",
+    "O_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.098703923257689,
+      "nearest_species": "Pd",
+      "z_above": 1.43528367327578
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S3b",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3b/single_CH3O/02_single_CH3O_rank2_idx00260.vasp",
+    "O_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.9690063931633368,
+      "nearest_species": "Pd",
+      "z_above": 1.6982823121152055
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S3b",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3b/coads_SetA/00_coads_SetA_rank0_idx02051.vasp",
+    "C_CO_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 1.8929113101222994,
+      "nearest_species": "Pd",
+      "z_above": 0.9888411635351826
+    },
+    "O_methoxy_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 2.0122406140496807,
+      "nearest_species": "Pd",
+      "z_above": 1.670179065389604
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S3b",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3b/coads_SetA/01_coads_SetA_rank1_idx02603.vasp",
+    "C_CO_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 1.897676702881147,
+      "nearest_species": "Pd",
+      "z_above": 1.0477516137560663
+    },
+    "O_methoxy_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.0412865659430692,
+      "nearest_species": "Pd",
+      "z_above": 1.513525568585166
+    }
+  },
+  {
+    "kind": "coads_SetA",
+    "surface": "S3b",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S3b/coads_SetA/02_coads_SetA_rank2_idx02754.vasp",
+    "C_CO_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 1.9299350900603922,
+      "nearest_species": "Pd",
+      "z_above": 1.082405607479318
+    },
+    "O_methoxy_anchor": {
+      "site": "bridge_Pd-Pd",
+      "n": 2,
+      "n_Pd": 2,
+      "n_O": 0,
+      "nearest_d": 2.0127767369800367,
+      "nearest_species": "Pd",
+      "z_above": 0.8643994124613101
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S4",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S4/single_CO/00_single_CO_rank0_idx00007.vasp",
+    "C_anchor": {
+      "site": "atop_O",
+      "n": 1,
+      "n_Pd": 0,
+      "n_O": 1,
+      "nearest_d": 1.1787466669118163,
+      "nearest_species": "O",
+      "z_above": 0.3064481944871318
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S4",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S4/single_CO/01_single_CO_rank1_idx00080.vasp",
+    "C_anchor": {
+      "site": "physisorbed (>2.6 \u00c5)",
+      "n": 0,
+      "n_Pd": 0,
+      "n_O": 0,
+      "nearest_d": null,
+      "nearest_species": null,
+      "z_above": 2.541542463884939
+    }
+  },
+  {
+    "kind": "single_CO",
+    "surface": "S4",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S4/single_CO/02_single_CO_rank2_idx00033.vasp",
+    "C_anchor": {
+      "site": "bridge_Pd-O",
+      "n": 2,
+      "n_Pd": 1,
+      "n_O": 1,
+      "nearest_d": 1.9050740796046846,
+      "nearest_species": "O",
+      "z_above": 0.5266881808110178
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S4",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S4/single_CH3O/01_single_CH3O_rank1_idx00241.vasp",
+    "O_anchor": {
+      "site": "atop_Pd",
+      "n": 1,
+      "n_Pd": 1,
+      "n_O": 0,
+      "nearest_d": 1.9797813426408373,
+      "nearest_species": "Pd",
+      "z_above": 0.7294855344175701
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S4",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S4/single_CH3O/90_single_CH3O_manual_atop_Pd.vasp",
+    "O_anchor": {
+      "site": "hollow_3(Pd1O2)",
+      "n": 3,
+      "n_Pd": 1,
+      "n_O": 2,
+      "nearest_d": 1.7899344683919485,
+      "nearest_species": "O",
+      "z_above": 0.8247321890504526
+    }
+  },
+  {
+    "kind": "single_CH3O",
+    "surface": "S4",
+    "path": "calculations/G3_adsorption/DFT_shortlist/S4/single_CH3O/91_single_CH3O_manual_bridge.vasp",
+    "O_anchor": {
+      "site": "hollow_3(Pd2O1)",
+      "n": 3,
+      "n_Pd": 2,
+      "n_O": 1,
+      "nearest_d": 0.7747321891022043,
+      "nearest_species": "O",
+      "z_above": 0.7747321890504537
+    }
+  }
+]

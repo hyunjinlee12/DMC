@@ -1,0 +1,35 @@
+{
+  "surface": "S3_PdO100",
+  "adsorbates": {
+    "CO": {
+      "n_raw": 135,
+      "n_converged": 135,
+      "n_unique": 8,
+      "n_top3": 3,
+      "top3_indices": [
+        22,
+        3,
+        82
+      ],
+      "E_range_meV": 79.5,
+      "avg_steps": 40.5,
+      "time_sec": 233.3,
+      "top1_site_type": "atop"
+    },
+    "CH3O": {
+      "n_raw": 405,
+      "n_converged": 405,
+      "n_unique": 156,
+      "n_top3": 3,
+      "top3_indices": [
+        369,
+        315,
+        300
+      ],
+      "E_range_meV": 1123.4,
+      "avg_steps": 57.4,
+      "time_sec": 990.7,
+      "top1_site_type": "unknown"
+    }
+  }
+}

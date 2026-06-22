@@ -1,0 +1,92 @@
+[
+  {
+    "surface": "S1",
+    "sdir": "S1_Pd100",
+    "n_raw": 6338,
+    "n_records": 6338,
+    "n_converged": 6275,
+    "n_unique_after_dedup": 5950,
+    "n_shortlist": 3,
+    "E_range_meV": 1660.3566775195873,
+    "time_seconds": 27960.90498495102,
+    "time_per_struct": 4.411629060421429,
+    "mace_config": {
+      "model": "mh-1",
+      "head": "oc20_usemppbe",
+      "dtype": "float64",
+      "cueq": true
+    }
+  },
+  {
+    "surface": "S2",
+    "sdir": "S2_PdO101_Pd100",
+    "n_raw": 11598,
+    "n_records": 11598,
+    "n_converged": 11546,
+    "n_unique_after_dedup": 11590,
+    "n_shortlist": 4,
+    "E_range_meV": 2863.6611392271334,
+    "time_seconds": 50958.39449071884,
+    "time_per_struct": 4.393722580679327,
+    "mace_config": {
+      "model": "mh-1",
+      "head": "oc20_usemppbe",
+      "dtype": "float64",
+      "cueq": true
+    }
+  },
+  {
+    "surface": "S3",
+    "sdir": "S3_PdO100",
+    "n_raw": 8281,
+    "n_records": 8281,
+    "n_converged": 8247,
+    "n_unique_after_dedup": 8281,
+    "n_shortlist": 4,
+    "E_range_meV": 4201.7255658405475,
+    "time_seconds": 38552.931879520416,
+    "time_per_struct": 4.655588923985076,
+    "mace_config": {
+      "model": "mh-1",
+      "head": "oc20_usemppbe",
+      "dtype": "float64",
+      "cueq": true
+    }
+  },
+  {
+    "surface": "S3b",
+    "sdir": "S3b_PdO100_PdOterm",
+    "n_raw": 3764,
+    "n_records": 3764,
+    "n_converged": 3762,
+    "n_unique_after_dedup": 3764,
+    "n_shortlist": 3,
+    "E_range_meV": 2299.6139115749656,
+    "time_seconds": 17436.24520945549,
+    "time_per_struct": 4.632371203362245,
+    "mace_config": {
+      "model": "mh-1",
+      "head": "oc20_usemppbe",
+      "dtype": "float64",
+      "cueq": true
+    }
+  },
+  {
+    "surface": "S4",
+    "sdir": "S4_PdO2_110",
+    "n_raw": 7975,
+    "n_records": 7975,
+    "n_converged": 6742,
+    "n_unique_after_dedup": 7975,
+    "n_shortlist": 4,
+    "E_range_meV": 8337.611009048032,
+    "time_seconds": 97782.51582741737,
+    "time_per_struct": 12.261130511274906,
+    "mace_config": {
+      "model": "mh-1",
+      "head": "oc20_usemppbe",
+      "dtype": "float64",
+      "cueq": true
+    }
+  }
+]

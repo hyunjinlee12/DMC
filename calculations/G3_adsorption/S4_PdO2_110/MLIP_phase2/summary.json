@@ -1,0 +1,18 @@
+{
+  "surface": "S4",
+  "sdir": "S4_PdO2_110",
+  "n_raw": 7975,
+  "n_records": 7975,
+  "n_converged": 6742,
+  "n_unique_after_dedup": 7975,
+  "n_shortlist": 4,
+  "E_range_meV": 8337.611009048032,
+  "time_seconds": 97782.51582741737,
+  "time_per_struct": 12.261130511274906,
+  "mace_config": {
+    "model": "mh-1",
+    "head": "oc20_usemppbe",
+    "dtype": "float64",
+    "cueq": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "surface": "S1",
+  "sdir": "S1_Pd100",
+  "n_raw": 6338,
+  "n_records": 6338,
+  "n_converged": 6275,
+  "n_unique_after_dedup": 5950,
+  "n_shortlist": 3,
+  "E_range_meV": 1660.3566775195873,
+  "time_seconds": 27960.90498495102,
+  "time_per_struct": 4.411629060421429,
+  "mace_config": {
+    "model": "mh-1",
+    "head": "oc20_usemppbe",
+    "dtype": "float64",
+    "cueq": true
+  }
+}

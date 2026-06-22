@@ -1,0 +1,181 @@
+{
+  "timestamp": "2026-06-16 19:13:57",
+  "total_time_sec": 7686.5,
+  "surfaces": [
+    {
+      "surface": "S1_Pd100",
+      "adsorbates": {
+        "CO": {
+          "n_raw": 112,
+          "n_converged": 112,
+          "n_unique": 5,
+          "n_top3": 3,
+          "top3_indices": [
+            36,
+            56,
+            35
+          ],
+          "E_range_meV": 319.8,
+          "avg_steps": 43.7,
+          "time_sec": 172.0,
+          "top1_site_type": "bridge"
+        },
+        "CH3O": {
+          "n_raw": 336,
+          "n_converged": 336,
+          "n_unique": 89,
+          "n_top3": 3,
+          "top3_indices": [
+            255,
+            99,
+            208
+          ],
+          "E_range_meV": 260.4,
+          "avg_steps": 70.0,
+          "time_sec": 784.6,
+          "top1_site_type": "unknown"
+        }
+      }
+    },
+    {
+      "surface": "S2_PdO101_Pd100",
+      "adsorbates": {
+        "CO": {
+          "n_raw": 166,
+          "n_converged": 166,
+          "n_unique": 14,
+          "n_top3": 3,
+          "top3_indices": [
+            59,
+            101,
+            128
+          ],
+          "E_range_meV": 703.8,
+          "avg_steps": 52.3,
+          "time_sec": 319.8,
+          "top1_site_type": "bridge"
+        },
+        "CH3O": {
+          "n_raw": 498,
+          "n_converged": 497,
+          "n_unique": 327,
+          "n_top3": 3,
+          "top3_indices": [
+            44,
+            340,
+            22
+          ],
+          "E_range_meV": 1643.9,
+          "avg_steps": 75.6,
+          "time_sec": 1403.2,
+          "top1_site_type": "unknown"
+        }
+      }
+    },
+    {
+      "surface": "S3_PdO100",
+      "adsorbates": {
+        "CO": {
+          "n_raw": 135,
+          "n_converged": 135,
+          "n_unique": 8,
+          "n_top3": 3,
+          "top3_indices": [
+            22,
+            3,
+            82
+          ],
+          "E_range_meV": 79.5,
+          "avg_steps": 40.5,
+          "time_sec": 233.3,
+          "top1_site_type": "atop"
+        },
+        "CH3O": {
+          "n_raw": 405,
+          "n_converged": 405,
+          "n_unique": 156,
+          "n_top3": 3,
+          "top3_indices": [
+            369,
+            315,
+            300
+          ],
+          "E_range_meV": 1123.4,
+          "avg_steps": 57.4,
+          "time_sec": 990.7,
+          "top1_site_type": "unknown"
+        }
+      }
+    },
+    {
+      "surface": "S3b_PdO100_PdOterm",
+      "adsorbates": {
+        "CO": {
+          "n_raw": 87,
+          "n_converged": 84,
+          "n_unique": 13,
+          "n_top3": 3,
+          "top3_indices": [
+            84,
+            65,
+            49
+          ],
+          "E_range_meV": 2752.4,
+          "avg_steps": 64.5,
+          "time_sec": 213.0,
+          "top1_site_type": "bridge"
+        },
+        "CH3O": {
+          "n_raw": 261,
+          "n_converged": 261,
+          "n_unique": 184,
+          "n_top3": 3,
+          "top3_indices": [
+            90,
+            198,
+            61
+          ],
+          "E_range_meV": 410.9,
+          "avg_steps": 77.9,
+          "time_sec": 785.5,
+          "top1_site_type": "unknown"
+        }
+      }
+    },
+    {
+      "surface": "S4_PdO2_110",
+      "adsorbates": {
+        "CO": {
+          "n_raw": 129,
+          "n_converged": 100,
+          "n_unique": 33,
+          "n_top3": 3,
+          "top3_indices": [
+            68,
+            116,
+            46
+          ],
+          "E_range_meV": 3166.4,
+          "avg_steps": 110.4,
+          "time_sec": 713.7,
+          "top1_site_type": "unknown"
+        },
+        "CH3O": {
+          "n_raw": 387,
+          "n_converged": 367,
+          "n_unique": 281,
+          "n_top3": 3,
+          "top3_indices": [
+            65,
+            240,
+            241
+          ],
+          "E_range_meV": 5562.3,
+          "avg_steps": 100.4,
+          "time_sec": 2070.6,
+          "top1_site_type": "unknown"
+        }
+      }
+    }
+  ]
+}

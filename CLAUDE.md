@@ -49,6 +49,21 @@ Never start adsorption sampling before G2, or Phase 2 before G3.
 - **`github-manager`** — repo ops; no destructive / history-rewriting ops without your
   explicit instruction.
 
+### Judge committee (QC layer between producers and you — Paimon-extended)
+For high-stakes gate-advancing outputs (MLIP ranking phase, DFT shortlist results,
+NEB profile), convene the 5-judge committee + chair + summarizer pattern (inspired
+by Paimon, arXiv 2606.09422). See `docs/COMMITTEE.md`.
+- **`judge-methods`** — rule compliance.
+- **`judge-physics`** — chemistry sanity.
+- **`judge-statistics`** — distribution validity.
+- **`judge-silent-error`** — "looks right but is wrong" detector (Paimon §2.2).
+- **`judge-malicious`** — agent trust auditor (Paimon §3.3); if fires → Fail.
+- **`committee-chair`** — 4-label verdict (Pass/Pass-with-caveats/Revise/Fail).
+- **`summarizer`** — condenses Revise feedback → 1-3 actionable items.
+- **`annotator`** — (pre-judge) bridges docs ↔ subtask, surfaces implicit constraints.
+Judges run BLIND in parallel. Chair aggregates. Convene at gate hand-offs;
+skip for routine ops. Revise has retry budget 1-2; Fail escalates to user.
+
 ## Typical pipeline (gated — NOT a simple linear ML flow)
 Phase 1:
   `literature` (scope refs)

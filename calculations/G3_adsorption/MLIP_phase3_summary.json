@@ -1,0 +1,82 @@
+[
+  {
+    "surface": "S1",
+    "pool": "SetTS",
+    "n_raw": 1097,
+    "n_converged": 1086,
+    "n_unique": 1015,
+    "time_seconds": 4189.2355370521545
+  },
+  {
+    "surface": "S1",
+    "pool": "SetB",
+    "n_raw": 100,
+    "n_converged": 100,
+    "n_unique": 100,
+    "time_seconds": 397.54859614372253
+  },
+  {
+    "surface": "S2",
+    "pool": "SetTS",
+    "n_raw": 1625,
+    "n_converged": 1617,
+    "n_unique": 1623,
+    "time_seconds": 7523.146062135696
+  },
+  {
+    "surface": "S2",
+    "pool": "SetB",
+    "n_raw": 100,
+    "n_converged": 100,
+    "n_unique": 100,
+    "time_seconds": 393.7433156967163
+  },
+  {
+    "surface": "S3",
+    "pool": "SetTS",
+    "n_raw": 1441,
+    "n_converged": 1431,
+    "n_unique": 1441,
+    "time_seconds": 7474.757537126541
+  },
+  {
+    "surface": "S3",
+    "pool": "SetB",
+    "n_raw": 100,
+    "n_converged": 100,
+    "n_unique": 100,
+    "time_seconds": 403.75929260253906
+  },
+  {
+    "surface": "S3b",
+    "pool": "SetTS",
+    "n_raw": 469,
+    "n_converged": 468,
+    "n_unique": 469,
+    "time_seconds": 2358.2699823379517
+  },
+  {
+    "surface": "S3b",
+    "pool": "SetB",
+    "n_raw": 100,
+    "n_converged": 100,
+    "n_unique": 100,
+    "time_seconds": 450.5488541126251
+  },
+  {
+    "surface": "S4",
+    "pool": "SetTS",
+    "n_raw": 1182,
+    "n_converged": 1043,
+    "n_unique": 1181,
+    "time_seconds": 13016.119446516037
+  },
+  {
+    "surface": "S4",
+    "pool": "SetB",
+    "n_raw": 100,
+    "n_converged": 78,
+    "n_unique": 100,
+    "time_seconds": 1339.4794571399689
+  }
+]

@@ -1,0 +1,155 @@
+[
+  {
+    "surface": "S1",
+    "pool": "SetTS",
+    "n_input": 1097,
+    "n_survivors": 685,
+    "n_unique": 408,
+    "E_range_meV": 755.9669215775671,
+    "drops": {
+      "fragmented": 401,
+      "collapsed": 0,
+      "CO_bond_broken": 0,
+      "methoxy_OC_broken": 0,
+      "CH_broken": 0,
+      "unconverged": 11,
+      "setb_too_close": 0
+    }
+  },
+  {
+    "surface": "S1",
+    "pool": "SetB",
+    "n_input": 100,
+    "n_survivors": 5,
+    "n_unique": 5,
+    "E_range_meV": 30.509083095410006,
+    "drops": {
+      "fragmented": 86,
+      "collapsed": 0,
+      "CO_bond_broken": 0,
+      "methoxy_OC_broken": 0,
+      "CH_broken": 0,
+      "unconverged": 0,
+      "setb_too_close": 9
+    }
+  },
+  {
+    "surface": "S2",
+    "pool": "SetTS",
+    "n_input": 1625,
+    "n_survivors": 1194,
+    "n_unique": 1096,
+    "E_range_meV": 3059.100795166728,
+    "drops": {
+      "fragmented": 406,
+      "collapsed": 0,
+      "CO_bond_broken": 0,
+      "methoxy_OC_broken": 0,
+      "CH_broken": 17,
+      "unconverged": 8,
+      "setb_too_close": 0
+    }
+  },
+  {
+    "surface": "S2",
+    "pool": "SetB",
+    "n_input": 100,
+    "n_survivors": 4,
+    "n_unique": 4,
+    "E_range_meV": 783.7939303614121,
+    "drops": {
+      "fragmented": 95,
+      "collapsed": 0,
+      "CO_bond_broken": 0,
+      "methoxy_OC_broken": 0,
+      "CH_broken": 0,
+      "unconverged": 0,
+      "setb_too_close": 1
+    }
+  },
+  {
+    "surface": "S3",
+    "pool": "SetTS",
+    "n_input": 1441,
+    "n_survivors": 897,
+    "n_unique": 837,
+    "E_range_meV": 3252.8192274064622,
+    "drops": {
+      "fragmented": 504,
+      "collapsed": 0,
+      "CO_bond_broken": 0,
+      "methoxy_OC_broken": 4,
+      "CH_broken": 26,
+      "unconverged": 10,
+      "setb_too_close": 0
+    }
+  },
+  {
+    "surface": "S3",
+    "pool": "SetB",
+    "n_input": 100,
+    "n_survivors": 7,
+    "n_unique": 7,
+    "E_range_meV": 1154.3844690662581,
+    "drops": {
+      "fragmented": 90,
+      "collapsed": 0,
+      "CO_bond_broken": 0,
+      "methoxy_OC_broken": 0,
+      "CH_broken": 1,
+      "unconverged": 0,
+      "setb_too_close": 2
+    }
+  },
+  {
+    "surface": "S3b",
+    "pool": "SetTS",
+    "n_input": 469,
+    "n_survivors": 299,
+    "n_unique": 285,
+    "E_range_meV": 2310.5637016606124,
+    "drops": {
+      "fragmented": 167,
+      "collapsed": 0,
+      "CO_bond_broken": 0,
+      "methoxy_OC_broken": 0,
+      "CH_broken": 2,
+      "unconverged": 1,
+      "setb_too_close": 0
+    }
+  },
+  {
+    "surface": "S3b",
+    "pool": "SetB",
+    "n_input": 100,
+    "n_survivors": 4,
+    "n_unique": 4,
+    "E_range_meV": 111.79707478925138,
+    "drops": {
+      "fragmented": 92,
+      "collapsed": 0,
+      "CO_bond_broken": 0,
+      "methoxy_OC_broken": 0,
+      "CH_broken": 0,
+      "unconverged": 0,
+      "setb_too_close": 4
+    }
+  },
+  {
+    "surface": "S4",
+    "pool": "SetTS",
+    "n_input": 1182,
+    "n_survivors": 615,
+    "n_unique": 490,
+    "E_range_meV": 4591.871115037748,
+    "drops": {
+      "fragmented": 337,
+      "collapsed": 0,
+      "CO_bond_broken": 0,
+      "methoxy_OC_broken": 2,
+      "CH_broken": 89,
+      "unconverged": 139,
+      "setb_too_close": 0
+    }
+  }
+]

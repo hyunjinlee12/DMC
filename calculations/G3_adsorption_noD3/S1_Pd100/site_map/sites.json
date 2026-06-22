@@ -1,0 +1,9 @@
+{
+  "total_sites": 112,
+  "site_types": {
+    "atop": 16,
+    "bridge": 32,
+    "3-fold": 64
+  },
+  "note": "Site types classified by coordination (topology length)"
+}

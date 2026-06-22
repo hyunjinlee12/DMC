@@ -1,0 +1,175 @@
+==========================================
+  T1.14 Phase 3 — MACE-MH + D3 ranking
+  SLURM job:  370
+  Node:       jbnu-gpu2
+  GPU:        0
+  Start:      Sat Jun 20 11:44:54 AM KST 2026
+==========================================
+=== Phase 3 — surfaces: ['S1', 'S2', 'S3', 'S3b', 'S4']  SetB sub=100/surface ===
+  S1  slab=True SetTS=1097 SetB=9600
+  S2  slab=True SetTS=1625 SetB=29147
+  S3  slab=True SetTS=1441 SetB=16110
+  S3b  slab=True SetTS=469 SetB=7157
+  S4  slab=True SetTS=1182 SetB=14270
+Loading MACE-MH calculator...
+Using Materials Project MACE for MACECalculator with /home/hyunjin/.cache/mace/macemh1model
+Using float64 for MACECalculator, which is slower but more accurate. Recommended for geometry optimization.
+Using TorchDFTD3Calculator for D3 dispersion corrections
+[S1 SetTS] 1097 candidates
+[S1 SetTS] 1/1097  ETA=3.54hr
+[S1 SetTS] 50/1097  ETA=1.12hr
+[S1 SetTS] 100/1097  ETA=1.08hr
+[S1 SetTS] 150/1097  ETA=1.02hr
+[S1 SetTS] 200/1097  ETA=0.97hr
+[S1 SetTS] 250/1097  ETA=0.90hr
+[S1 SetTS] 300/1097  ETA=0.84hr
+[S1 SetTS] 350/1097  ETA=0.79hr
+[S1 SetTS] 400/1097  ETA=0.74hr
+[S1 SetTS] 450/1097  ETA=0.69hr
+[S1 SetTS] 500/1097  ETA=0.64hr
+[S1 SetTS] 550/1097  ETA=0.58hr
+[S1 SetTS] 600/1097  ETA=0.52hr
+[S1 SetTS] 650/1097  ETA=0.47hr
+[S1 SetTS] 700/1097  ETA=0.42hr
+[S1 SetTS] 750/1097  ETA=0.37hr
+[S1 SetTS] 800/1097  ETA=0.31hr
+[S1 SetTS] 850/1097  ETA=0.26hr
+[S1 SetTS] 900/1097  ETA=0.21hr
+[S1 SetTS] 950/1097  ETA=0.16hr
+[S1 SetTS] 1000/1097  ETA=0.10hr
+[S1 SetTS] 1050/1097  ETA=0.05hr
+[S1 SetB] 100 candidates
+[S1 SetB] 1/100  ETA=0.08hr
+[S1 SetB] 50/100  ETA=0.05hr
+[S1 SetB] 100/100  ETA=0.00hr
+[S2 SetTS] 1625 candidates
+[S2 SetTS] 1/1625  ETA=1.53hr
+[S2 SetTS] 50/1625  ETA=2.10hr
+[S2 SetTS] 100/1625  ETA=1.92hr
+[S2 SetTS] 150/1625  ETA=1.85hr
+[S2 SetTS] 200/1625  ETA=1.87hr
+[S2 SetTS] 250/1625  ETA=1.81hr
+[S2 SetTS] 300/1625  ETA=1.71hr
+[S2 SetTS] 350/1625  ETA=1.65hr
+[S2 SetTS] 400/1625  ETA=1.58hr
+[S2 SetTS] 450/1625  ETA=1.51hr
+[S2 SetTS] 500/1625  ETA=1.44hr
+[S2 SetTS] 550/1625  ETA=1.38hr
+[S2 SetTS] 600/1625  ETA=1.33hr
+[S2 SetTS] 650/1625  ETA=1.26hr
+[S2 SetTS] 700/1625  ETA=1.20hr
+[S2 SetTS] 750/1625  ETA=1.13hr
+[S2 SetTS] 800/1625  ETA=1.06hr
+[S2 SetTS] 850/1625  ETA=1.00hr
+[S2 SetTS] 900/1625  ETA=0.93hr
+[S2 SetTS] 950/1625  ETA=0.87hr
+[S2 SetTS] 1000/1625  ETA=0.81hr
+[S2 SetTS] 1050/1625  ETA=0.75hr
+[S2 SetTS] 1100/1625  ETA=0.68hr
+[S2 SetTS] 1150/1625  ETA=0.62hr
+[S2 SetTS] 1200/1625  ETA=0.55hr
+[S2 SetTS] 1250/1625  ETA=0.49hr
+[S2 SetTS] 1300/1625  ETA=0.42hr
+[S2 SetTS] 1350/1625  ETA=0.35hr
+[S2 SetTS] 1400/1625  ETA=0.29hr
+[S2 SetTS] 1450/1625  ETA=0.23hr
+[S2 SetTS] 1500/1625  ETA=0.16hr
+[S2 SetTS] 1550/1625  ETA=0.10hr
+[S2 SetTS] 1600/1625  ETA=0.03hr
+[S2 SetB] 100 candidates
+[S2 SetB] 1/100  ETA=0.10hr
+[S2 SetB] 50/100  ETA=0.05hr
+[S2 SetB] 100/100  ETA=0.00hr
+[S3 SetTS] 1441 candidates
+[S3 SetTS] 1/1441  ETA=1.94hr
+[S3 SetTS] 50/1441  ETA=2.03hr
+[S3 SetTS] 100/1441  ETA=1.93hr
+[S3 SetTS] 150/1441  ETA=1.82hr
+[S3 SetTS] 200/1441  ETA=1.75hr
+[S3 SetTS] 250/1441  ETA=1.69hr
+[S3 SetTS] 300/1441  ETA=1.63hr
+[S3 SetTS] 350/1441  ETA=1.58hr
+[S3 SetTS] 400/1441  ETA=1.50hr
+[S3 SetTS] 450/1441  ETA=1.41hr
+[S3 SetTS] 500/1441  ETA=1.34hr
+[S3 SetTS] 550/1441  ETA=1.26hr
+[S3 SetTS] 600/1441  ETA=1.19hr
+[S3 SetTS] 650/1441  ETA=1.13hr
+[S3 SetTS] 700/1441  ETA=1.05hr
+[S3 SetTS] 750/1441  ETA=0.99hr
+[S3 SetTS] 800/1441  ETA=0.92hr
+[S3 SetTS] 850/1441  ETA=0.85hr
+[S3 SetTS] 900/1441  ETA=0.78hr
+[S3 SetTS] 950/1441  ETA=0.71hr
+[S3 SetTS] 1000/1441  ETA=0.63hr
+[S3 SetTS] 1050/1441  ETA=0.56hr
+[S3 SetTS] 1100/1441  ETA=0.49hr
+[S3 SetTS] 1150/1441  ETA=0.42hr
+[S3 SetTS] 1200/1441  ETA=0.35hr
+[S3 SetTS] 1250/1441  ETA=0.28hr
+[S3 SetTS] 1300/1441  ETA=0.20hr
+[S3 SetTS] 1350/1441  ETA=0.13hr
+[S3 SetTS] 1400/1441  ETA=0.06hr
+[S3 SetB] 100 candidates
+[S3 SetB] 1/100  ETA=0.07hr
+[S3 SetB] 50/100  ETA=0.05hr
+[S3 SetB] 100/100  ETA=0.00hr
+[S3b SetTS] 469 candidates
+[S3b SetTS] 1/469  ETA=1.53hr
+[S3b SetTS] 50/469  ETA=0.58hr
+[S3b SetTS] 100/469  ETA=0.50hr
+[S3b SetTS] 150/469  ETA=0.42hr
+[S3b SetTS] 200/469  ETA=0.36hr
+[S3b SetTS] 250/469  ETA=0.30hr
+[S3b SetTS] 300/469  ETA=0.23hr
+[S3b SetTS] 350/469  ETA=0.16hr
+[S3b SetTS] 400/469  ETA=0.10hr
+[S3b SetTS] 450/469  ETA=0.03hr
+[S3b SetB] 100 candidates
+[S3b SetB] 1/100  ETA=0.10hr
+[S3b SetB] 50/100  ETA=0.06hr
+[S3b SetB] 100/100  ETA=0.00hr
+[S4 SetTS] 1182 candidates
+[S4 SetTS] 1/1182  ETA=7.71hr
+[S4 SetTS] 50/1182  ETA=3.40hr
+[S4 SetTS] 100/1182  ETA=3.59hr
+[S4 SetTS] 150/1182  ETA=3.26hr
+[S4 SetTS] 200/1182  ETA=3.00hr
+[S4 SetTS] 250/1182  ETA=2.76hr
+[S4 SetTS] 300/1182  ETA=2.66hr
+[S4 SetTS] 350/1182  ETA=2.54hr
+[S4 SetTS] 400/1182  ETA=2.38hr
+[S4 SetTS] 450/1182  ETA=2.25hr
+[S4 SetTS] 500/1182  ETA=2.11hr
+[S4 SetTS] 550/1182  ETA=1.93hr
+[S4 SetTS] 600/1182  ETA=1.76hr
+[S4 SetTS] 650/1182  ETA=1.59hr
+[S4 SetTS] 700/1182  ETA=1.46hr
+[S4 SetTS] 750/1182  ETA=1.31hr
+[S4 SetTS] 800/1182  ETA=1.16hr
+[S4 SetTS] 850/1182  ETA=1.02hr
+[S4 SetTS] 900/1182  ETA=0.87hr
+[S4 SetTS] 950/1182  ETA=0.71hr
+[S4 SetTS] 1000/1182  ETA=0.55hr
+[S4 SetTS] 1050/1182  ETA=0.40hr
+[S4 SetTS] 1100/1182  ETA=0.25hr
+[S4 SetTS] 1150/1182  ETA=0.10hr
+[S4 SetB] 100 candidates
+[S4 SetB] 1/100  ETA=0.57hr
+[S4 SetB] 50/100  ETA=0.19hr
+[S4 SetB] 100/100  ETA=0.00hr
+=== Phase 3 done ===
+  S1   SetTS  raw=1097 conv=1086 unique=1015 time=1.16hr
+  S1   SetB   raw=100  conv=100  unique=100  time=0.11hr
+  S2   SetTS  raw=1625 conv=1617 unique=1623 time=2.09hr
+  S2   SetB   raw=100  conv=100  unique=100  time=0.11hr
+  S3   SetTS  raw=1441 conv=1431 unique=1441 time=2.08hr
+  S3   SetB   raw=100  conv=100  unique=100  time=0.11hr
+  S3b  SetTS  raw=469  conv=468  unique=469  time=0.66hr
+  S3b  SetB   raw=100  conv=100  unique=100  time=0.13hr
+  S4   SetTS  raw=1182 conv=1043 unique=1181 time=3.62hr
+  S4   SetB   raw=100  conv=78   unique=100  time=0.37hr
+
+==========================================
+  Phase 3 finished: Sat Jun 20 10:11:18 PM KST 2026
+==========================================

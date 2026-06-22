@@ -1,0 +1,160 @@
+{
+  "judge": "physics",
+  "target": "ml-trainer:MLIP_phase2_filtered",
+  "prior_verdict": "REJECT",
+  "current_verdict": "CONCERN",
+  "score": 5,
+  "decision": "CONDITIONAL_GO",
+
+  "summary": "Geometry filter PARTIALLY resolved prior failures. S3 product collapse fixed (100%→25%), S2 band violation fixed, fragmentation caught (50-60%). BUT: S4 remains 100% defective (all physisorbed), S1/S3/S3b PES flat (3-27 meV top-10), MLIP energy ranking inverted across all surfaces. Proceed to DFT for S1,S2,S3(rank1-3),S3b with GEOMETRY-based selection. STOP S4.",
+
+  "evidence": [
+    {
+      "check": "S3 shortlist chemistry (post-filter)",
+      "value": "3/4 viable (75%)",
+      "before": "0/4 viable (100% product collapse)",
+      "status": "improved"
+    },
+    {
+      "check": "S3 rank-1 Pd-C(CO)",
+      "value": 2.465,
+      "expected": "[1.85, 2.00] chemisorbed",
+      "status": "pass_borderline"
+    },
+    {
+      "check": "S3 rank-1 Pd-O(CH3O)",
+      "value": 1.996,
+      "expected": "[2.00, 2.15]",
+      "status": "pass"
+    },
+    {
+      "check": "S2 SetA band compliance",
+      "value": "4/4 in [2.1, 4.0) Å",
+      "before": "rank-0 at 1.9 Å (out of band)",
+      "status": "fixed"
+    },
+    {
+      "check": "S4 shortlist chemistry",
+      "value": "0/4 viable (100% physisorbed)",
+      "status": "fail_critical"
+    },
+    {
+      "check": "S1 PES flatness (top-10)",
+      "value": "3.0 meV",
+      "expected": "> 50 meV for meaningful ranking",
+      "status": "fail"
+    },
+    {
+      "check": "S3b PES flatness (top-10)",
+      "value": "2.9 meV",
+      "status": "fail"
+    },
+    {
+      "check": "S2 PES discriminating power",
+      "value": "214.6 meV top-10 spread",
+      "status": "pass"
+    },
+    {
+      "check": "Geometry filter effectiveness (fragmentation)",
+      "value": "3166-5427 structures removed per surface (50-60%)",
+      "status": "pass"
+    },
+    {
+      "check": "Geometry filter effectiveness (bond-breaking)",
+      "value": "885 total C-H/O-C breaks detected",
+      "status": "pass"
+    },
+    {
+      "check": "Spot-check middle ranks (S3, S4)",
+      "value": "10/10 intact (no fragmentation/collapse in filtered pool)",
+      "status": "pass"
+    }
+  ],
+
+  "concerns": [
+    "S4 REJECT: 100% of shortlist have CO or CH3O physisorption. 884 C-H breaks suggest CH3O unstable on PdO2 under MACE. Cannot send to DFT.",
+    "S1/S3/S3b PES FLAT: top-10 within 3-27 meV (noise floor). MLIP energy ranking meaningless. Must select DFT candidates by GEOMETRY diversity only.",
+    "S3 rank-0 has MeO physisorbed (Pd-O=3.226 Å) yet 3038 meV ABOVE viable candidates. Energy ranking inverted.",
+    "NO surface has rank-0 = lowest energy. Distance-bin selection sacrifices energy ordering — acceptable for flat PES (S1/S3b), questionable for S2.",
+    "S4 represents 11% C-H break rate during relaxation — strong indicator that PdO2(110) fundamentally incompatible with this reactive-pair setup."
+  ],
+
+  "asks": [
+    "S4 alternative: (a) skip S4 SetA, (b) try CHGNet/M3GNet MLIP, or (c) hand-place pairs + DFT-only",
+    "Re-filter S3 shortlist: drop rank-0 (Pd-O > 2.3 Å), promote chemisorbed candidate from unique pool",
+    "For S1/S3/S3b: explicitly document that shortlist selected by GEOMETRY diversity, not energy rank",
+    "Visual validation: render S2 rank-2,3 and all S4 to confirm Pd-C=3.4-3.7 Å is physisorption vs bridge-to-different-layer",
+    "Add chemisorption filter (Pd-C < 2.5 Å AND Pd-O < 2.3 Å) as hard requirement for shortlist selection in future runs"
+  ],
+
+  "surface_verdicts": {
+    "S1_Pd100": {
+      "verdict": "CONCERN",
+      "chemistry_pass": "2/3",
+      "PES_spread_meV": 3.0,
+      "usable": true,
+      "action": "Send all 3 to DFT (ignore energies, maximize diversity)"
+    },
+    "S2_PdO101_Pd100": {
+      "verdict": "CONCERN",
+      "chemistry_pass": "2/4",
+      "PES_spread_meV": 214.6,
+      "usable": true,
+      "action": "Send rank-0,1 (clean) + optionally rank-2,3 (physisorption reference)"
+    },
+    "S3_PdO100": {
+      "verdict": "CONCERN",
+      "chemistry_pass": "3/4",
+      "PES_spread_meV": 27.3,
+      "usable": true,
+      "action": "Send rank-1,2,3 ONLY. DROP rank-0 (MeO physisorbed)"
+    },
+    "S3b_PdO100_PdOterm": {
+      "verdict": "CONCERN",
+      "chemistry_pass": "3/3",
+      "PES_spread_meV": 2.9,
+      "usable": true,
+      "action": "Send all 3 (all clean, diverse geometries)"
+    },
+    "S4_PdO2_110": {
+      "verdict": "REJECT",
+      "chemistry_pass": "0/4",
+      "PES_spread_meV": 122.7,
+      "usable": false,
+      "action": "STOP. Do not send to DFT. Requires alternative approach."
+    }
+  },
+
+  "comparison_to_prior_verdict": {
+    "resolved": [
+      "S3 product collapse (was 100%, now 25%)",
+      "S2 SetA band violation (was rank-0 at 1.9 Å, now all in [2.1,4.0))",
+      "Fragmentation (50-60% caught)",
+      "Bond-breaking detection (885 flagged)"
+    ],
+    "not_resolved": [
+      "S4 CO physisorption (still 75% of shortlist)",
+      "PES flatness (was <0.5 meV, now 3-27 meV for S1/S3/S3b, still below 50 meV threshold)",
+      "Energy ranking inversion (rank-0 not lowest-E on any surface)"
+    ],
+    "new_issues": [
+      "S3 rank-0 MeO physisorbed (different defect than before)",
+      "S1 rank-1 CO physisorbed (not mentioned in prior)"
+    ]
+  },
+
+  "recommendation": "CONDITIONAL GO with manual curation:\n- S1, S2, S3 (rank 1-3 only), S3b → DFT Level 1 (vacuum opt)\n- Select by GEOMETRIC diversity, not MLIP energy rank\n- S4 → STOP, requires alternative strategy\n- Geometry filter successfully removed catastrophic failures but cannot fix MLIP weak oxide binding and flat PES\n- Phase 2 MLIP = STRUCTURE GENERATOR, not energy ranker",
+
+  "metadata": {
+    "n_structures_inspected": 17,
+    "n_spot_checks": 10,
+    "surfaces_analyzed": 5,
+    "total_shortlist_candidates": 18,
+    "total_viable_candidates": 10,
+    "overall_pass_rate": "56%",
+    "confidence": "high",
+    "blind_review": true,
+    "inspector": "judge-physics",
+    "date": "2026-06-19"
+  }
+}

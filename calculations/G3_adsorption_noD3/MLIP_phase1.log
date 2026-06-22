@@ -1,0 +1,242 @@
+[2026-06-16 17:02:29] ================================================================================
+[2026-06-16 17:02:29] T1.14: MACE-MH Phase 1 ranking — single adsorbates (CO*, CH3O*)
+[2026-06-16 17:02:29] ================================================================================
+[2026-06-16 17:02:29] 
+Initializing MACE-MH calculator (mh-1 + oc20_usemppbe + cueq)...
+[2026-06-16 17:02:33]   Calculator ready (3.3s)
+[2026-06-16 17:02:33] 
+============================================================
+[2026-06-16 17:02:33] Processing S1_Pd100
+[2026-06-16 17:02:33] ============================================================
+[2026-06-16 17:02:33]   Loaded G2 slab: 80 atoms
+[2026-06-16 17:02:33] 
+  --- CO ---
+[2026-06-16 17:02:33]   Loaded 112 candidates
+[2026-06-16 17:03:55]     Relaxing 50/112
+[2026-06-16 17:05:09]     Relaxing 100/112
+[2026-06-16 17:05:23]     Relaxing 112/112
+[2026-06-16 17:05:24]   Relaxed 112/112, converged 112
+[2026-06-16 17:05:24]   Dedup: 112 → 5 unique
+[2026-06-16 17:05:24]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/relaxed_CO.traj
+[2026-06-16 17:05:47] ================================================================================
+[2026-06-16 17:05:47] T1.14: MACE-MH Phase 1 ranking — single adsorbates (CO*, CH3O*)
+[2026-06-16 17:05:47] ================================================================================
+[2026-06-16 17:05:47] 
+Initializing MACE-MH calculator (mh-1 + oc20_usemppbe + cueq)...
+[2026-06-16 17:05:51]   Calculator ready (3.3s)
+[2026-06-16 17:05:51] 
+============================================================
+[2026-06-16 17:05:51] Processing S1_Pd100
+[2026-06-16 17:05:51] ============================================================
+[2026-06-16 17:05:51]   Loaded G2 slab: 80 atoms
+[2026-06-16 17:05:51] 
+  --- CO ---
+[2026-06-16 17:05:51]   Loaded 112 candidates
+[2026-06-16 17:07:14]     Relaxing 50/112
+[2026-06-16 17:08:28]     Relaxing 100/112
+[2026-06-16 17:08:42]     Relaxing 112/112
+[2026-06-16 17:08:43]   Relaxed 112/112, converged 112
+[2026-06-16 17:08:43]   Dedup: 112 → 5 unique
+[2026-06-16 17:08:43]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/relaxed_CO.traj
+[2026-06-16 17:08:43]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/ranked_CO.json
+[2026-06-16 17:08:43]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/unique_CO.json
+[2026-06-16 17:08:43]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/top10_CO.png
+[2026-06-16 17:08:43]   Stats: E_range=319.8 meV, avg_steps=43.7, time=172.0s
+[2026-06-16 17:08:43] 
+  --- CH3O ---
+[2026-06-16 17:08:43]   Loaded 336 candidates
+[2026-06-16 17:10:35]     Relaxing 50/336
+[2026-06-16 17:12:33]     Relaxing 100/336
+[2026-06-16 17:14:30]     Relaxing 150/336
+[2026-06-16 17:16:23]     Relaxing 200/336
+[2026-06-16 17:18:25]     Relaxing 250/336
+[2026-06-16 17:20:13]     Relaxing 300/336
+[2026-06-16 17:21:45]     Relaxing 336/336
+[2026-06-16 17:21:47]   Relaxed 336/336, converged 336
+[2026-06-16 17:21:47]   Dedup: 336 → 89 unique
+[2026-06-16 17:21:47]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/relaxed_CH3O.traj
+[2026-06-16 17:21:47]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/ranked_CH3O.json
+[2026-06-16 17:21:47]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/unique_CH3O.json
+[2026-06-16 17:21:47]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/top10_CH3O.png
+[2026-06-16 17:21:47]   Stats: E_range=260.4 meV, avg_steps=70.0, time=784.6s
+[2026-06-16 17:21:47] 
+Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/summary.json
+[2026-06-16 17:21:47] 
+============================================================
+[2026-06-16 17:21:47] Processing S2_PdO101_Pd100
+[2026-06-16 17:21:47] ============================================================
+[2026-06-16 17:21:47]   Loaded G2 slab: 112 atoms
+[2026-06-16 17:21:47] 
+  --- CO ---
+[2026-06-16 17:21:47]   Loaded 166 candidates
+[2026-06-16 17:23:24]     Relaxing 50/166
+[2026-06-16 17:25:01]     Relaxing 100/166
+[2026-06-16 17:26:32]     Relaxing 150/166
+[2026-06-16 17:27:04]     Relaxing 166/166
+[2026-06-16 17:27:07]   Relaxed 166/166, converged 166
+[2026-06-16 17:27:07]   Dedup: 166 → 14 unique
+[2026-06-16 17:27:07]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/MLIP_phase1/relaxed_CO.traj
+[2026-06-16 17:27:07]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/MLIP_phase1/ranked_CO.json
+[2026-06-16 17:27:07]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/MLIP_phase1/unique_CO.json
+[2026-06-16 17:27:07]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/MLIP_phase1/top10_CO.png
+[2026-06-16 17:27:07]   Stats: E_range=703.8 meV, avg_steps=52.3, time=319.8s
+[2026-06-16 17:27:07] 
+  --- CH3O ---
+[2026-06-16 17:27:07]   Loaded 498 candidates
+[2026-06-16 17:29:27]     Relaxing 50/498
+[2026-06-16 17:31:43]     Relaxing 100/498
+[2026-06-16 17:34:05]     Relaxing 150/498
+[2026-06-16 17:36:15]     Relaxing 200/498
+[2026-06-16 17:38:35]     Relaxing 250/498
+[2026-06-16 17:41:09]     Relaxing 300/498
+[2026-06-16 17:43:39]     Relaxing 350/498
+[2026-06-16 17:46:04]     Relaxing 400/498
+[2026-06-16 17:48:21]     Relaxing 450/498
+[2026-06-16 17:50:28]     Relaxing 498/498
+[2026-06-16 17:50:30]   Relaxed 498/498, converged 497
+[2026-06-16 17:50:30]   Dedup: 498 → 327 unique
+[2026-06-16 17:50:30]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/MLIP_phase1/relaxed_CH3O.traj
+[2026-06-16 17:50:30]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/MLIP_phase1/ranked_CH3O.json
+[2026-06-16 17:50:30]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/MLIP_phase1/unique_CH3O.json
+[2026-06-16 17:50:30]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/MLIP_phase1/top10_CH3O.png
+[2026-06-16 17:50:30]   Stats: E_range=1643.9 meV, avg_steps=75.6, time=1403.2s
+[2026-06-16 17:50:30] 
+Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/MLIP_phase1/summary.json
+[2026-06-16 17:50:30] 
+============================================================
+[2026-06-16 17:50:30] Processing S3_PdO100
+[2026-06-16 17:50:30] ============================================================
+[2026-06-16 17:50:30]   Loaded G2 slab: 128 atoms
+[2026-06-16 17:50:30] 
+  --- CO ---
+[2026-06-16 17:50:30]   Loaded 135 candidates
+[2026-06-16 17:51:56]     Relaxing 50/135
+[2026-06-16 17:53:23]     Relaxing 100/135
+[2026-06-16 17:54:22]     Relaxing 135/135
+[2026-06-16 17:54:23]   Relaxed 135/135, converged 135
+[2026-06-16 17:54:23]   Dedup: 135 → 8 unique
+[2026-06-16 17:54:24]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3_PdO100/MLIP_phase1/relaxed_CO.traj
+[2026-06-16 17:54:24]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3_PdO100/MLIP_phase1/ranked_CO.json
+[2026-06-16 17:54:24]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3_PdO100/MLIP_phase1/unique_CO.json
+[2026-06-16 17:54:24]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3_PdO100/MLIP_phase1/top10_CO.png
+[2026-06-16 17:54:24]   Stats: E_range=79.5 meV, avg_steps=40.5, time=233.3s
+[2026-06-16 17:54:24] 
+  --- CH3O ---
+[2026-06-16 17:54:24]   Loaded 405 candidates
+[2026-06-16 17:56:21]     Relaxing 50/405
+[2026-06-16 17:58:25]     Relaxing 100/405
+[2026-06-16 18:00:29]     Relaxing 150/405
+[2026-06-16 18:02:39]     Relaxing 200/405
+[2026-06-16 18:04:37]     Relaxing 250/405
+[2026-06-16 18:06:35]     Relaxing 300/405
+[2026-06-16 18:08:38]     Relaxing 350/405
+[2026-06-16 18:10:35]     Relaxing 400/405
+[2026-06-16 18:10:52]     Relaxing 405/405
+[2026-06-16 18:10:54]   Relaxed 405/405, converged 405
+[2026-06-16 18:10:54]   Dedup: 405 → 156 unique
+[2026-06-16 18:10:54]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3_PdO100/MLIP_phase1/relaxed_CH3O.traj
+[2026-06-16 18:10:54]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3_PdO100/MLIP_phase1/ranked_CH3O.json
+[2026-06-16 18:10:54]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3_PdO100/MLIP_phase1/unique_CH3O.json
+[2026-06-16 18:10:54]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3_PdO100/MLIP_phase1/top10_CH3O.png
+[2026-06-16 18:10:54]   Stats: E_range=1123.4 meV, avg_steps=57.4, time=990.7s
+[2026-06-16 18:10:54] 
+Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3_PdO100/MLIP_phase1/summary.json
+[2026-06-16 18:10:54] 
+============================================================
+[2026-06-16 18:10:54] Processing S3b_PdO100_PdOterm
+[2026-06-16 18:10:54] ============================================================
+[2026-06-16 18:10:54]   Loaded G2 slab: 104 atoms
+[2026-06-16 18:10:54] 
+  --- CO ---
+[2026-06-16 18:10:54]   Loaded 87 candidates
+[2026-06-16 18:12:49]     Relaxing 50/87
+[2026-06-16 18:14:21]     Relaxing 87/87
+[2026-06-16 18:14:27]   Relaxed 87/87, converged 84
+[2026-06-16 18:14:27]   Dedup: 87 → 13 unique
+[2026-06-16 18:14:27]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase1/relaxed_CO.traj
+[2026-06-16 18:14:27]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase1/ranked_CO.json
+[2026-06-16 18:14:27]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase1/unique_CO.json
+[2026-06-16 18:14:27]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase1/top10_CO.png
+[2026-06-16 18:14:27]   Stats: E_range=2752.4 meV, avg_steps=64.5, time=213.0s
+[2026-06-16 18:14:27] 
+  --- CH3O ---
+[2026-06-16 18:14:27]   Loaded 261 candidates
+[2026-06-16 18:17:01]     Relaxing 50/261
+[2026-06-16 18:19:28]     Relaxing 100/261
+[2026-06-16 18:21:56]     Relaxing 150/261
+[2026-06-16 18:24:28]     Relaxing 200/261
+[2026-06-16 18:27:00]     Relaxing 250/261
+[2026-06-16 18:27:30]     Relaxing 261/261
+[2026-06-16 18:27:33]   Relaxed 261/261, converged 261
+[2026-06-16 18:27:33]   Dedup: 261 → 184 unique
+[2026-06-16 18:27:33]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase1/relaxed_CH3O.traj
+[2026-06-16 18:27:33]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase1/ranked_CH3O.json
+[2026-06-16 18:27:33]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase1/unique_CH3O.json
+[2026-06-16 18:27:33]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase1/top10_CH3O.png
+[2026-06-16 18:27:33]   Stats: E_range=410.9 meV, avg_steps=77.9, time=785.5s
+[2026-06-16 18:27:33] 
+Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase1/summary.json
+[2026-06-16 18:27:33] 
+============================================================
+[2026-06-16 18:27:33] Processing S4_PdO2_110
+[2026-06-16 18:27:33] ============================================================
+[2026-06-16 18:27:33]   Loaded G2 slab: 144 atoms
+[2026-06-16 18:27:33] 
+  --- CO ---
+[2026-06-16 18:27:33]   Loaded 129 candidates
+[2026-06-16 18:32:14]     Relaxing 50/129
+[2026-06-16 18:36:56]     Relaxing 100/129
+[2026-06-16 18:39:25]     Relaxing 129/129
+[2026-06-16 18:39:26]   Relaxed 129/129, converged 100
+[2026-06-16 18:39:26]   Dedup: 129 → 33 unique
+[2026-06-16 18:39:26]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/MLIP_phase1/relaxed_CO.traj
+[2026-06-16 18:39:26]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/MLIP_phase1/ranked_CO.json
+[2026-06-16 18:39:26]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/MLIP_phase1/unique_CO.json
+[2026-06-16 18:39:27]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/MLIP_phase1/top10_CO.png
+[2026-06-16 18:39:27]   Stats: E_range=3166.4 meV, avg_steps=110.4, time=713.7s
+[2026-06-16 18:39:27] 
+  --- CH3O ---
+[2026-06-16 18:39:27]   Loaded 387 candidates
+[2026-06-16 18:43:58]     Relaxing 50/387
+[2026-06-16 18:48:19]     Relaxing 100/387
+[2026-06-16 18:52:19]     Relaxing 150/387
+[2026-06-16 18:56:29]     Relaxing 200/387
+[2026-06-16 19:00:57]     Relaxing 250/387
+[2026-06-16 19:05:12]     Relaxing 300/387
+[2026-06-16 19:09:27]     Relaxing 350/387
+[2026-06-16 19:13:50]     Relaxing 387/387
+[2026-06-16 19:13:57]   Relaxed 387/387, converged 367
+[2026-06-16 19:13:57]   Dedup: 387 → 281 unique
+[2026-06-16 19:13:57]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/MLIP_phase1/relaxed_CH3O.traj
+[2026-06-16 19:13:57]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/MLIP_phase1/ranked_CH3O.json
+[2026-06-16 19:13:57]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/MLIP_phase1/unique_CH3O.json
+[2026-06-16 19:13:57]   Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/MLIP_phase1/top10_CH3O.png
+[2026-06-16 19:13:57]   Stats: E_range=5562.3 meV, avg_steps=100.4, time=2070.6s
+[2026-06-16 19:13:57] 
+Saved /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S4_PdO2_110/MLIP_phase1/summary.json
+[2026-06-16 19:13:57] 
+================================================================================
+[2026-06-16 19:13:57] COMPLETE. Total time: 7686.5s
+[2026-06-16 19:13:57] Global summary: /home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/MLIP_phase1_summary.json
+[2026-06-16 19:13:57] ================================================================================
+[2026-06-16 19:13:57] 
+Per-surface summary:
+[2026-06-16 19:13:57] Surface               CO_raw  CO_conv  CO_uniq   CO_E_meV  CH3O_raw  CH3O_conv  CH3O_uniq   CH3O_E_meV
+[2026-06-16 19:13:57] ------------------------------------------------------------------------------------------------------------------------
+[2026-06-16 19:13:57] S1_Pd100                 112      112        5      319.8       336        336         89        260.4
+[2026-06-16 19:13:57] S2_PdO101_Pd100          166      166       14      703.8       498        497        327       1643.9
+[2026-06-16 19:13:57] S3_PdO100                135      135        8       79.5       405        405        156       1123.4
+[2026-06-16 19:13:57] S3b_PdO100_PdOterm        87       84       13     2752.4       261        261        184        410.9
+[2026-06-16 19:13:57] S4_PdO2_110              129      100       33     3166.4       387        367        281       5562.3
+[2026-06-16 19:13:57] 
+DFT shortlist (top-3 per surface per adsorbate):
+[2026-06-16 19:13:57]   S1_Pd100/CO: [36, 56, 35]
+[2026-06-16 19:13:57]   S1_Pd100/CH3O: [255, 99, 208]
+[2026-06-16 19:13:57]   S2_PdO101_Pd100/CO: [59, 101, 128]
+[2026-06-16 19:13:57]   S2_PdO101_Pd100/CH3O: [44, 340, 22]
+[2026-06-16 19:13:57]   S3_PdO100/CO: [22, 3, 82]
+[2026-06-16 19:13:57]   S3_PdO100/CH3O: [369, 315, 300]
+[2026-06-16 19:13:57]   S3b_PdO100_PdOterm/CO: [84, 65, 49]
+[2026-06-16 19:13:57]   S3b_PdO100_PdOterm/CH3O: [90, 198, 61]
+[2026-06-16 19:13:57]   S4_PdO2_110/CO: [68, 116, 46]
+[2026-06-16 19:13:57]   S4_PdO2_110/CH3O: [65, 240, 241]

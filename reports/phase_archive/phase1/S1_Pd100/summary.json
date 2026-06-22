@@ -1,0 +1,35 @@
+{
+  "surface": "S1_Pd100",
+  "adsorbates": {
+    "CO": {
+      "n_raw": 112,
+      "n_converged": 95,
+      "n_unique": 12,
+      "n_top3": 3,
+      "top3_indices": [
+        64,
+        8,
+        99
+      ],
+      "E_range_meV": 1692.3,
+      "avg_steps": 72.1,
+      "time_sec": 427.8,
+      "top1_site_type": "bridge"
+    },
+    "CH3O": {
+      "n_raw": 336,
+      "n_converged": 336,
+      "n_unique": 85,
+      "n_top3": 3,
+      "top3_indices": [
+        48,
+        59,
+        138
+      ],
+      "E_range_meV": 304.4,
+      "avg_steps": 64.1,
+      "time_sec": 1134.9,
+      "top1_site_type": "unknown"
+    }
+  }
+}

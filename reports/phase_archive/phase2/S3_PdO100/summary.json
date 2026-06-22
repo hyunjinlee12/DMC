@@ -1,0 +1,18 @@
+{
+  "surface": "S3",
+  "sdir": "S3_PdO100",
+  "n_raw": 8281,
+  "n_records": 8281,
+  "n_converged": 8247,
+  "n_unique_after_dedup": 8281,
+  "n_shortlist": 4,
+  "E_range_meV": 4201.7255658405475,
+  "time_seconds": 38552.931879520416,
+  "time_per_struct": 4.655588923985076,
+  "mace_config": {
+    "model": "mh-1",
+    "head": "oc20_usemppbe",
+    "dtype": "float64",
+    "cueq": true
+  }
+}

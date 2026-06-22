@@ -6,15 +6,24 @@ Last updated: 2026-06-16
 
 ## G2 slab status (T1.5–T1.9) — ALL CONVERGED
 
-| Slab | Model | Atoms | E (eV) | Status |
-|------|-------|-------|--------|--------|
-| S1 | Pd(100) | 80 | -434.408 | CONVERGED ✓ |
-| S2 | 1 ML PdO(101)/Pd(100) (√5×√5)R27° | 112 | -618.565 | CONVERGED ✓ |
-| S3 | PdO(100) O-term | 128 | -724.152 | CONVERGED ✓ |
-| S3b | PdO(100) PdO-term | 104 | -570.770 | CONVERGED ✓ |
-| S4 | PdO₂(110) | 144 | -788.493 | CONVERGED ✓ |
+E reported as E_sigma→0 (extrapolation to T=0 K, OUTCAR "energy(sigma->0)") for
+consistency across surfaces. Free atom max force < 0.03 eV/Å for all 5 slabs
+(EDIFFG criterion; fixed bottom-layer atoms not counted by VASP).
+
+| Slab | Model | Atoms | Top-layer | E (eV, E₀) | F_max free (eV/Å) | Status |
+|------|-------|------:|-----------|-----------:|------------------:|--------|
+| S1   | Pd(100)                            | 80  | Pd                       | -434.380 | 0.019 | CONVERGED ✓ |
+| S2   | 1 ML PdO(101)/Pd(100) (√5×√5)R27°  | 112 | mixed Pd-O (oxide)       | -618.565 | 0.026 | CONVERGED ✓ |
+| S3   | PdO(100) mixed-term (stoich.)      | 128 | 8 Pd + 16 O (O-rich)     | -724.103 | 0.023 | CONVERGED ✓ |
+| S3b  | PdO(100) Pd-term (Pd-rich)         | 104 | 8 Pd (pure)              | -570.772 | 0.028 | CONVERGED ✓ |
+| S4   | PdO₂(110) stoichiometric           | 144 | mixed Pd-O               | -788.493 | 0.025 | CONVERGED ✓ |
 
 T1.9 validation passed for all 5 surfaces (rumpling, Pd–O, coordination, dipole, termination stability) → **checkpoint B cleared**.
+
+Notes (committee re-audit 2026-06-20):
+- Termination labels clarified: S3 = stoichiometric PdO(100) with O-rich (16O/8Pd) top, S3b = Pd-rich PdO(100) with pure-Pd top. Earlier "O-term/PdO-term" labels retained in calculations/ dir names for backward compatibility.
+- S3 dipole 1.88 e·Å (다른 slab 0.02-0.26 보다 큼) — IDIPOL=3 보정 적용, downstream 모니터링.
+- E values previously mixed F vs E₀; standardized to E₀ here.
 
 ## G3 sampling status (T1.10–T1.13) — HEURISTIC CANDIDATES READY
 

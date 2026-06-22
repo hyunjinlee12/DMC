@@ -1,0 +1,33 @@
+{
+  "surface": "S3",
+  "sdir": "S3_PdO100",
+  "n_input": 8281,
+  "n_unconverged_dropped": 34,
+  "n_fragmented_dropped": 4289,
+  "n_collapsed_dropped": 0,
+  "n_bond_broken_dropped": 277,
+  "n_survivors": 3681,
+  "n_unique_after_dedup": 3614,
+  "n_shortlist_setA_band": 4,
+  "E_range_meV": 3345.8331474103034,
+  "shortlist_d_reactive": [
+    2.3725906990747885,
+    2.9883327848528873,
+    3.2605212432628896,
+    3.5243797612647056
+  ],
+  "shortlist_E_meV": [
+    3038.398049702778,
+    2096.0467835159307,
+    2075.1440131610934,
+    2080.2219857865794
+  ],
+  "drop_reasons": {
+    "fragmented": 4289,
+    "collapsed": 0,
+    "CO_bond_broken": 0,
+    "methoxy_OC_broken": 2,
+    "CH_broken": 275,
+    "unconverged": 34
+  }
+}

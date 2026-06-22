@@ -1,0 +1,33 @@
+{
+  "surface": "S4",
+  "sdir": "S4_PdO2_110",
+  "n_input": 7975,
+  "n_unconverged_dropped": 1233,
+  "n_fragmented_dropped": 3798,
+  "n_collapsed_dropped": 0,
+  "n_bond_broken_dropped": 885,
+  "n_survivors": 2059,
+  "n_unique_after_dedup": 1918,
+  "n_shortlist_setA_band": 4,
+  "E_range_meV": 5090.075423784242,
+  "shortlist_d_reactive": [
+    2.461556018827273,
+    2.959866992044063,
+    3.2343546171793798,
+    3.5654279714657573
+  ],
+  "shortlist_E_meV": [
+    2852.6945069914973,
+    511.7106961747595,
+    513.5000745632397,
+    540.2824117896898
+  ],
+  "drop_reasons": {
+    "fragmented": 3798,
+    "collapsed": 0,
+    "CO_bond_broken": 0,
+    "methoxy_OC_broken": 1,
+    "CH_broken": 884,
+    "unconverged": 1233
+  }
+}

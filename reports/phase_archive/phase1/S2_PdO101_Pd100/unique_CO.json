@@ -1,0 +1,314 @@
+[
+  {
+    "idx": 59,
+    "E": -575.272268767819,
+    "dE_rel": 0.0,
+    "converged": true,
+    "n_steps": 53,
+    "d_min": 2.013831168112259,
+    "site_type": "bridge",
+    "fingerprint": [
+      1.18
+    ]
+  },
+  {
+    "idx": 81,
+    "E": -575.2628022503067,
+    "dE_rel": 9.466517512350947,
+    "converged": true,
+    "n_steps": 51,
+    "d_min": 2.020401512629874,
+    "site_type": "bridge",
+    "fingerprint": [
+      1.18
+    ]
+  },
+  {
+    "idx": 130,
+    "E": -575.0427050548981,
+    "dE_rel": 229.56371292093536,
+    "converged": true,
+    "n_steps": 53,
+    "d_min": 1.8938226006768304,
+    "site_type": "unknown",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 154,
+    "E": -575.038307101608,
+    "dE_rel": 233.9616662110302,
+    "converged": true,
+    "n_steps": 57,
+    "d_min": 1.899321684844188,
+    "site_type": "unknown",
+    "fingerprint": [
+      1.16
+    ]
+  },
+  {
+    "idx": 27,
+    "E": -575.0334683057091,
+    "dE_rel": 238.80046210990713,
+    "converged": true,
+    "n_steps": 49,
+    "d_min": 1.8962285810019377,
+    "site_type": "unknown",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 35,
+    "E": -575.0329766498119,
+    "dE_rel": 239.29211800714256,
+    "converged": true,
+    "n_steps": 49,
+    "d_min": 1.901823100672827,
+    "site_type": "unknown",
+    "fingerprint": [
+      1.16
+    ]
+  },
+  {
+    "idx": 127,
+    "E": -575.0145466570052,
+    "dE_rel": 257.7221108138019,
+    "converged": true,
+    "n_steps": 46,
+    "d_min": 1.8989541618880061,
+    "site_type": "unknown",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 43,
+    "E": -575.0096922588878,
+    "dE_rel": 262.57650893126083,
+    "converged": true,
+    "n_steps": 44,
+    "d_min": 1.8992415621839698,
+    "site_type": "unknown",
+    "fingerprint": [
+      1.16
+    ]
+  },
+  {
+    "idx": 136,
+    "E": -574.9978174846715,
+    "dE_rel": 274.45128314752765,
+    "converged": true,
+    "n_steps": 50,
+    "d_min": 1.8971752589241087,
+    "site_type": "unknown",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 63,
+    "E": -574.9947833753238,
+    "dE_rel": 277.48539249523674,
+    "converged": true,
+    "n_steps": 54,
+    "d_min": 1.9007994453704085,
+    "site_type": "unknown",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 14,
+    "E": -574.9771533972659,
+    "dE_rel": 295.1153705531624,
+    "converged": true,
+    "n_steps": 50,
+    "d_min": 4.0297322434583185,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 135,
+    "E": -574.9742701564479,
+    "dE_rel": 297.9986113710993,
+    "converged": true,
+    "n_steps": 31,
+    "d_min": 1.9045945191825924,
+    "site_type": "unknown",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 20,
+    "E": -574.596372814827,
+    "dE_rel": 675.8959529920503,
+    "converged": true,
+    "n_steps": 47,
+    "d_min": 3.4140103390533256,
+    "site_type": "unknown",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 3,
+    "E": -574.5946792340104,
+    "dE_rel": 677.5895338086002,
+    "converged": true,
+    "n_steps": 58,
+    "d_min": 2.511951008673045,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 80,
+    "E": -574.5842333599874,
+    "dE_rel": 688.0354078316486,
+    "converged": true,
+    "n_steps": 45,
+    "d_min": 2.545872086683766,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 13,
+    "E": -574.5689098817339,
+    "dE_rel": 703.3588860850841,
+    "converged": true,
+    "n_steps": 34,
+    "d_min": 3.1458711317962913,
+    "site_type": "unknown",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 146,
+    "E": -574.5646956750408,
+    "dE_rel": 707.5730927782615,
+    "converged": true,
+    "n_steps": 41,
+    "d_min": 3.27356611886085,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 156,
+    "E": -574.5545172134811,
+    "dE_rel": 717.7515543379513,
+    "converged": true,
+    "n_steps": 45,
+    "d_min": 2.5272677815514517,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 125,
+    "E": -574.5341810253284,
+    "dE_rel": 738.0877424906203,
+    "converged": true,
+    "n_steps": 45,
+    "d_min": 3.1842144732800395,
+    "site_type": "bridge",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 160,
+    "E": -574.5247687413438,
+    "dE_rel": 747.5000264752225,
+    "converged": true,
+    "n_steps": 39,
+    "d_min": 3.543067248205099,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 142,
+    "E": -574.513955079454,
+    "dE_rel": 758.3136883649786,
+    "converged": true,
+    "n_steps": 43,
+    "d_min": 2.82541663197282,
+    "site_type": "hollow",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 49,
+    "E": -574.5049676755607,
+    "dE_rel": 767.3010922583217,
+    "converged": true,
+    "n_steps": 39,
+    "d_min": 3.1561005919149605,
+    "site_type": "bridge",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 134,
+    "E": -574.4929993620273,
+    "dE_rel": 779.2694057917515,
+    "converged": true,
+    "n_steps": 41,
+    "d_min": 3.054199769922727,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 89,
+    "E": -574.4847262262936,
+    "dE_rel": 787.542541525454,
+    "converged": true,
+    "n_steps": 42,
+    "d_min": 3.0576884043253365,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 6,
+    "E": -574.4747244912664,
+    "dE_rel": 797.5442765525713,
+    "converged": true,
+    "n_steps": 28,
+    "d_min": 2.9400546320121,
+    "site_type": "atop",
+    "fingerprint": [
+      1.15
+    ]
+  },
+  {
+    "idx": 86,
+    "E": -574.4538536898316,
+    "dE_rel": 818.4150779874244,
+    "converged": true,
+    "n_steps": 38,
+    "d_min": 3.1960273574290823,
+    "site_type": "bridge",
+    "fingerprint": [
+      1.15
+    ]
+  }
+]
