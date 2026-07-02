@@ -1,0 +1,39 @@
+#!/bin/bash
+#SBATCH --job-name=S5_Pd111_G2
+#SBATCH --partition=debug
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gres=gpu:1
+#SBATCH --output=slurm.%j.out
+#SBATCH --error=slurm.%j.err
+
+unset PYTHONPATH PYTHONHOME CONDA_PREFIX CONDA_DEFAULT_ENV
+unset CONDA_SHLVL CONDA_PROMPT_MODIFIER
+export LD_LIBRARY_PATH=""
+
+# NVHPC compiler + MPI
+export NVHPC=$HOME/nvhpc
+export NVARCH=Linux_x86_64
+export NVVERSION=25.9
+export PATH=$NVHPC/$NVARCH/$NVVERSION/compilers/bin:$PATH
+export PATH=$NVHPC/$NVARCH/$NVVERSION/comm_libs/mpi/bin:$PATH
+
+export LD_LIBRARY_PATH=$NVHPC/$NVARCH/$NVVERSION/comm_libs/mpi/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$NVHPC/$NVARCH/$NVVERSION/compilers/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$NVHPC/$NVARCH/$NVVERSION/compilers/extras/qd/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOME/fftw/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-13.0/lib64:$LD_LIBRARY_PATH
+
+export OMP_NUM_THREADS=16
+export MKL_NUM_THREADS=1
+
+VASP_BIN=/home/hyunjin/vasp.6.4.3/bin/vasp_std
+NPROCS=${SLURM_NTASKS:-1}
+echo "Job: ${SLURM_JOB_NAME} | Dir: $(pwd) | MPI ranks: ${NPROCS} | GPUs: ${SLURM_GPUS_ON_NODE:-1}"
+echo "Start: $(date)"
+
+cd $SLURM_SUBMIT_DIR
+mpirun --bind-to none -np ${NPROCS} ${VASP_BIN}
+
+echo "End: $(date)"

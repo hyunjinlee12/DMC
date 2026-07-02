@@ -37,7 +37,10 @@ DEFAULT_RADII = 0.85
 ATOM_COLORS = {
     "Pd": [0.165, 0.616, 0.561],  # #2a9d8f
     "O":  [0.941, 0.443, 0.404],  # #f07167
+    "C":  [0.18, 0.18, 0.18],
+    "H":  [0.95, 0.95, 0.95],
 }
+ATOM_RADII = {"Pd": 1.30, "O": 0.65, "C": 0.80, "H": 0.45}
 
 VIEWS = {
     "perspective": "-75x,15y,3z",
@@ -72,7 +75,8 @@ def _fix_pov_camera(pov_path, atoms, rotation):
         return
 
     is_side_or_top = rotation in ("-90x,0y,0z", "0x,0y,0z",
-                                  "-90x,0y,0z", "90x,0y,0z")
+                                  "-90x,0y,0z", "90x,0y,0z",
+                                  "-90x,-90y,0z", "-90x,90y,0z")
     angle = 1.0 if is_side_or_top else 20.0
 
     all_xy = atom_coords[:, :2]
@@ -150,11 +154,12 @@ def render(atoms, out_png, rotation=DEFAULT_ROTATION, width=DEFAULT_WIDTH,
 
     syms = atoms.get_chemical_symbols()
     colors = [ATOM_COLORS.get(s, [0.5, 0.5, 0.5]) for s in syms]
+    radii = [ATOM_RADII.get(s, DEFAULT_RADII) for s in syms]
 
     write_pov(
         str(pov_path), atoms,
         rotation=rotation,
-        radii=DEFAULT_RADII,
+        radii=radii,
         show_unit_cell=2 if show_cell else 0,
         colors=colors,
         povray_settings={

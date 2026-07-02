@@ -3088,9 +3088,9 @@
   },
   {
     "idx": 396,
-    "E": -697.7171591741482,
+    "E": -697.4976928510097,
     "dE_rel": 909.8699970015787,
-    "converged": false,
+    "converged": true,
     "n_steps": 200,
     "d_min": 2.160941568500711,
     "site_type": "unknown",

@@ -44,7 +44,7 @@ BUDGET = {
     'S2':  {'CO': 5, 'CH3O': 5, 'coads': 5},
     'S3':  {'CO': 3, 'CH3O': 3, 'coads': 3},
     'S3b': {'CO': 3, 'CH3O': 3, 'coads': 3},
-    'S4':  {'CO': 3, 'CH3O': 3, 'coads': 0},
+    'S4':  {'CO': 3, 'CH3O': 3, 'coads': 3},   # 가이드 §P1-D: 3-5. SetA band + intact pool에 1077 후보 있음.
 }
 
 PD_BOND_CUTOFF = 2.60

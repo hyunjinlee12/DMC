@@ -133,10 +133,10 @@
   },
   {
     "idx": 65,
-    "E": -545.6793599467246,
+    "E": -547.4811105188309,
     "dE_rel": 1949.5953637959929,
-    "converged": false,
-    "n_steps": 200,
+    "converged": true,
+    "n_steps": 208,
     "d_min": 2.68928614737198,
     "site_type": "atop",
     "fingerprint": [
@@ -145,10 +145,10 @@
   },
   {
     "idx": 38,
-    "E": -545.533363115179,
+    "E": -547.5008226343624,
     "dE_rel": 2095.5921953416237,
-    "converged": false,
-    "n_steps": 200,
+    "converged": true,
+    "n_steps": 208,
     "d_min": 2.8498064520514284,
     "site_type": "atop",
     "fingerprint": [
@@ -157,10 +157,10 @@
   },
   {
     "idx": 43,
-    "E": -545.4546340183309,
+    "E": -547.4975944128475,
     "dE_rel": 2174.3212921896884,
-    "converged": false,
-    "n_steps": 200,
+    "converged": true,
+    "n_steps": 206,
     "d_min": 3.4183866264236813,
     "site_type": "atop",
     "fingerprint": [
@@ -169,10 +169,10 @@
   },
   {
     "idx": 74,
-    "E": -545.4514718371137,
+    "E": -547.4448614646402,
     "dE_rel": 2177.4834734069373,
-    "converged": false,
-    "n_steps": 200,
+    "converged": true,
+    "n_steps": 201,
     "d_min": 2.999469627724286,
     "site_type": "atop",
     "fingerprint": [
@@ -181,10 +181,10 @@
   },
   {
     "idx": 62,
-    "E": -545.3964424831834,
+    "E": -547.480912735217,
     "dE_rel": 2232.5128273372457,
-    "converged": false,
-    "n_steps": 200,
+    "converged": true,
+    "n_steps": 205,
     "d_min": 3.5903817447696467,
     "site_type": "unknown",
     "fingerprint": [
@@ -193,10 +193,10 @@
   },
   {
     "idx": 44,
-    "E": -545.3746839558268,
+    "E": -547.4965629682176,
     "dE_rel": 2254.2713546938558,
-    "converged": false,
-    "n_steps": 200,
+    "converged": true,
+    "n_steps": 205,
     "d_min": 3.0451378541712955,
     "site_type": "atop",
     "fingerprint": [
@@ -205,10 +205,10 @@
   },
   {
     "idx": 42,
-    "E": -545.3149810585674,
+    "E": -547.4977760277171,
     "dE_rel": 2313.9742519532547,
-    "converged": false,
-    "n_steps": 200,
+    "converged": true,
+    "n_steps": 207,
     "d_min": 3.316446496850049,
     "site_type": "atop",
     "fingerprint": [
