@@ -5,6 +5,16 @@ A terminal-based multi-agent Claude Code setup, adapted from `materials-ml-kit` 
 oxidation of Pd {100} (Pd⁰ → Pd²⁺ → Pd⁴⁺) promote or suppress electrochemical DMC
 formation? See **`PROJECT.md`** for the brief and **`USAGE.md`** for the walkthrough.
 
+## Current status
+- **G1 (bulk)** ✅ passed · **G2 (slab)** ✅ passed — 5 surfaces validated (S1 Pd(100),
+  S2 PdO(101)/Pd(100), S3 PdO(100), S3b PdO(100) PdO-term, S4 PdO2(110)).
+- **G3 (adsorption), in progress**: MLIP (MACE) screening done on all 5 surfaces ×
+  3 adsorbate types (CO*, CH₃O*, co-ads) → top-5 low-energy & site-diverse candidates
+  per surface/adsorbate shortlisted (70 total, `T1_16_DFT_L2`).
+  DFT (VASPsol) validation of the shortlist is underway — S1 Pd(100) CO* done (5/5);
+  remaining 65 candidates queued.
+- G3 gate (descriptor map + Case A–D) not yet reached.
+
 ## The team (strict hierarchy — everything routes through the Director)
 
 ```

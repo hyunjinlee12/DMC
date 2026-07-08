@@ -22,6 +22,7 @@ __pycache__/
 # Claude Code internal
 .claude/projects/
 .claude/settings.local.json
+CLAUDE.local.md
 
 # Large ASE trajectory dumps (regeneratable from pipeline scripts)
 # (Per-surface SetA/SetB/SetTS/side/rejected are hundreds of MB; keep summary.json instead.)
