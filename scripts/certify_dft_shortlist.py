@@ -24,7 +24,7 @@ from ase.constraints import FixAtoms
 
 ROOT = Path('/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc')
 G3 = ROOT / 'calculations/G3_adsorption'
-SHORTLIST_DIR = G3 / 'DFT_shortlist'
+SHORTLIST_DIR = G3 / 'DFT_shortlist_v1'
 OUT = ROOT / 'reports/G3/DFT_certification'
 OUT.mkdir(parents=True, exist_ok=True)
 

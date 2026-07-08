@@ -20,7 +20,7 @@ from pathlib import Path
 
 ROOT = Path('/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc')
 G2 = ROOT / 'calculations/G2_slab'
-OUT = ROOT / 'calculations/G3_adsorption/DFT_shortlist/S4/single_CH3O'
+OUT = ROOT / 'calculations/G3_adsorption/DFT_shortlist_v1/S4/single_CH3O'
 
 def build_ch3o(o_pos, axis_up=np.array([0, 0, 1])):
     """Build CH3O fragment with O at o_pos, C above, 3 H rotated symmetrically.

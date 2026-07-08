@@ -1,6 +1,6 @@
 """Set up T1.16 Level 1 (vacuum) DFT jobs for 47 shortlist candidates.
 
-For each candidate POSCAR in DFT_shortlist/{surface}/{kind}/:
+For each candidate POSCAR in DFT_shortlist_v1/{surface}/{kind}/:
   1. Create job directory: calculations/T1_16_DFT_L1/{surface}/{kind}/{candidate_name}/
   2. Copy POSCAR there
   3. Copy INCAR from G2 slab same surface (ISMEAR/SIGMA matches surface)
@@ -21,7 +21,7 @@ from ase.io import read
 
 ROOT = Path('/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc')
 G2 = ROOT / 'calculations/G2_slab'
-SHORTLIST = ROOT / 'calculations/G3_adsorption/DFT_shortlist'
+SHORTLIST = ROOT / 'calculations/G3_adsorption/DFT_shortlist_v1'
 T1_16 = ROOT / 'calculations/T1_16_DFT_L1'
 POTCAR_LIB = Path('/home/hyunjin/POTENTIAL/potpaw_PBE')
 SUBMIT_SCRIPT = ROOT / 'scripts/submit_vasp_gpu.sh'

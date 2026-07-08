@@ -14,7 +14,7 @@ Sources:
                             (commit Phase 3 refilter showed S4 co-ads unviable)
 
 Output structure:
-  calculations/G3_adsorption/DFT_shortlist/
+  calculations/G3_adsorption/DFT_shortlist_v1/
     {surface}/
       single_CO/
         00_CO_phase1_rank0.vasp        (POSCAR)
@@ -36,7 +36,7 @@ from ase.constraints import FixAtoms
 ROOT = Path('/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc')
 G3 = ROOT / 'calculations/G3_adsorption'
 G2 = ROOT / 'calculations/G2_slab'
-OUT = G3 / 'DFT_shortlist'
+OUT = G3 / 'DFT_shortlist_v1'
 if OUT.exists():
     shutil.rmtree(OUT)
 OUT.mkdir()

@@ -179,7 +179,7 @@ doc.add_paragraph(
 )
 
 # Shortlist table
-sl_global = json.load(open(ROOT/'calculations/G3_adsorption/DFT_shortlist/shortlist_global.json'))
+sl_global = json.load(open(ROOT/'calculations/G3_adsorption/DFT_shortlist_v1/shortlist_global.json'))
 budget = {}
 for e in sl_global:
     s = e['surface']; k = e['kind']

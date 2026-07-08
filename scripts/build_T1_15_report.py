@@ -321,7 +321,7 @@ def fig06_committee():
 # ======================================================================
 def fig07_top1_chemistry():
     """Plot d_min for top-3 single CO and CH3O per surface."""
-    dft = json.load(open(G3/'DFT_shortlist/shortlist_global.json'))
+    dft = json.load(open(G3/'DFT_shortlist_v1/shortlist_global.json'))
     d_co = {sid: [] for sid in SURFACES}
     d_ch = {sid: [] for sid in SURFACES}
     for e in dft:
@@ -384,7 +384,7 @@ def fig08_d_reactive():
 def fig09_dft_shortlist():
     co = []; ch = []; coads = []
     for sid in SURFACES:
-        sl = json.load(open(G3/'DFT_shortlist'/sid/'shortlist.json'))
+        sl = json.load(open(G3/'DFT_shortlist_v1'/sid/'shortlist.json'))
         co.append(sum(1 for e in sl if e['kind']=='single_CO'))
         ch.append(sum(1 for e in sl if e['kind']=='single_CH3O'))
         coads.append(sum(1 for e in sl if e['kind']=='coads_SetA'))
@@ -449,7 +449,7 @@ def fig11_top_structures():
     for i, sid in enumerate(SURFACES):
         for j, kind in enumerate(['single_CO', 'single_CH3O', 'coads_SetA']):
             ax = axes[i, j]
-            sub = G3/'DFT_shortlist'/sid/kind
+            sub = G3/'DFT_shortlist_v1'/sid/kind
             if not sub.exists():
                 ax.axis('off')
                 ax.text(0.5, 0.5, '— (unavailable)', ha='center', va='center', transform=ax.transAxes, fontsize=11, color='red')

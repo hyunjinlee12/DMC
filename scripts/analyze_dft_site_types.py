@@ -21,7 +21,7 @@ from ase.io import read
 from collections import Counter
 
 ROOT = Path('/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc')
-SHORTLIST = ROOT / 'calculations/G3_adsorption/DFT_shortlist'
+SHORTLIST = ROOT / 'calculations/G3_adsorption/DFT_shortlist_v1'
 OUT = ROOT / 'reports/G3/DFT_certification'
 OUT.mkdir(parents=True, exist_ok=True)
 
