@@ -72,8 +72,12 @@ for p in picks:
     # INCAR
     incar = INCAR_METAL if sid == 'S1' else INCAR_OXIDE
     (dest/'INCAR').write_text(incar)
-    # POTCAR (sibling from T1_16 DFT L1)
-    shutil.copy(POTCAR_SRC[sid], dest/'POTCAR')
+    # POTCAR: build from library matching POSCAR species order (Pd -> Pd_pv).
+    # NOTE: do NOT copy the CO-only sibling POTCAR — CH3O/coads contain H.
+    LIB = Path('/home/hyunjin/POTENTIAL/potpaw_PBE')
+    FOLDER = {'C':'C','H':'H','O':'O','Pd':'Pd_pv'}
+    species = (dest/'POSCAR').read_text().splitlines()[5].split()
+    (dest/'POTCAR').write_text(''.join((LIB/FOLDER[s]/'POTCAR').read_text() for s in species))
     # submit script
     sub = SUBMIT_TEMPLATE.read_text()
     sub = sub.replace('vasp_%j.out', 'slurm.%j.out').replace('vasp_%j.err', 'slurm.%j.err')
