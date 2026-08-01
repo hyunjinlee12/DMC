@@ -1,28 +1,28 @@
-sid,ads,rank,idx,E_MLIP,dE_from_global,site,region,n_Pd_nbr,n_O_nbr,d_anchor_surf,height,d_CO_bond,d_CH3O_bond,d_reactive,d_bin,site_combo
-S1,CO,2,43,-405.6726,0.0464,4f_4Pd0O,metal,4,0,2.154,0.989,1.22,,,,
-S1,CH3O,1,283,-415.871,0.0024,atop_Pd,metal,1,0,1.987,1.972,,1.394,,,
-S2,CO,2,14,-574.9772,0.2951,br_PdPd,metal,2,0,2.02,0.521,1.178,,,,
-S2,CH3O,2,217,-585.614,0.2877,br_PdO,interface,1,1,2.032,1.314,,1.393,,,
-S2,CH3O,3,496,-585.5794,0.3223,atop_O,oxide,0,1,2.25,2.174,,1.369,,,
-S3,CO,4,76,-687.845,0.105,physi,physi,0,0,3.196,2.694,1.148,,,,
-S3,CH3O,2,395,-698.5978,0.0292,physi,physi,0,0,2.632,2.258,,1.35,,,
-S3,CH3O,3,385,-698.2592,0.3678,br_OO,oxide,0,2,2.523,2.011,,1.352,,,
-S3b,CO,1,84,-547.6238,0.0051,physi,physi,0,0,3.59,3.127,1.167,,,,
-S3b,CO,2,6,-547.495,0.134,br_PdPd,metal,2,0,1.918,1.129,1.19,,,,
-S4,CH3O,2,383,-767.2514,0.0063,physi,physi,0,0,2.809,1.844,,1.345,,,
-S4,CH3O,3,329,-767.2157,0.0419,br_PdO,interface,1,1,1.998,0.827,,1.414,,,
-S1,coads,1,487,-432.0193,0.0318,,,,,,,1.188,1.429,2.989,reactive-close,br_PdPd+br_PdPd
-S1,coads,2,4021,-432.0405,0.0107,,,,,,,1.189,1.432,5.402,thermodynamic,br_PdPd+br_PdPd
-S1,coads,3,1696,-432.0484,0.0028,,,,,,,1.188,1.435,4.183,separated,br_PdPd+br_PdPd
-S1,coads,4,3255,-432.0029,0.0483,,,,,,,1.22,1.433,5.06,thermodynamic,4f_4Pd0O+br_PdPd
-S2,coads,1,8079,-600.7868,0.4414,,,,,,,1.152,1.411,2.858,reactive-close,atop_Pd+atop_Pd
-S2,coads,2,3633,-600.9994,0.2289,,,,,,,1.179,1.412,5.186,thermodynamic,br_PdPd+atop_Pd
-S2,coads,3,9507,-601.0274,0.2008,,,,,,,1.178,1.416,4.128,separated,br_PdPd+atop_Pd
-S2,coads,4,11165,-601.0096,0.2187,,,,,,,1.155,1.435,4.342,separated,atop_Pd+br_PdPd
-S3,coads,1,3481,-713.2831,0.0414,,,,,,,1.151,1.415,2.988,reactive-close,atop_Pd+atop_Pd
-S3,coads,2,5161,-713.3037,0.0209,,,,,,,1.15,1.415,3.249,reactive-loose,atop_Pd+atop_Pd
-S3,coads,3,4593,-713.2554,0.0691,,,,,,,1.148,1.414,4.055,separated,physi+atop_Pd
-S3b,coads,1,2051,-574.1964,0.5542,,,,,,,1.182,1.379,2.895,reactive-close,br_PdPd+atop_Pd
-S3b,coads,2,2754,-574.6289,0.1217,,,,,,,1.189,1.418,3.663,reactive-loose,br_PdPd+br_PdPd
-S3b,coads,3,2484,-574.7443,0.0063,,,,,,,1.191,1.435,4.988,separated,br_PdPd+br_PdPd
-S3b,coads,4,2841,-574.6171,0.1335,,,,,,,1.166,1.435,5.009,thermodynamic,atop_Pd+br_PdPd
+priority,sid,ads,idx,E_MLIP,dE_from_global,site,region,n_Pd_nbr,n_O_nbr,d_anchor_surf,d_CO_bond,d_CH3O_bond,d_reactive,d_bin,site_combo,xy_dist_to_nearest_v4,nearest_v4_idx,selection_reason,neighbors_within_3.5A
+MUST,S3,coads,3481,-713.2831,0.0414,,,CO:1/CH3O:1,CO:0/CH3O:0,2.465,1.151,1.415,2.988,reactive-close,atop_Pd+atop_Pd,0.21,2408,distance-bin gap (reactive) not covered by v4,C_CO:[Pd:2.47;O:3.07;O:3.08;O:3.12;O:3.12] O_CH3:[Pd:2.00;O:2.75;O:2.76;O:2.86;O:2.87]
+MUST,S3,coads,5161,-713.3037,0.0209,,,CO:1/CH3O:1,CO:0/CH3O:0,2.489,1.15,1.415,3.249,reactive-loose,atop_Pd+atop_Pd,0.386,2408,distance-bin gap (reactive) not covered by v4,C_CO:[Pd:2.49;O:2.98;O:3.08;O:3.15;O:3.25] O_CH3:[Pd:2.00;O:2.80;O:2.81;O:2.82;O:2.84]
+MUST,S3b,coads,2051,-574.1964,0.5542,,,CO:2/CH3O:1,CO:0/CH3O:0,1.893,1.182,1.379,2.895,reactive-close,br_PdPd+atop_Pd,3.473,3309,distance-bin gap (reactive) not covered by v4,C_CO:[Pd:1.89;Pd:2.11;O:3.18;O:3.26;Pd:3.31] O_CH3:[Pd:2.01;Pd:2.97]
+MUST,S3b,coads,2754,-574.6289,0.1217,,,CO:2/CH3O:2,CO:0/CH3O:0,1.93,1.189,1.418,3.663,reactive-loose,br_PdPd+br_PdPd,4.138,2461,distance-bin gap (reactive) not covered by v4,C_CO:[Pd:1.93;Pd:1.98] O_CH3:[Pd:2.01;Pd:2.18;O:3.25]
+RECOMMENDED,S1,coads,487,-432.0193,0.0318,,,CO:2/CH3O:2,CO:0/CH3O:0,1.976,1.188,1.429,2.989,reactive-close,br_PdPd+br_PdPd,0.596,767,distinct-site br_PdPd+br_PdPd + reactive-close,C_CO:[Pd:1.98;Pd:1.98;Pd:3.18;Pd:3.19] O_CH3:[Pd:2.08;Pd:2.10;Pd:3.37;Pd:3.42]
+RECOMMENDED,S1,coads,4021,-432.0405,0.0107,,,CO:2/CH3O:2,CO:0/CH3O:0,1.971,1.189,1.432,5.402,thermodynamic,br_PdPd+br_PdPd,1.974,4132,thermodynamic representative,C_CO:[Pd:1.97;Pd:1.97;Pd:3.40;Pd:3.41;Pd:3.44;Pd:3.45] O_CH3:[Pd:2.10;Pd:2.11;Pd:3.41;Pd:3.42]
+RECOMMENDED,S2,coads,3633,-600.9994,0.2289,,,CO:2/CH3O:1,CO:0/CH3O:0,2.013,1.179,1.412,5.186,thermodynamic,br_PdPd+atop_Pd,2.943,8447,thermodynamic representative,C_CO:[Pd:2.01;Pd:2.03;O:2.73;O:2.74;O:2.89;O:2.94;Pd:3.17] O_CH3:[Pd:2.02;O:2.70;O:2.81;Pd:3.19;Pd:3.30]
+RECOMMENDED,S2,coads,8079,-600.7868,0.4414,,,CO:1/CH3O:1,CO:0/CH3O:0,1.899,1.152,1.411,2.858,reactive-close,atop_Pd+atop_Pd,1.361,8447,distinct-site atop_Pd+atop_Pd + reactive-close,C_CO:[Pd:1.90;O:2.68;O:2.83;Pd:3.49] O_CH3:[Pd:2.03;O:2.73;O:2.79;Pd:3.21;Pd:3.23]
+REVIEW-NEEDED,S1,coads,1696,-432.0484,0.0028,,,CO:2/CH3O:2,CO:0/CH3O:0,1.971,1.188,1.435,4.183,separated,br_PdPd+br_PdPd,0.394,76,separated secondary pick / combo br_PdPd+br_PdPd — not a reactive rep,C_CO:[Pd:1.97;Pd:1.97;Pd:3.38;Pd:3.40;Pd:3.49;Pd:3.50] O_CH3:[Pd:2.10;Pd:2.11;Pd:3.32;Pd:3.40]
+REVIEW-NEEDED,S1,coads,3255,-432.0029,0.0483,,,CO:4/CH3O:2,CO:0/CH3O:0,2.162,1.22,1.433,5.06,thermodynamic,4f_4Pd0O+br_PdPd,1.338,4132,thermodynamic secondary pick / combo 4f_4Pd0O+br_PdPd — not a reactive rep,C_CO:[Pd:2.16;Pd:2.17;Pd:2.18;Pd:2.18;Pd:3.09] O_CH3:[Pd:2.10;Pd:2.11;Pd:3.44;Pd:3.45]
+REVIEW-NEEDED,S2,coads,9507,-601.0274,0.2008,,,CO:2/CH3O:1,CO:0/CH3O:0,2.011,1.178,1.416,4.128,separated,br_PdPd+atop_Pd,0.087,471,separated secondary pick / combo br_PdPd+atop_Pd — not a reactive rep,C_CO:[Pd:2.01;Pd:2.03;O:2.73;O:2.73;O:2.91;O:2.93;Pd:3.18] O_CH3:[Pd:2.01;O:2.70;O:2.87;Pd:3.19;Pd:3.26]
+REVIEW-NEEDED,S2,coads,11165,-601.0096,0.2187,,,CO:1/CH3O:2,CO:0/CH3O:0,1.896,1.155,1.435,4.342,separated,atop_Pd+br_PdPd,1.373,8447,separated secondary pick / combo atop_Pd+br_PdPd — not a reactive rep,C_CO:[Pd:1.90;O:2.70;O:2.82;Pd:3.46;Pd:3.49] O_CH3:[Pd:2.12;Pd:2.15;O:2.76;O:2.80;O:2.86;O:2.89;Pd:2.91]
+REVIEW-NEEDED,S3,coads,4593,-713.2554,0.0691,,,CO:0/CH3O:1,CO:0/CH3O:0,3.267,1.148,1.414,4.055,separated,physi+atop_Pd,3.458,2408,separated secondary pick / combo physi+atop_Pd — not a reactive rep,C_CO:[O:3.27;O:3.43] O_CH3:[Pd:2.00;O:2.79;O:2.82;O:2.83;O:2.86]
+REVIEW-NEEDED,S3b,coads,2484,-574.7443,0.0063,,,CO:2/CH3O:2,CO:0/CH3O:0,1.92,1.191,1.435,4.988,separated,br_PdPd+br_PdPd,0.165,2461,separated secondary pick / combo br_PdPd+br_PdPd — not a reactive rep,C_CO:[Pd:1.92;Pd:2.00;O:3.29] O_CH3:[Pd:2.08;Pd:2.12]
+REVIEW-NEEDED,S3b,coads,2841,-574.6171,0.1335,,,CO:1/CH3O:2,CO:0/CH3O:0,1.81,1.166,1.435,5.009,thermodynamic,atop_Pd+br_PdPd,1.268,2151,thermodynamic secondary pick / combo atop_Pd+br_PdPd — not a reactive rep,C_CO:[Pd:1.81;Pd:3.32;Pd:3.40] O_CH3:[Pd:2.10;Pd:2.11]
+OPTIONAL,S1,CH3O,283,-415.871,0.0024,atop_Pd,metal,1,0,1.987,,1.394,,,,1.467,105,single-ads atop_Pd/metal diversity,Pd:1.99;Pd:3.31;Pd:3.35
+OPTIONAL,S1,CO,43,-405.6726,0.0464,4f_4Pd0O,metal,4,0,2.154,1.22,,,,,3.189,30,single-ads 4f_4Pd0O/metal diversity,Pd:2.15;Pd:2.17;Pd:2.18;Pd:2.18;Pd:3.09
+OPTIONAL,S2,CH3O,217,-585.614,0.2877,br_PdO,interface,1,1,2.032,,1.393,,,,1.42,62,single-ads br_PdO/interface diversity,Pd:2.03;O:2.59;O:2.98
+OPTIONAL,S2,CH3O,496,-585.5794,0.3223,atop_O,oxide,0,1,2.25,,1.369,,,,2.412,204,single-ads atop_O/oxide diversity,O:2.25;Pd:3.33
+OPTIONAL,S2,CO,14,-574.9772,0.2951,br_PdPd,metal,2,0,2.02,1.178,,,,,1.411,59,single-ads br_PdPd/metal diversity,Pd:2.02;Pd:2.02;O:2.71;O:2.73;O:2.87;O:2.95;Pd:3.24;Pd:3.47
+OPTIONAL,S3,CH3O,385,-698.2592,0.3678,br_OO,oxide,0,2,2.523,,1.352,,,,3.085,143,single-ads br_OO/oxide diversity,O:2.52;O:2.53;Pd:3.48
+OPTIONAL,S3,CH3O,395,-698.5978,0.0292,physi,physi,0,0,2.632,,1.35,,,,3.165,143,single-ads physi/physi diversity,O:2.63;O:2.91
+OPTIONAL,S3,CO,76,-687.845,0.105,physi,physi,0,0,3.196,1.148,,,,,2.587,20,single-ads physi/physi diversity,O:3.20;O:3.25
+OPTIONAL,S3b,CO,6,-547.495,0.134,br_PdPd,metal,2,0,1.918,1.19,,,,,1.144,38,single-ads br_PdPd/metal diversity,Pd:1.92;Pd:2.01;O:3.32;O:3.44
+OPTIONAL,S3b,CO,84,-547.6238,0.0051,physi,physi,0,0,3.59,1.167,,,,,1.239,56,single-ads physi/physi diversity,
+OPTIONAL,S4,CH3O,329,-767.2157,0.0419,br_PdO,interface,1,1,1.998,,1.414,,,,2.891,240,single-ads br_PdO/interface diversity,Pd:2.00;O:2.55;O:2.72;O:2.94;O:3.01;O:3.36;O:3.45
+OPTIONAL,S4,CH3O,383,-767.2514,0.0063,physi,physi,0,0,2.809,,1.345,,,,2.242,211,single-ads physi/physi diversity,O:2.81;O:2.95;O:3.25
