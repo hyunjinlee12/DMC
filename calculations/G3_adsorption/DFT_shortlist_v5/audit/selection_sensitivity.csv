@@ -1,0 +1,17 @@
+sid,ads,idx,priority,E_MLIP,E_bind_MLIP,dE_from_global,d_reactive,site@2.4A,site@2.6A,site@2.8A,combo@2.4A,combo@2.6A,combo@2.8A,bin@2.8-3.8A,bin@3.0-4.0A,bin@3.2-4.2A,label_stable,bin_stable,robustness
+S1,coads,487,RECOMMENDED,-432.0193,-3.9435,0.0318,2.989,,,,br_PdPd+br_PdPd,br_PdPd+br_PdPd,br_PdPd+br_PdPd,reactive-loose,reactive-close,reactive-close,yes,no,threshold-sensitive-bin
+S1,coads,4021,RECOMMENDED,-432.0405,-3.9647,0.0107,5.402,,,,br_PdPd+br_PdPd,br_PdPd+br_PdPd,br_PdPd+br_PdPd,thermodynamic,thermodynamic,thermodynamic,yes,yes,robust
+S2,coads,3633,RECOMMENDED,-600.9994,-2.5332,0.2289,5.186,,,,br_PdPd+atop_Pd,br_PdPd+atop_Pd,4f_2Pd2O+br_PdO,thermodynamic,thermodynamic,thermodynamic,no,yes,threshold-sensitive-label
+S2,coads,8079,RECOMMENDED,-600.7868,-2.3206,0.4414,2.858,,,,atop_Pd+atop_Pd,atop_Pd+atop_Pd,br_PdO+h3_1Pd2O,reactive-loose,reactive-close,reactive-close,no,no,threshold-sensitive-label
+S3,coads,3481,MUST,-713.2831,-1.5096,0.0414,2.988,,,,physi+atop_Pd,atop_Pd+atop_Pd,atop_Pd+h3_1Pd2O,reactive-loose,reactive-close,reactive-close,no,no,threshold-sensitive-label
+S3,coads,5161,MUST,-713.3037,-1.5301,0.0209,3.249,,,,physi+atop_Pd,atop_Pd+atop_Pd,atop_Pd+atop_Pd,reactive-loose,reactive-loose,reactive-loose,no,yes,threshold-sensitive-label
+S3b,coads,2051,MUST-diagnostic,-574.1964,-4.6508,0.5542,2.895,,,,br_PdPd+atop_Pd,br_PdPd+atop_Pd,br_PdPd+atop_Pd,reactive-loose,reactive-close,reactive-close,yes,no,threshold-sensitive-bin
+S3b,coads,2754,MUST,-574.6289,-5.0833,0.1217,3.663,,,,br_PdPd+br_PdPd,br_PdPd+br_PdPd,br_PdPd+br_PdPd,reactive-loose,reactive-loose,reactive-loose,yes,yes,robust
+S1,CO,43,OPTIONAL,-405.6726,-1.7517,0.0464,,4f_4Pd0O,4f_4Pd0O,4f_4Pd0O,,,,,,,yes,N/A,robust
+S1,CH3O,283,OPTIONAL,-415.871,-2.1591,0.0024,,atop_Pd,atop_Pd,atop_Pd,,,,,,,yes,N/A,robust
+S2,CH3O,217,OPTIONAL,-585.614,-1.5116,0.2877,,atop_Pd,br_PdO,br_PdO,,,,,,,no,N/A,threshold-sensitive-label
+S2,CH3O,496,OPTIONAL,-585.5794,-1.4771,0.3223,,atop_O,atop_O,atop_O,,,,,,,yes,N/A,robust
+S3,CH3O,395,OPTIONAL,-698.5978,-1.1882,0.0292,,physi,physi,atop_O,,,,,,,no,N/A,threshold-sensitive-label
+S3b,CO,6,OPTIONAL,-547.495,-2.1043,0.134,,br_PdPd,br_PdPd,br_PdPd,,,,,,,yes,N/A,robust
+S4,CH3O,329,OPTIONAL,-767.2157,-4.1532,0.0419,,atop_Pd,br_PdO,h3_1Pd2O,,,,,,,no,N/A,threshold-sensitive-label
+S4,CH3O,383,OPTIONAL,-767.2514,-4.1888,0.0063,,physi,physi,physi,,,,,,,yes,N/A,robust

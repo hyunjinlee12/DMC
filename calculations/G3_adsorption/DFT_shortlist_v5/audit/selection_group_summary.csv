@@ -1,0 +1,15 @@
+sid,ads,raw,unique_MLIP,converged,valid_final,n_sites_distinct,top_sites,n_distance_bins,distance_bins,E_min,E_max,dE_span,E_bind_min,E_bind_max,n_v4_picks,n_v5_new_picks,total_dft_planned
+S1,CO,112,12,12,12,3,atop_Pd:6;br_PdPd:5;4f_4Pd0O:1,,,-405.719,-405.3873,0.332,-1.7981,-1.4663,5,1,6
+S1,CH3O,336,85,85,85,2,br_PdPd:63;atop_Pd:22,,,-415.8734,-415.569,0.304,-2.1614,-1.857,5,1,6
+S1,coads,6338,1985,1985,1985,9,br_PdPd+br_PdPd:1005;br_PdPd+atop_Pd:462;atop_Pd+br_PdPd:345;atop_Pd+atop_Pd:99;4f_4Pd0O+br_PdPd:30,4,reactive-loose:1014;separated:842;thermodynamic:111;reactive-close:18,-432.0512,-431.288,0.763,-3.9753,-3.2122,5,2,7
+S2,CO,166,26,26,26,3,physi:12;atop_Pd:10;br_PdPd:4,,,-575.2723,-574.4539,0.818,-0.9609,-0.1425,5,0,5
+S2,CH3O,498,321,321,311,4,atop_Pd:249;br_PdPd:55;br_PdO:4;atop_O:3,,,-585.9017,-584.2483,1.653,-1.7994,-0.1459,5,2,7
+S2,coads,11598,5524,5524,5524,24,physi+atop_Pd:2124;atop_Pd+atop_Pd:1430;physi+br_PdPd:634;br_PdPd+atop_Pd:425;atop_Pd+br_PdPd:331,5,reactive-loose:2373;separated:1725;thermodynamic:735;reactive-close:531;product-like:160,-601.6655,-598.8018,2.864,-3.1993,-0.3356,5,2,7
+S3,CO,135,10,10,10,2,atop_Pd:6;physi:4,,,-687.9499,-687.8242,0.126,-0.3313,-0.2055,5,0,5
+S3,CH3O,405,172,172,168,4,atop_Pd:136;atop_O:16;physi:14;br_OO:2,,,-698.627,-697.4468,1.18,-1.2174,-0.0371,5,1,6
+S3,coads,8281,3614,3614,3614,9,physi+atop_Pd:2188;atop_Pd+atop_Pd:824;physi+atop_O:231;atop_Pd+physi:127;atop_Pd+atop_O:114,5,reactive-loose:2073;separated:730;thermodynamic:462;reactive-close:219;product-like:130,-715.3792,-712.0334,3.346,-3.6057,-0.2598,5,2,7
+S3b,CO,87,18,18,18,3,atop_Pd:13;br_PdPd:3;physi:2,,,-547.629,-547.4448,0.184,-2.2383,-2.0541,5,1,6
+S3b,CH3O,261,189,189,189,2,atop_Pd:125;br_PdPd:64,,,-558.1287,-557.6576,0.471,-2.947,-2.4759,5,0,5
+S3b,coads,3764,1581,1581,1581,5,atop_Pd+atop_Pd:839;br_PdPd+br_PdPd:266;br_PdPd+atop_Pd:246;atop_Pd+br_PdPd:229;atop_Pd+physi:1,5,separated:600;reactive-loose:549;thermodynamic:317;reactive-close:113;product-like:2,-574.7506,-573.3434,1.407,-5.205,-3.7979,5,2,7
+S4,CO,129,52,50,26,3,physi:23;br_PdO:2;atop_Pd:1,,,-756.5792,-753.4402,3.139,-3.3077,-0.1686,5,0,5
+S4,CH3O,387,291,290,165,4,atop_Pd:120;atop_O:32;br_PdO:9;physi:4,,,-767.2577,-763.7447,3.513,-4.1951,-0.6822,5,2,7
