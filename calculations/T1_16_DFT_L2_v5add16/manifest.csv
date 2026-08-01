@@ -1,0 +1,87 @@
+origin,sid,ads,idx,rank,E_MLIP,dE_from_global,site,site_combo,region,d_reactive,d_bin,priority,selection_reason,status,dir
+v4-existing,S1,CO,64,0,-405.7190491925288,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),DONE,calculations/T1_16_DFT_L2/S1/CO/00_CO_idx00064
+v4-existing,S1,CO,3,1,-405.7177579793188,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),DONE,calculations/T1_16_DFT_L2/S1/CO/01_CO_idx00003
+v4-existing,S1,CO,8,2,-405.7147971253136,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),DONE,calculations/T1_16_DFT_L2/S1/CO/02_CO_idx00008
+v4-existing,S1,CO,28,3,-405.71289233710115,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),DONE,calculations/T1_16_DFT_L2/S1/CO/03_CO_idx00028
+v4-existing,S1,CO,30,4,-405.7124660696776,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),DONE,calculations/T1_16_DFT_L2/S1/CO/04_CO_idx00030
+v4-existing,S1,CH3O,48,0,-415.87339027332945,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S1/CH3O/00_CH3O_idx00048
+v4-existing,S1,CH3O,59,1,-415.87225263618353,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S1/CH3O/01_CH3O_idx00059
+v4-existing,S1,CH3O,138,2,-415.8718829277795,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S1/CH3O/02_CH3O_idx00138
+v4-existing,S1,CH3O,105,3,-415.8712321391327,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S1/CH3O/03_CH3O_idx00105
+v4-existing,S1,CH3O,37,4,-415.868882330609,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S1/CH3O/04_CH3O_idx00037
+v4-existing,S2,CO,59,0,-575.272268767819,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/CO/00_CO_idx00059
+v4-existing,S2,CO,81,1,-575.2628022503067,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/CO/01_CO_idx00081
+v4-existing,S2,CO,130,2,-575.0427050548981,,physi,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/CO/02_CO_idx00130
+v4-existing,S2,CO,154,3,-575.038307101608,,physi,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/CO/03_CO_idx00154
+v4-existing,S2,CO,27,4,-575.0334683057091,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/CO/04_CO_idx00027
+v4-existing,S2,CH3O,19,0,-585.901712210141,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/CH3O/00_CH3O_idx00019
+v4-existing,S2,CH3O,297,1,-585.9015857568862,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/CH3O/01_CH3O_idx00297
+v4-existing,S2,CH3O,340,2,-585.9012623775004,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/CH3O/02_CH3O_idx00340
+v4-existing,S2,CH3O,204,3,-585.8972411167513,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/CH3O/03_CH3O_idx00204
+v4-existing,S2,CH3O,62,4,-585.896490400182,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/CH3O/04_CH3O_idx00062
+v4-existing,S3,CO,123,0,-687.9499342381896,,physi,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/CO/00_CO_idx00123
+v4-existing,S3,CO,22,1,-687.9449909037323,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/CO/01_CO_idx00022
+v4-existing,S3,CO,49,2,-687.9217749537544,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/CO/02_CO_idx00049
+v4-existing,S3,CO,40,3,-687.9149332883935,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/CO/03_CO_idx00040
+v4-existing,S3,CO,20,4,-687.8629616893809,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/CO/04_CO_idx00020
+v4-existing,S3,CH3O,315,0,-698.6270291711497,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/CH3O/00_CH3O_idx00315
+v4-existing,S3,CH3O,369,1,-698.626681115152,,atop_O,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/CH3O/01_CH3O_idx00369
+v4-existing,S3,CH3O,117,2,-698.6265637435819,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/CH3O/02_CH3O_idx00117
+v4-existing,S3,CH3O,164,3,-698.6259081624904,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/CH3O/03_CH3O_idx00164
+v4-existing,S3,CH3O,143,4,-698.6243842560048,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/CH3O/04_CH3O_idx00143
+v4-existing,S3b,CO,56,0,-547.6289553105206,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/CO/00_CO_idx00056
+v4-existing,S3b,CO,41,1,-547.5964967927302,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/CO/01_CO_idx00041
+v4-existing,S3b,CO,19,2,-547.5882544430696,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/CO/02_CO_idx00019
+v4-existing,S3b,CO,38,3,-547.5008226343624,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/CO/03_CO_idx00038
+v4-existing,S3b,CO,79,4,-547.5004901497957,,physi,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/CO/04_CO_idx00079
+v4-existing,S3b,CH3O,198,0,-558.1287233468558,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/CH3O/00_CH3O_idx00198
+v4-existing,S3b,CH3O,16,1,-558.1244100003859,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/CH3O/01_CH3O_idx00016
+v4-existing,S3b,CH3O,108,2,-558.123295401935,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/CH3O/02_CH3O_idx00108
+v4-existing,S3b,CH3O,260,3,-558.1213241482855,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/CH3O/03_CH3O_idx00260
+v4-existing,S3b,CH3O,8,4,-558.1207769233309,,br_PdPd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/CH3O/04_CH3O_idx00008
+v4-existing,S4,CO,80,0,-756.5792241790562,,physi,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S4/CO/00_CO_idx00080
+v4-existing,S4,CO,76,1,-756.5642120777284,,physi,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S4/CO/01_CO_idx00076
+v4-existing,S4,CO,61,2,-756.5259441430527,,physi,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S4/CO/02_CO_idx00061
+v4-existing,S4,CO,86,3,-754.0571118762834,,physi,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S4/CO/03_CO_idx00086
+v4-existing,S4,CO,55,4,-754.0571118762833,,physi,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S4/CO/04_CO_idx00055
+v4-existing,S4,CH3O,369,0,-767.2576626359828,,atop_O,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S4/CH3O/00_CH3O_idx00369
+v4-existing,S4,CH3O,260,1,-767.2575389996656,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S4/CH3O/01_CH3O_idx00260
+v4-existing,S4,CH3O,241,2,-767.2572873010396,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S4/CH3O/02_CH3O_idx00241
+v4-existing,S4,CH3O,211,3,-767.2528421265519,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S4/CH3O/03_CH3O_idx00211
+v4-existing,S4,CH3O,240,4,-767.251775758758,,atop_Pd,,,,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S4/CH3O/04_CH3O_idx00240
+v4-existing,S1,coads,767,0,-432.0511505530256,,,br_PdPd+br_PdPd,,3.101,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S1/coads/00_coads_idx00767
+v4-existing,S1,coads,5495,1,-432.0494867446825,,,br_PdPd+br_PdPd,,3.085,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S1/coads/01_coads_idx05495
+v4-existing,S1,coads,3785,2,-432.0490805265768,,,br_PdPd+br_PdPd,,3.135,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S1/coads/02_coads_idx03785
+v4-existing,S1,coads,4132,3,-432.04894849177344,,,br_PdPd+br_PdPd,,3.922,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S1/coads/03_coads_idx04132
+v4-existing,S1,coads,76,4,-432.04894327985227,,,br_PdPd+br_PdPd,,3.127,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S1/coads/04_coads_idx00076
+v4-existing,S2,coads,989,0,-601.2282614944418,,,br_PdPd+br_PdPd,,3.33,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/coads/00_coads_idx00989
+v4-existing,S2,coads,3165,1,-601.2266130207496,,,br_PdPd+br_PdPd,,3.316,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/coads/01_coads_idx03165
+v4-existing,S2,coads,8300,2,-601.2249174653148,,,br_PdPd+br_PdPd,,3.309,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/coads/02_coads_idx08300
+v4-existing,S2,coads,8447,3,-601.2242882392882,,,br_PdPd+br_PdPd,,3.305,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/coads/03_coads_idx08447
+v4-existing,S2,coads,471,4,-601.2013775668686,,,br_PdPd+br_PdPd,,3.348,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S2/coads/04_coads_idx00471
+v4-existing,S3b,coads,2151,0,-574.750591262553,,,br_PdPd+br_PdPd,,5.305,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/coads/00_coads_idx02151
+v4-existing,S3b,coads,2461,1,-574.75014496893,,,br_PdPd+br_PdPd,,5.311,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/coads/01_coads_idx02461
+v4-existing,S3b,coads,3309,2,-574.7495023168665,,,br_PdPd+br_PdPd,,5.283,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/coads/02_coads_idx03309
+v4-existing,S3b,coads,142,3,-574.7484982303976,,,br_PdPd+br_PdPd,,5.18,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/coads/03_coads_idx00142
+v4-existing,S3b,coads,1220,4,-574.7479814346082,,,br_PdPd+br_PdPd,,5.249,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3b/coads/04_coads_idx01220
+v4-existing,S3,coads,2408,0,-713.3245637559503,,,atop_Pd+atop_Pd,,5.404,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/coads/00_coads_idx02408
+v4-existing,S3,coads,1045,1,-713.3242107807788,,,atop_Pd+atop_Pd,,5.394,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/coads/01_coads_idx01045
+v4-existing,S3,coads,3382,2,-713.3239072728007,,,atop_Pd+atop_Pd,,5.39,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/coads/02_coads_idx03382
+v4-existing,S3,coads,6637,3,-713.323718054027,,,atop_Pd+atop_Pd,,5.398,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/coads/03_coads_idx06637
+v4-existing,S3,coads,1353,4,-713.3233295031844,,,atop_Pd+atop_Pd,,5.362,,v4-baseline,top-5 MLIP E + xy dedup (v4 selector),PENDING,calculations/T1_16_DFT_L2/S3/coads/04_coads_idx01353
+v5-new,S1,coads,487,,-432.0193219865356,0.0318,,br_PdPd+br_PdPd,,2.989,reactive-close,RECOMMENDED,reactive-close br_PdPd+br_PdPd (ΔE=0.032),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S1/coads/coads_idx00487
+v5-new,S1,coads,4021,,-432.04048340613787,0.0107,,br_PdPd+br_PdPd,,5.402,thermodynamic,RECOMMENDED,thermodynamic br_PdPd+br_PdPd rep (ΔE=0.011),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S1/coads/coads_idx04021
+v5-new,S2,coads,3633,,-600.9993978045983,0.2289,,br_PdPd+atop_Pd,,5.186,thermodynamic,RECOMMENDED,thermodynamic br_PdPd+atop_Pd rep (ΔE=0.229),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S2/coads/coads_idx03633
+v5-new,S2,coads,8079,,-600.7868201558618,0.4414,,atop_Pd+atop_Pd,,2.858,reactive-close,RECOMMENDED,reactive-close atop_Pd+atop_Pd distinct-site (ΔE=0.441),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S2/coads/coads_idx08079
+v5-new,S3,coads,3481,,-713.283148052988,0.0414,,atop_Pd+atop_Pd,,2.988,reactive-close,MUST,"reactive-close atop_Pd+atop_Pd, bin gap not covered by v4 (ΔE=0.041)","PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S3/coads/coads_idx03481
+v5-new,S3,coads,5161,,-713.3036758500434,0.0209,,atop_Pd+atop_Pd,,3.249,reactive-loose,MUST,"reactive-loose atop_Pd+atop_Pd, bin gap not covered by v4 (ΔE=0.021)","PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S3/coads/coads_idx05161
+v5-new,S3b,coads,2051,,-574.1964112039822,0.5542,,br_PdPd+atop_Pd,,2.895,reactive-close,MUST-diagnostic,"reactive-close br_PdPd+atop_Pd, only reactive-close in pool. HIGH-ENERGY DIAGNOSTIC ΔE=0.554 eV — kept per workplan §9 rule 9","PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S3b/coads/coads_idx02051
+v5-new,S3b,coads,2754,,-574.6288789072723,0.1217,,br_PdPd+br_PdPd,,3.663,reactive-loose,MUST,reactive-loose br_PdPd+br_PdPd (ΔE=0.122),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S3b/coads/coads_idx02754
+v5-new,S1,CO,43,,-405.67261065442545,0.0464,4f_4Pd0O,,metal,,,OPTIONAL,4-fold hollow site (4f_4Pd0O) diversity (ΔE=0.046),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S1/CO/CO_idx00043
+v5-new,S1,CH3O,283,,-415.8710088872099,0.0024,atop_Pd,,metal,,,OPTIONAL,atop_Pd/metal site (ΔE=0.002),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S1/CH3O/CH3O_idx00283
+v5-new,S2,CH3O,217,,-585.6139766074084,0.2877,br_PdO,,interface,,,OPTIONAL,br_PdO interface site (ΔE=0.288),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S2/CH3O/CH3O_idx00217
+v5-new,S2,CH3O,496,,-585.5793905126623,0.3223,atop_O,,oxide,,,OPTIONAL,atop_O oxide site (ΔE=0.322),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S2/CH3O/CH3O_idx00496
+v5-new,S3,CH3O,395,,-698.5978100199566,0.0292,physi,,physi,,,OPTIONAL,physisorbed reference (ΔE=0.029),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S3/CH3O/CH3O_idx00395
+v5-new,S3b,CO,6,,-547.4949653268903,0.134,br_PdPd,,metal,,,OPTIONAL,br_PdPd metal site (ΔE=0.134),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S3b/CO/CO_idx00006
+v5-new,S4,CH3O,329,,-767.2157296424111,0.0419,br_PdO,,interface,,,OPTIONAL,br_PdO interface site (ΔE=0.042),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S4/CH3O/CH3O_idx00329
+v5-new,S4,CH3O,383,,-767.2513597794174,0.0063,physi,,physi,,,OPTIONAL,physisorbed reference (ΔE=0.006),"PENDING (bundle only, not submitted)",calculations/T1_16_DFT_L2_v5add16/S4/CH3O/CH3O_idx00383

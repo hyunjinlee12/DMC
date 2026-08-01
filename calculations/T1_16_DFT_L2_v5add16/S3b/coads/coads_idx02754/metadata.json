@@ -1,0 +1,21 @@
+{
+  "sid": "S3b",
+  "ads": "coads",
+  "idx": 2754,
+  "E_MLIP": -574.6288789072723,
+  "dE_from_global": 0.1217,
+  "site": "",
+  "region": "",
+  "n_Pd_nbr": "CO:2/CH3O:2",
+  "n_O_nbr": "CO:0/CH3O:0",
+  "d_anchor_surf": "1.93",
+  "d_reactive": "3.663",
+  "d_bin": "reactive-loose",
+  "site_combo": "br_PdPd+br_PdPd",
+  "priority": "MUST",
+  "selection_reason": "reactive-loose br_PdPd+br_PdPd (\u0394E=0.122)",
+  "neighbors_within_3.5A": "C_CO:[Pd:1.93;Pd:1.98] O_CH3:[Pd:2.01;Pd:2.18;O:3.25]",
+  "source_traj": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase2/relaxed_SetA.traj",
+  "source_unique_json": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase2_filtered/unique_SetA.json",
+  "notes": ""
+}

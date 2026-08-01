@@ -1,0 +1,21 @@
+{
+  "sid": "S1",
+  "ads": "CH3O",
+  "idx": 283,
+  "E_MLIP": -415.8710088872099,
+  "dE_from_global": 0.0024,
+  "site": "atop_Pd",
+  "region": "metal",
+  "n_Pd_nbr": "1",
+  "n_O_nbr": "0",
+  "d_anchor_surf": "1.987",
+  "d_reactive": "",
+  "d_bin": "",
+  "site_combo": "",
+  "priority": "OPTIONAL",
+  "selection_reason": "atop_Pd/metal site (\u0394E=0.002)",
+  "neighbors_within_3.5A": "Pd:1.99;Pd:3.31;Pd:3.35",
+  "source_traj": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/relaxed_CH3O.traj",
+  "source_unique_json": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/unique_CH3O.json",
+  "notes": ""
+}

@@ -1,0 +1,21 @@
+{
+  "sid": "S3b",
+  "ads": "coads",
+  "idx": 2051,
+  "E_MLIP": -574.1964112039822,
+  "dE_from_global": 0.5542,
+  "site": "",
+  "region": "",
+  "n_Pd_nbr": "CO:2/CH3O:1",
+  "n_O_nbr": "CO:0/CH3O:0",
+  "d_anchor_surf": "1.893",
+  "d_reactive": "2.895",
+  "d_bin": "reactive-close",
+  "site_combo": "br_PdPd+atop_Pd",
+  "priority": "MUST-diagnostic",
+  "selection_reason": "reactive-close br_PdPd+atop_Pd, only reactive-close in pool. HIGH-ENERGY DIAGNOSTIC \u0394E=0.554 eV \u2014 kept per workplan \u00a79 rule 9",
+  "neighbors_within_3.5A": "C_CO:[Pd:1.89;Pd:2.11;O:3.18;O:3.26;Pd:3.31] O_CH3:[Pd:2.01;Pd:2.97]",
+  "source_traj": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase2/relaxed_SetA.traj",
+  "source_unique_json": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase2_filtered/unique_SetA.json",
+  "notes": "HIGH-ENERGY DIAGNOSTIC: only reactive-close candidate in pool; \u0394E=0.554 eV vs global min. DFT will show whether it truly binds or relaxes back to a lower-E arrangement."
+}

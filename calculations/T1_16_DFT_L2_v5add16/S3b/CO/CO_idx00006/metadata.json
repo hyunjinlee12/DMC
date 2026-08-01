@@ -1,0 +1,21 @@
+{
+  "sid": "S3b",
+  "ads": "CO",
+  "idx": 6,
+  "E_MLIP": -547.4949653268903,
+  "dE_from_global": 0.134,
+  "site": "br_PdPd",
+  "region": "metal",
+  "n_Pd_nbr": "2",
+  "n_O_nbr": "0",
+  "d_anchor_surf": "1.918",
+  "d_reactive": "",
+  "d_bin": "",
+  "site_combo": "",
+  "priority": "OPTIONAL",
+  "selection_reason": "br_PdPd metal site (\u0394E=0.134)",
+  "neighbors_within_3.5A": "Pd:1.92;Pd:2.01;O:3.32;O:3.44",
+  "source_traj": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase1/relaxed_CO.traj",
+  "source_unique_json": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S3b_PdO100_PdOterm/MLIP_phase1/unique_CO.json",
+  "notes": ""
+}

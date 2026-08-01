@@ -1,0 +1,21 @@
+{
+  "sid": "S2",
+  "ads": "CH3O",
+  "idx": 217,
+  "E_MLIP": -585.6139766074084,
+  "dE_from_global": 0.2877,
+  "site": "br_PdO",
+  "region": "interface",
+  "n_Pd_nbr": "1",
+  "n_O_nbr": "1",
+  "d_anchor_surf": "2.032",
+  "d_reactive": "",
+  "d_bin": "",
+  "site_combo": "",
+  "priority": "OPTIONAL",
+  "selection_reason": "br_PdO interface site (\u0394E=0.288)",
+  "neighbors_within_3.5A": "Pd:2.03;O:2.59;O:2.98",
+  "source_traj": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/MLIP_phase1/relaxed_CH3O.traj",
+  "source_unique_json": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S2_PdO101_Pd100/MLIP_phase1/unique_CH3O.json",
+  "notes": ""
+}

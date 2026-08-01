@@ -1,0 +1,21 @@
+{
+  "sid": "S1",
+  "ads": "CO",
+  "idx": 43,
+  "E_MLIP": -405.67261065442545,
+  "dE_from_global": 0.0464,
+  "site": "4f_4Pd0O",
+  "region": "metal",
+  "n_Pd_nbr": "4",
+  "n_O_nbr": "0",
+  "d_anchor_surf": "2.154",
+  "d_reactive": "",
+  "d_bin": "",
+  "site_combo": "",
+  "priority": "OPTIONAL",
+  "selection_reason": "4-fold hollow site (4f_4Pd0O) diversity (\u0394E=0.046)",
+  "neighbors_within_3.5A": "Pd:2.15;Pd:2.17;Pd:2.18;Pd:2.18;Pd:3.09",
+  "source_traj": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/relaxed_CO.traj",
+  "source_unique_json": "/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc/calculations/G3_adsorption/S1_Pd100/MLIP_phase1/unique_CO.json",
+  "notes": ""
+}
