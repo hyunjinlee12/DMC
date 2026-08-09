@@ -1,15 +1,15 @@
 {
   "level": "T1.17 VASPsol (methanol, LSOL=T, EB_K=32.6, TAU=0)",
   "restart_kind": "geometric only (ISTART=0, ICHARG=2). L1 had LWAVE=.FALSE. \u2192 no WAVECAR.",
-  "mask_convention": "G2 canonical fixed-atom indices; fixed coordinates copied from G2 CONTCAR; mapping done by species + position (PBC-agnostic Euclidean, tol=1.5 \u00c5).",
+  "mask_convention": "Bottom-half-of-substrate mask from T1.16, inherited by ASE constraint re-indexing after adsorbate atoms are stripped. Fixed atoms at T1.16-inherited (effectively G2-original) positions since they never moved during T1.16.",
   "poscar_species": [
     "O",
     "Pd"
   ],
   "sid": "S3",
   "kind": "clean_slab",
-  "source_CONTCAR": "calculations/G2_slab/S3_PdO100/CONTCAR",
+  "derived_from": "calculations/T1_16_DFT_L2/S3/CH3O/00_CH3O_idx00315/CONTCAR",
+  "derived_ads_kind": "CH3O",
   "n_atoms_total": 128,
-  "n_atoms_fixed": 32,
-  "purpose": "Clean-slab VASPsol reference. Same G2 fixed indices and coordinates as the ads dirs \u2192 exact cancellation in \u0394G_ads."
+  "n_atoms_fixed": 64
 }

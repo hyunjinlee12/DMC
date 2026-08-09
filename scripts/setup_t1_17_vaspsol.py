@@ -1,20 +1,20 @@
-"""T1.17 setup — VASPsol Level-2 solvation with G2 canonical mask.
+"""T1.17 setup — VASPsol Level-2 solvation with T1.16 canonical mask.
 
-Post-review 2026-07-17 (round 4):
-- Clean slab = G2 CONTCAR verbatim (positions + G2 mask).
-- Adsorbate slab: G2's fixed-atom indices are mapped to the corresponding
-  atoms in the T1.16 CONTCAR by species + position matching. Those atoms
-  have their positions overwritten with G2's canonical coordinates AND
-  are marked fixed. Free substrate atoms and adsorbate atoms keep their
-  T1.16-relaxed positions and are free to move in T1.17.
-- Result: ads_slab and clean_slab share IDENTICAL fixed atom indices +
-  identical fixed coordinates + identical mask + identical cell + identical
-  POTCAR substrate order, so ΔG_ads = G(ads) − G(clean) − μ has EXACT
-  fixed-atom cancellation.
-- z-threshold rules explicitly REJECTED (per reviewer): index-based mapping
-  is stable under z-drift.
-- MAGMOM: left at VASP default for now — magnetic seed test in
-  calculations/magnetic_seed_test/ resolves initialization policy before
+Post-review 2026-07-17 (round 5, corrected):
+- The T1.16 production mask (bottom-half-of-substrate by median z, applied
+  in run_mace_phase*.py) is DETERMINISTIC per surface — same 40/56/64/52/72
+  count regardless of adsorbate. It supersedes G2's original bottom-2-layer
+  mask (32/40/32/32/42) which was overwritten during MLIP setup.
+- Clean slab is built by stripping the adsorbate from the top-1 T1.16
+  CONTCAR — this gives substrate positions that MATCH the ads dir at the
+  fixed atoms (they never moved during T1.16 since bottom-half was frozen).
+  Mask + positions inherited exactly.
+- Adsorbate dirs: use T1.16 CONTCAR positions + T1.16 mask verbatim. No
+  overwrite.
+- Result: ads and clean share IDENTICAL cell, IDENTICAL fixed-atom
+  positions, IDENTICAL mask, IDENTICAL POTCAR substrate order. Auto-check
+  passes.
+- MAGMOM: left at VASP default — resolved by magnetic_seed_test/ before
   final T1.17 mass submission.
 """
 import json, csv
@@ -107,48 +107,40 @@ echo "End: $(date)"
 """
 
 # ============================================================================
-# Canonical mask machinery
+# Adsorbate stripping (for clean slab construction)
 # ============================================================================
 
-def load_canonical_g2(sid):
-    """Return (g2_atoms, g2_fixed_indices) — G2 CONTCAR with its FixAtoms."""
-    g2 = read(G2/SDIRS[sid]/'CONTCAR')
-    fx = next((sorted(int(i) for i in c.index) for c in g2.constraints
-               if isinstance(c, FixAtoms)), [])
-    if not fx:
-        raise ValueError(f'{sid}: G2 CONTCAR has no FixAtoms constraint')
-    return g2, fx
+def strip_adsorbate(ads_atoms, ads_kind):
+    """Return substrate-only copy of ads-slab atoms + inherited FixAtoms.
 
-def apply_canonical_mask(ads_atoms, g2_atoms, g2_fixed_indices, tol=1.5):
-    """Map each G2-fixed atom to an ads-slab atom by species+position match,
-    overwrite the ads position with the canonical G2 coordinate, and mark
-    that ads-slab atom fixed. Free substrate atoms and adsorbate atoms are
-    untouched.
+    ads_kind: 'CO' | 'CH3O' | 'coads' — dictates expected removed composition.
 
-    Raises ValueError if any G2 atom cannot be uniquely mapped within `tol` Å.
+    Adsorbate = all C, all H, and any O bonded (< 1.5 Å, PBC-aware) to any C.
+    Substrate positions AND selective-dynamics mask inherited exactly from
+    the T1.16 CONTCAR so ΔG_ads has exact substrate + fixed-atom cancellation
+    with the ads dir.
     """
-    ads_new = ads_atoms.copy()
-    ads_new.set_constraint()   # wipe existing FixAtoms so we rebuild it
+    EXP = {'CO':(1,0,1),'CH3O':(1,3,1),'coads':(2,3,2)}
+    n_c_exp, n_h_exp, n_o_exp = EXP[ads_kind]
 
-    canonical_ads_idx = []
-    for gi in g2_fixed_indices:
-        g_sym = g2_atoms.get_chemical_symbols()[gi]
-        g_pos = g2_atoms.positions[gi]
-        best_ai = None; best_d = float('inf')
-        for ai in range(len(ads_new)):
-            if ai in canonical_ads_idx: continue
-            if ads_new.get_chemical_symbols()[ai] != g_sym: continue
-            d = float(np.linalg.norm(ads_new.positions[ai] - g_pos))
-            if d < best_d:
-                best_d = d; best_ai = ai
-        if best_ai is None or best_d > tol:
-            raise ValueError(f'Cannot map G2 fixed atom {gi} ({g_sym}, '
-                             f'pos={g_pos}) to any ads atom within {tol} Å '
-                             f'(closest: {best_d} Å)')
-        ads_new.positions[best_ai] = g_pos   # overwrite with canonical
-        canonical_ads_idx.append(best_ai)
-    ads_new.set_constraint(FixAtoms(indices=canonical_ads_idx))
-    return ads_new, canonical_ads_idx
+    syms = ads_atoms.get_chemical_symbols()
+    c_idx = [i for i,s in enumerate(syms) if s=='C']
+    h_idx = [i for i,s in enumerate(syms) if s=='H']
+    o_idx = [i for i,s in enumerate(syms) if s=='O']
+    ads_o = []
+    for oi in o_idx:
+        for ci in c_idx:
+            if ads_atoms.get_distance(ci, oi, mic=True) < 1.5:
+                ads_o.append(oi); break
+
+    assert len(c_idx) == n_c_exp, f'{ads_kind}: expected {n_c_exp} C, got {len(c_idx)}'
+    assert len(h_idx) == n_h_exp, f'{ads_kind}: expected {n_h_exp} H, got {len(h_idx)}'
+    assert len(ads_o) == n_o_exp, f'{ads_kind}: expected {n_o_exp} C-bonded O, got {len(ads_o)}'
+
+    ads_set = set(c_idx) | set(h_idx) | set(ads_o)
+    keep = [i for i in range(len(ads_atoms)) if i not in ads_set]
+    slab = ads_atoms[keep]     # ASE handles FixAtoms reindex
+    return slab
 
 def write_common(dest, atoms, sid, extra_meta):
     write(str(dest/'POSCAR'), atoms, format='vasp', direct=True, sort=True, vasp5=True)
@@ -168,42 +160,44 @@ def write_common(dest, atoms, sid, extra_meta):
     }, indent=2))
 
 def build_adsorbate_dir(sid, ads, idx, l1_contcar):
+    """Ads dir: T1.16 CONTCAR verbatim (positions + T1.16 mask inherited)."""
     dest = OUT/sid/ads/f'{ads}_idx{idx:05d}'
     if dest.exists(): return None, 'exists'
     dest.mkdir(parents=True)
-    g2, g2_fixed = load_canonical_g2(sid)
-    ads_atoms = read(l1_contcar)
-    try:
-        ads_canonical, fixed_ads_idx = apply_canonical_mask(ads_atoms, g2, g2_fixed)
-    except ValueError as e:
-        raise RuntimeError(f'{sid}/{ads} idx={idx}: canonical mask apply FAILED — {e}')
-    write_common(dest, ads_canonical, sid, extra_meta={
+    ads_atoms = read(l1_contcar)   # ASE reads FixAtoms from selective dynamics
+    n_fixed = sum(len(c.index) for c in ads_atoms.constraints if isinstance(c, FixAtoms))
+    write_common(dest, ads_atoms, sid, extra_meta={
         'sid':sid,'ads':ads,'idx':int(idx),
         'source_L1_CONTCAR': str(l1_contcar.relative_to(ROOT)),
-        'canonical_from_G2': str((G2/SDIRS[sid]/'CONTCAR').relative_to(ROOT)),
-        'n_atoms_total': len(ads_canonical),
-        'n_atoms_fixed': len(fixed_ads_idx),
-        'g2_fixed_count': len(g2_fixed),
-        'purpose': ('Level-2 solvated adsorbate slab with G2 canonical mask. '
-                    'Fixed atoms at G2 coordinates; free atoms + adsorbate at '
-                    'T1.16-relaxed positions; will re-relax under VASPsol.'),
+        'n_atoms_total': len(ads_atoms),
+        'n_atoms_fixed': n_fixed,
+        'mask_convention': 'T1.16 production mask inherited (bottom-half of '
+                           'substrate by median z). Same mask as clean slab '
+                           'for exact ΔG cancellation.',
     })
     return dest, 'created'
 
-def build_clean_slab_dir(sid):
-    """Clean slab = G2 CONTCAR verbatim. Positions and mask taken directly."""
+def build_clean_slab_dir(sid, ads_contcar_src, ads_kind):
+    """Clean slab built by stripping adsorbate from the surface's top-1 T1.16
+    CONTCAR. Substrate positions + T1.16 selective-dynamics mask inherited
+    exactly → identical fixed-atom coordinates with the ads dir."""
     dest = OUT/f'{sid}_clean'
     if dest.exists(): return None, 'exists'
     dest.mkdir(parents=True)
-    g2 = read(G2/SDIRS[sid]/'CONTCAR')
-    write_common(dest, g2, sid, extra_meta={
+    ads_atoms = read(ads_contcar_src)
+    slab = strip_adsorbate(ads_atoms, ads_kind)
+    n_fixed = sum(len(c.index) for c in slab.constraints if isinstance(c, FixAtoms))
+    write_common(dest, slab, sid, extra_meta={
         'sid':sid,'kind':'clean_slab',
-        'source_CONTCAR': str((G2/SDIRS[sid]/'CONTCAR').relative_to(ROOT)),
-        'n_atoms_total': len(g2),
-        'n_atoms_fixed': sum(len(c.index) for c in g2.constraints if isinstance(c, FixAtoms)),
-        'purpose': ('Clean-slab VASPsol reference. Same G2 fixed indices '
-                    'and coordinates as the ads dirs → exact cancellation '
-                    'in ΔG_ads.'),
+        'derived_from': str(ads_contcar_src.relative_to(ROOT)),
+        'derived_ads_kind': ads_kind,
+        'n_atoms_total': len(slab),
+        'n_atoms_fixed': n_fixed,
+        'mask_convention': ('Bottom-half-of-substrate mask from T1.16, inherited '
+                            'by ASE constraint re-indexing after adsorbate atoms '
+                            'are stripped. Fixed atoms at T1.16-inherited '
+                            '(effectively G2-original) positions since they '
+                            'never moved during T1.16.'),
     })
     return dest, 'created'
 
@@ -287,9 +281,23 @@ def main():
                          'dir':str(dest.relative_to(ROOT))})
         print(f'  ads   {sid}/{ads} idx={p["idx"]} → {dest.relative_to(ROOT)}')
 
-    # 2. Clean slab per surface (G2 CONTCAR verbatim)
+    # 2. Clean slab per surface (strip adsorbate from top-1 T1.16 CONTCAR)
+    #    Prefers CO > CH3O > coads (least substrate distortion).
+    ads_pref = ['CO','CH3O','coads']
+    picked_ads_for_clean = {}
     for sid in ['S1','S2','S3','S3b','S4']:
-        dest, status = build_clean_slab_dir(sid)
+        for ads in ads_pref:
+            if (sid, ads) in picks:
+                picked_ads_for_clean[sid] = (ads, picks[(sid, ads)])
+                break
+    for sid in ['S1','S2','S3','S3b','S4']:
+        if sid not in picked_ads_for_clean:
+            manifest.append({'kind':'clean_slab','sid':sid,'ads':'','idx':'',
+                             'E_L1_vacuum':'','status':'PENDING (no DONE ads on this surface)',
+                             'dir':''})
+            continue
+        ads_kind, p = picked_ads_for_clean[sid]
+        dest, status = build_clean_slab_dir(sid, p['contcar_path'], ads_kind)
         if dest is None:
             skipped += 1
             manifest.append({'kind':'clean_slab','sid':sid,'ads':'','idx':'',

@@ -1,7 +1,7 @@
 {
   "level": "T1.17 VASPsol (methanol, LSOL=T, EB_K=32.6, TAU=0)",
   "restart_kind": "geometric only (ISTART=0, ICHARG=2). L1 had LWAVE=.FALSE. \u2192 no WAVECAR.",
-  "mask_convention": "G2 canonical fixed-atom indices; fixed coordinates copied from G2 CONTCAR; mapping done by species + position (PBC-agnostic Euclidean, tol=1.5 \u00c5).",
+  "mask_convention": "T1.16 production mask inherited (bottom-half of substrate by median z). Same mask as clean slab for exact \u0394G cancellation.",
   "poscar_species": [
     "C",
     "O",
@@ -11,9 +11,6 @@
   "ads": "CO",
   "idx": 3,
   "source_L1_CONTCAR": "calculations/T1_16_DFT_L2/S1/CO/01_CO_idx00003/CONTCAR",
-  "canonical_from_G2": "calculations/G2_slab/S1_Pd100/CONTCAR",
   "n_atoms_total": 82,
-  "n_atoms_fixed": 32,
-  "g2_fixed_count": 32,
-  "purpose": "Level-2 solvated adsorbate slab with G2 canonical mask. Fixed atoms at G2 coordinates; free atoms + adsorbate at T1.16-relaxed positions; will re-relax under VASPsol."
+  "n_atoms_fixed": 40
 }

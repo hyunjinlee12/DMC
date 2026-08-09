@@ -94,17 +94,25 @@ Ionic relaxation only (`ISIF = 2`), cell fixed from bulk equilibrium lattice.
 | KSPACING | 0.25 | 0.25 | 0.25 | 0.25 | 0.25 |
 | natoms | 80 | 112 | 128 | 104 | 144 |
 | vacuum | 20 Å | 20 Å | 20 Å | 20 Å | 20 Å |
-| **fix mask (G2 canonical)** | z<3.5 → 32 atoms | z<3.5 → 40 | z<3.1 → 32 | z<3.1 → 32 | z<4.8 → 42 |
-| E_slab (eV, E₀) | -434.380 | -618.565 | -724.103 | -570.772 | -788.493 |
-| F_max free (eV/Å) | 0.019 | 0.026 | 0.023 | 0.028 | 0.025 |
+| **G2 original fix mask** | bottom 2 layers → **32** | bottom 2 layers → **40** | ~35% bottom → **32** | ~35% bottom → **32** | ~35% bottom → **42** |
+| **T1.16 production mask** (bottom-half of substrate by median z; **this is what actually ran**) | **40** | **56** | **64** | **52** | **72** |
+| E_slab (eV, E₀) at G2 mask | -434.380 | -618.565 | -724.103 | -570.772 | -788.493 |
+| F_max free (eV/Å) at G2 mask | 0.019 | 0.026 | 0.023 | 0.028 | 0.025 |
 
 Common:
-- Asymmetric slab: bottom-layer atoms fixed via selective dynamics. **The G2
-  CONTCAR's own FixAtoms constraint (the per-surface counts above) is the
-  canonical mask** — used verbatim by T1.17 clean-slab dirs and mapped
-  atom-by-atom to T1.17 ads-slab dirs (see §5). NOT applied by z-threshold;
-  applied by index list to preserve identity under z-drift.
+- Asymmetric slab: bottom-layer atoms fixed via selective dynamics.
 - Vacuum 20 Å along surface normal.
+- **Important mask-provenance note**: G2 clean-slab was originally relaxed
+  with the "G2 original fix mask" (bottom 2 layers or ~35 %; per-surface
+  counts 32/40/32/32/42). The MLIP screening setup
+  (`scripts/run_mace_phase*.py`) then OVERWROTE the constraint with a
+  bottom-half-of-substrate rule via `z_median = np.median(substrate_z)`,
+  giving the deterministic counts 40/56/64/52/72. T1.16 inherited that
+  mask from the MLIP-relaxed candidates. **Therefore the T1.16 mask is
+  the canonical mask for T1.17**, not G2's original — see §5.
+- **`E_slab` values above use the G2 original mask** and are structure-
+  validation numbers only. For ΔG_ads with T1.17 mask, use the T1.17
+  clean-slab energy (to be computed with T1.16-mask 40/56/64/52/72).
 - Dipole correction along z (IDIPOL=3) since asymmetric slab has net dipole.
 - KSPACING = 0.25 Å⁻¹ (project standard, matches ~3×3×1 mesh on typical
   supercells).
@@ -241,22 +249,26 @@ Same INCAR as T1.16 **plus** the VASPsol block and explicit restart flags:
 | **TAU** | **0** | exclude cavitation/non-electrostatic term (workplan) |
 | ~~LAMBDA_D_K~~ | **absent** | deliberately not set — would activate the linearised Poisson–Boltzmann electrolyte model (Debye screening), which is a separate physical effect. |
 
-**Clean slab (revised)**:
-- **Clean slab = G2 CONTCAR verbatim** (positions + FixAtoms constraint
-  copied directly). One clean slab per surface.
-- ads-slab dirs: G2's fixed-atom indices are mapped atom-by-atom to the
-  T1.16 CONTCAR by species + Euclidean position match (tolerance 1.5 Å);
-  those atom positions are then **overwritten with G2's canonical
-  coordinates** and marked fixed. Free substrate atoms and adsorbate atoms
-  keep their T1.16-relaxed positions.
-- Result: ads and clean dirs share **identical fixed-atom count, identical
-  fixed coordinates, identical cell, identical POTCAR substrate order,
-  identical KSPACING** — auto-consistency check
-  (`scripts/setup_t1_17_vaspsol.py::auto_consistency_check`) reports 0
-  issues.
-- The previous "per-ads mask inheritance" approach (mask varies by ads type
-  on same surface) has been **retired** — see git history for the earlier
-  rationale.
+**Clean slab (final approach, round 5)**:
+- **T1.16 production mask is the canonical mask** (40/56/64/52/72 per
+  surface, deterministic and independent of adsorbate type — verified by
+  direct file inspection of all 65 T1.16 candidates).
+- **Ads slab**: T1.16 CONTCAR verbatim (positions + selective-dynamics mask
+  inherited via ASE constraint reading).
+- **Clean slab**: built by stripping the adsorbate (C, H, and C-bonded O
+  within 1.5 Å, PBC-aware) from that surface's top-1 T1.16 CONTCAR. ASE's
+  atom-deletion machinery re-indexes the FixAtoms constraint so the mask
+  transfers exactly. **Fixed-atom positions match the ads dir atom-for-atom**
+  because those atoms never moved during T1.16 (they were frozen).
+- Result: ads and clean dirs share IDENTICAL cell + IDENTICAL fixed-atom
+  count + IDENTICAL fixed-atom coordinates + IDENTICAL POTCAR substrate
+  order + IDENTICAL KSPACING — auto-consistency check reports 0 issues.
+- Verified (2026-07-17 round-5 rebuild):
+  - S1 clean = ads = 40 fixed, fixed coordinates identical
+  - S3 clean = ads = 64 fixed, fixed coordinates identical
+- Previous attempts (mask by median including adsorbate; mask via G2
+  canonical index) are retired — see git history for the flawed
+  rationales.
 
 **Status**: 4 dirs generated (S1: CO+clean; S3: CH₃O+clean). 15 more will be
 created as more T1.16 completes.
