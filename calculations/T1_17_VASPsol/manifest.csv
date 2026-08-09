@@ -1,0 +1,15 @@
+sid,ads,idx,E_L1,dir,status
+S1,CO,3,-451.4141,calculations/T1_17_VASPsol/S1/CO/CO_idx00003,created
+S3,CH3O,315,-749.9231,calculations/T1_17_VASPsol/S3/CH3O/CH3O_idx00315,created
+S1,CH3O,,,,PENDING L1 completion
+S1,coads,,,,PENDING L1 completion
+S2,CO,,,,PENDING L1 completion
+S2,CH3O,,,,PENDING L1 completion
+S2,coads,,,,PENDING L1 completion
+S3,CO,,,,PENDING L1 completion
+S3,coads,,,,PENDING L1 completion
+S3b,CO,,,,PENDING L1 completion
+S3b,CH3O,,,,PENDING L1 completion
+S3b,coads,,,,PENDING L1 completion
+S4,CO,,,,PENDING L1 completion
+S4,CH3O,,,,PENDING L1 completion

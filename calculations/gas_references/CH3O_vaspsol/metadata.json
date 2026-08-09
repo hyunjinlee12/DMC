@@ -1,0 +1,15 @@
+{
+  "molecule": "CH3O",
+  "variant": "vaspsol",
+  "natoms": 5,
+  "species": [
+    "C",
+    "H",
+    "O"
+  ],
+  "box_A": 15.0,
+  "ISPIN": 2,
+  "MAGMOM": "0 0 0 0 1",
+  "purpose": "Gas-phase CH3O reference for T1.18 adsorption energy (solvated convention).",
+  "note": "CH3O radical (open-shell, S=1/2), spin-polarised. MAGMOM per POSCAR order [C H H H O]: unpaired electron on O."
+}

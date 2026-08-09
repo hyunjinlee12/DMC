@@ -1,0 +1,15 @@
+{
+  "molecule": "CH3OH",
+  "variant": "vaspsol",
+  "natoms": 6,
+  "species": [
+    "C",
+    "H",
+    "O"
+  ],
+  "box_A": 15.0,
+  "ISPIN": 1,
+  "MAGMOM": null,
+  "purpose": "Gas-phase CH3OH reference for T1.18 adsorption energy (solvated convention).",
+  "note": "methanol (closed-shell)"
+}

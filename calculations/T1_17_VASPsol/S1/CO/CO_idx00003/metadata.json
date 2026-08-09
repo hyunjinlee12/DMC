@@ -1,0 +1,16 @@
+{
+  "sid": "S1",
+  "ads": "CO",
+  "idx": 3,
+  "source_L1_dir": "calculations/T1_16_DFT_L2/S1/CO/01_CO_idx00003",
+  "source_L1_CONTCAR": "calculations/T1_16_DFT_L2/S1/CO/01_CO_idx00003/CONTCAR",
+  "E_L1_vacuum_eV": -451.4141,
+  "poscar_species": [
+    "C",
+    "O",
+    "Pd"
+  ],
+  "level": "T1.17 VASPsol (methanol, EB_K=32.6, TAU=0)",
+  "purpose": "Level-2 solvation single-point relaxation of L1 vacuum minimum for adsorption energy in solvated environment (T1.18 input).",
+  "note": "Restart from L1 CONTCAR \u2014 do NOT re-relax from raw POSCAR."
+}

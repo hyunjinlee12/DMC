@@ -1,0 +1,30 @@
+SYSTEM = gas reference
+ENCUT = 520
+PREC = Accurate
+LASPH = .TRUE.
+ADDGRID = .TRUE.
+ISPIN = 2
+MAGMOM = 0 0 0 0 1
+IVDW = 12
+EDIFF = 1e-06
+NELM = 500
+NELMIN = 5
+ALGO = Normal
+NCORE = 1
+LREAL = Auto
+LWAVE = .FALSE.
+LCHARG = .FALSE.
+ISYM = 0
+IBRION = 2
+NSW = 200
+ISIF = 2
+ISMEAR = 0
+SIGMA = 0.01
+EDIFFG = -0.01
+KSPACING = 1.0
+
+# --- VASPsol (methanol) ---
+LSOL = .TRUE.
+EB_K = 32.6
+TAU = 0
+LAMBDA_D_K = 3.0

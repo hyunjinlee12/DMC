@@ -1,0 +1,13 @@
+{
+  "molecule": "H2",
+  "variant": "vaspsol",
+  "natoms": 2,
+  "species": [
+    "H"
+  ],
+  "box_A": 15.0,
+  "ISPIN": 1,
+  "MAGMOM": null,
+  "purpose": "Gas-phase H2 reference for T1.18 adsorption energy (solvated convention).",
+  "note": "molecular hydrogen"
+}
