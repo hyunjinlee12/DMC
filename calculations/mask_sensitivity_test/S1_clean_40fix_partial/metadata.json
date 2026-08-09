@@ -1,8 +1,8 @@
 {
   "name": "S1_clean_40fix_partial",
-  "source": "G2_slab/S1_Pd100/CONTCAR",
+  "source": "strip_adsorbate(ads_40fix_partial)",
   "mask": "partial-layer (bottom-half by median z applied to G2 clean slab)",
   "n_atoms": 80,
   "n_fixed": 32,
-  "note": "Reproduces the T1.16-style partial mask on the clean slab. Only for \u0394E_ads(40fix) computation."
+  "note": "Clean derived by stripping adsorbate from the paired ads dir \u2192 exact substrate cancellation (same atoms, positions, mask)."
 }

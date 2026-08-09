@@ -1,8 +1,8 @@
 {
   "name": "S1_clean_32fix_complete",
-  "source": "G2_slab/S1_Pd100/CONTCAR",
+  "source": "strip_adsorbate(ads_32fix_complete)",
   "mask": "G2 original complete-layer (32 = L1+L2)",
   "n_atoms": 80,
   "n_fixed": 32,
-  "note": "G2 CONTCAR verbatim, positions + constraint copied."
+  "note": "Clean derived by stripping adsorbate from the paired ads dir \u2192 exact substrate cancellation (same atoms, positions, mask)."
 }
