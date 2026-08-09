@@ -1,0 +1,8 @@
+{
+  "name": "S1_CO_idx3_40fix_partial",
+  "source": "T1_16_DFT_L2/S1/CO/01_CO_idx00003/CONTCAR",
+  "mask": "T1.16 partial-layer (bottom half of substrate by median z)",
+  "n_atoms": 82,
+  "n_fixed": 40,
+  "note": "40 fixed; layer 3 split 8/8. Reproduces current T1.16 setting."
+}
