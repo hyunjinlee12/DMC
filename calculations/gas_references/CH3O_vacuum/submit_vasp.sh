@@ -1,31 +1,42 @@
 #!/bin/bash
-#SBATCH --partition=h200q
+#SBATCH --partition=debug
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=16
-#SBATCH --cpus-per-task=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:1
 #SBATCH --time=1-00:00:00
 #SBATCH --output=slurm.%j.out
 #SBATCH --error=slurm.%j.err
 
-# ============================================================================
-# H200 submission (Singularity + srun). Adjust paths for your account.
-# ============================================================================
+# Usage: sbatch -J <jobname> --chdir=<calcdir> submit_vasp.sh
 
-# --- container + VASPsol build ---
-# The container must be built with VASPsol linked (verify with:
-#   singularity exec $CONTAINER grep -l VASPsol $VASP_BIN
-# or by running S1_clean pilot first and checking OUTCAR for solvation output.)
-CONTAINER=${CONTAINER:-/scratch/taehun1/hyunjin/vasp_vaspsol.sif}
-VASP_BIN=${VASP_BIN:-vasp_std}
+# --- Clean conda/python from environment ---
+unset PYTHONPATH PYTHONHOME CONDA_PREFIX CONDA_DEFAULT_ENV
+unset CONDA_SHLVL CONDA_PROMPT_MODIFIER
+export LD_LIBRARY_PATH=""
 
-# --- runtime env ---
-export OMP_NUM_THREADS=1
+# --- NVHPC compiler + MPI ---
+export NVHPC=$HOME/nvhpc
+export NVARCH=Linux_x86_64
+export NVVERSION=25.9
+export PATH=$NVHPC/$NVARCH/$NVVERSION/compilers/bin:$PATH
+export PATH=$NVHPC/$NVARCH/$NVVERSION/comm_libs/mpi/bin:$PATH
+
+export LD_LIBRARY_PATH=$NVHPC/$NVARCH/$NVVERSION/comm_libs/mpi/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$NVHPC/$NVARCH/$NVVERSION/compilers/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$NVHPC/$NVARCH/$NVVERSION/compilers/extras/qd/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOME/fftw/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-13.0/lib64:$LD_LIBRARY_PATH
+
+export OMP_NUM_THREADS=4
 export MKL_NUM_THREADS=1
 
-echo "Job: ${SLURM_JOB_NAME} | Dir: $(pwd) | Container: ${CONTAINER}"
+VASP_BIN=/home/hyunjin/vasp.6.4.3/bin/vasp_std
+
+NPROCS=${SLURM_NTASKS:-1}
+echo "Job: ${SLURM_JOB_NAME} | Dir: $(pwd) | MPI ranks: ${NPROCS} | GPUs: ${SLURM_GPUS_ON_NODE:-1}"
 echo "Start: $(date)"
 
-srun --mpi=pmix singularity exec --nv "${CONTAINER}" "${VASP_BIN}"
+mpirun --bind-to none -np ${NPROCS} ${VASP_BIN}
 
 echo "End: $(date)"
