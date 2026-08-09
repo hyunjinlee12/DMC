@@ -6,10 +6,10 @@
     "O",
     "Pd"
   ],
-  "sid": "S3",
+  "sid": "S4",
   "kind": "clean_slab",
-  "source_CONTCAR": "calculations/G2_slab/S3_PdO100/CONTCAR",
-  "n_atoms_total": 128,
-  "n_atoms_fixed": 32,
+  "source_CONTCAR": "calculations/G2_slab/S4_PdO2_110/CONTCAR",
+  "n_atoms_total": 144,
+  "n_atoms_fixed": 42,
   "purpose": "Clean-slab reference with same G2 complete-layer mask as ads."
 }

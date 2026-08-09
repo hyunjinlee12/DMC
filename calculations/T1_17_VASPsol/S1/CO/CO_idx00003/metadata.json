@@ -1,7 +1,7 @@
 {
   "level": "T1.17 VASPsol (methanol, LSOL=T, EB_K=32.6, TAU=0)",
-  "restart_kind": "geometric only (ISTART=0, ICHARG=2). L1 had LWAVE=.FALSE. \u2192 no WAVECAR.",
-  "mask_convention": "T1.16 production mask inherited (bottom-half of substrate by median z). Same mask as clean slab for exact \u0394G cancellation.",
+  "restart_kind": "geometric only (ISTART=0, ICHARG=2)",
+  "mask_convention": "G2 complete-layer mask (32/40/32/32/42 per surface). Applied by species+position mapping from G2 CONTCAR. This is a COMPLETE-LAYER constraint \u2014 every atomic plane is either fully fixed or fully free. Differs from T1.16 which used a partial-layer bottom-half rule.",
   "poscar_species": [
     "C",
     "O",
@@ -11,6 +11,9 @@
   "ads": "CO",
   "idx": 3,
   "source_L1_CONTCAR": "calculations/T1_16_DFT_L2/S1/CO/01_CO_idx00003/CONTCAR",
+  "canonical_from_G2": "calculations/G2_slab/S1_Pd100/CONTCAR",
   "n_atoms_total": 82,
-  "n_atoms_fixed": 40
+  "n_atoms_fixed": 32,
+  "T1_16_partial_layer_atoms_now_freed": null,
+  "purpose": "Level-2 solvated adsorbate slab with G2 complete-layer mask. Layer-3 atoms that T1.16 fixed via partial-layer rule are now FREE and re-relax under VASPsol."
 }

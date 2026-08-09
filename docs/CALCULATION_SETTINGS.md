@@ -249,26 +249,43 @@ Same INCAR as T1.16 **plus** the VASPsol block and explicit restart flags:
 | **TAU** | **0** | exclude cavitation/non-electrostatic term (workplan) |
 | ~~LAMBDA_D_K~~ | **absent** | deliberately not set — would activate the linearised Poisson–Boltzmann electrolyte model (Debye screening), which is a separate physical effect. |
 
-**Clean slab (final approach, round 5)**:
-- **T1.16 production mask is the canonical mask** (40/56/64/52/72 per
-  surface, deterministic and independent of adsorbate type — verified by
-  direct file inspection of all 65 T1.16 candidates).
-- **Ads slab**: T1.16 CONTCAR verbatim (positions + selective-dynamics mask
-  inherited via ASE constraint reading).
-- **Clean slab**: built by stripping the adsorbate (C, H, and C-bonded O
-  within 1.5 Å, PBC-aware) from that surface's top-1 T1.16 CONTCAR. ASE's
-  atom-deletion machinery re-indexes the FixAtoms constraint so the mask
-  transfers exactly. **Fixed-atom positions match the ads dir atom-for-atom**
-  because those atoms never moved during T1.16 (they were frozen).
-- Result: ads and clean dirs share IDENTICAL cell + IDENTICAL fixed-atom
-  count + IDENTICAL fixed-atom coordinates + IDENTICAL POTCAR substrate
-  order + IDENTICAL KSPACING — auto-consistency check reports 0 issues.
-- Verified (2026-07-17 round-5 rebuild):
-  - S1 clean = ads = 40 fixed, fixed coordinates identical
-  - S3 clean = ads = 64 fixed, fixed coordinates identical
-- Previous attempts (mask by median including adsorbate; mask via G2
-  canonical index) are retired — see git history for the flawed
-  rationales.
+**Clean slab (round 7 — final complete-layer approach)**:
+
+Layer-wise z-clustering audit revealed that **T1.16's bottom-half-by-
+median-z mask splits atoms WITHIN a layer** (e.g. S1 layer 3: 8 fixed +
+8 free among 16 atoms at essentially the same z, differing only by
+<0.01 Å after MLIP relax). This partial-layer fixation breaks in-plane
+symmetry and is physically unjustifiable for slab calcs.
+
+**G2's original mask is complete-layer** (verified via z-cluster inspection
+across all 5 surfaces — every atomic plane is either fully fixed or
+fully free): 32/40/32/32/42.
+
+**T1.17 therefore uses G2's complete-layer mask, not T1.16's partial-layer mask.**
+
+- **Ads slab**: read T1.16 CONTCAR, map G2's 32/40/32/32/42 fixed indices
+  by species + Euclidean position (tol 1.5 Å), overwrite those ads
+  positions with G2's canonical coordinates, apply FixAtoms. Free
+  substrate atoms — including the 8 layer-3 atoms that T1.16 held fixed
+  partially — start from T1.16 positions and re-relax freely under
+  VASPsol.
+- **Clean slab**: G2 CONTCAR verbatim.
+- Auto-consistency check: ads and clean pairs share identical cell,
+  identical 32/40/32/32/42 fixed count, identical fixed-atom coordinates.
+- Verified (round 7 rebuild): S1 ads=clean=32, S3 ads=clean=32, S2/S3b/S4
+  clean prepared, pending ads dirs will follow same rule.
+
+**T1.16 status (79 pending) is unchanged**: keeps its partial-layer mask,
+continues as screening only. Relative ranking within a surface remains
+valid because all candidates on same surface use same mask. **T1.16
+absolute energies are NOT used as final adsorption-energy references** —
+that role belongs to T1.17.
+
+Retired approaches (see git history):
+- round 3-4 "strip_adsorbate from top-1 T1.16" (partial-layer inheritance)
+- round 5 "T1.16 mask inheritance" (again partial-layer, my mistake)
+- round 7 restores round-4's G2-canonical approach with the correct
+  physical rationale (complete-layer preservation).
 
 **Status**: 4 dirs generated (S1: CO+clean; S3: CH₃O+clean). 15 more will be
 created as more T1.16 completes.

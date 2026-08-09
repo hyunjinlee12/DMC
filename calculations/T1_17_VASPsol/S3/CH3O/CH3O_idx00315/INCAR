@@ -1,4 +1,4 @@
-SYSTEM = pddmc T1.17 VASPsol (methanol implicit solvent)
+SYSTEM = pddmc T1.17 VASPsol (methanol, complete-layer mask)
 ENCUT = 520
 PREC = Accurate
 LASPH = .TRUE.
