@@ -3,12 +3,13 @@
   "restart_kind": "geometric only (ISTART=0, ICHARG=2). L1 had LWAVE=.FALSE. \u2192 no WAVECAR.",
   "mask_convention": "G2 canonical fixed-atom indices; fixed coordinates copied from G2 CONTCAR; mapping done by species + position (PBC-agnostic Euclidean, tol=1.5 \u00c5).",
   "poscar_species": [
+    "O",
     "Pd"
   ],
-  "sid": "S1",
+  "sid": "S3b",
   "kind": "clean_slab",
-  "source_CONTCAR": "calculations/G2_slab/S1_Pd100/CONTCAR",
-  "n_atoms_total": 80,
+  "source_CONTCAR": "calculations/G2_slab/S3b_PdO100_PdOterm/CONTCAR",
+  "n_atoms_total": 104,
   "n_atoms_fixed": 32,
   "purpose": "Clean-slab VASPsol reference. Same G2 fixed indices and coordinates as the ads dirs \u2192 exact cancellation in \u0394G_ads."
 }

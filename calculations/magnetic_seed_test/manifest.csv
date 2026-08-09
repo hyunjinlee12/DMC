@@ -1,0 +1,12 @@
+name,source,ispin,nupdown,magmom,note
+S1_clean__ispin1,G2 S1 clean,1,,default,even electron
+S1_clean__lowmag,G2 S1 clean,2,,80*0.200,even electron
+S1_clean__highmag,G2 S1 clean,2,,80*1.000,even electron
+S1_CO_idx3__ispin1,CONTCAR,1,,default,even electron
+S1_CO_idx3__lowmag,CONTCAR,2,,1*0.000 1*0.000 80*0.200,even electron
+S1_CO_idx3__highmag,CONTCAR,2,,1*0.000 1*0.000 80*1.000,even electron
+S3_clean__nonmag,G2 S3 clean,1,,default,
+S3_clean__fm,G2 S3 clean,2,,64*0.000 64*0.500,
+S3_clean__afm,G2 S3 clean,2,,64*0.000 +0.500 -0.500 +0.500 +0.500 +0.500 +0.500 +0.500 +0.500 +0.500 +0.500 +0.500 -0.500 +0.500 +0.500 -0.500 +0.500 -0.500 +0.500 -0.500 -0.500 +0.500 -0.500 -0.500 +0.500 -0.500 -0.500 -0.500 -0.500 +0.500 +0.500 +0.500 +0.500 +0.500 +0.500 -0.500 -0.500 +0.500 -0.500 +0.500 -0.500 -0.500 -0.500 +0.500 -0.500 -0.500 -0.500 +0.500 -0.500 -0.500 -0.500 +0.500 -0.500 -0.500 -0.500 +0.500 -0.500 -0.500 -0.500 -0.500 +0.500 -0.500 -0.500 +0.500 +0.500,
+S3_CH3O_idx315__doublet,CONTCAR,2,1,1*0.000 3*0.000 64*0.000 1*1.000 64*0.000,odd electron doublet
+S3_CH3O_idx315__unconstrained,CONTCAR,2,,1*0.000 3*0.000 64*0.000 1*1.000 64*0.300,"odd electron, no NUPDOWN"

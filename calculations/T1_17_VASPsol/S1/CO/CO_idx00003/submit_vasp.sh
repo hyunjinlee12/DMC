@@ -26,12 +26,8 @@ export LD_LIBRARY_PATH=/usr/local/cuda-13.0/lib64:$LD_LIBRARY_PATH
 export OMP_NUM_THREADS=4
 export MKL_NUM_THREADS=1
 
-# NOTE: VASP >=5.4.1 standard builds support solvation via LSOL — a separate
-# vasp_std_sol binary is NOT required if your build has LSOL compiled in.
-# Verify on first pilot run:
-#   grep -E "VASPsol|LSOL|EB_K" OUTCAR
-# should show solvation is active. If unknown-INCAR-tag warnings appear,
-# rebuild VASP with the solvation source.
+# VASP >=5.4.1 standard builds usually support LSOL — no separate binary
+# required. Verify with `grep -E "LSOL|EB_K|VASPsol" OUTCAR` on the pilot.
 VASP_BIN=${VASP_BIN:-/home/hyunjin/vasp.6.4.3/bin/vasp_std}
 
 NPROCS=${SLURM_NTASKS:-1}
