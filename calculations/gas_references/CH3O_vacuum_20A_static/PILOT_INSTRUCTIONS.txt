@@ -1,0 +1,16 @@
+This dir is a STATIC single-point box-size sanity check.
+DO NOT SUBMIT until the following two steps are done:
+
+  1. Wait for CH3O_vacuum/ relax to finish
+     (OUTCAR contains 'reached required accuracy').
+  2. In the gas_references parent dir, run:
+     python prepare_static_from_relax.py
+     This overwrites this dir's POSCAR with the relaxed coordinates
+     placed in a 20A box (cell only).
+  3. Verify OUTCAR_SOURCE_SHA256 file matches actual source CONTCAR.
+  4. touch READY in this dir.
+  5. Then sbatch submit_vasp.sh.
+
+The submit script has a READY guard that will EXIT immediately if
+READY does not exist. This prevents accidental submission with the
+placeholder POSCAR.

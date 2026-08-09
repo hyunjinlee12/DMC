@@ -363,7 +363,7 @@ with the reservoir chemical potentials defined by the physical setup:
 |---|---|---|
 | CO | gas feed | `μ_CO(g) = G(CO)_gas + kT·ln(p/p⁰)` — takes gas-phase E |
 | CO | dissolved | `μ_CO(g) + Δμ_solvation(CO, methanol)` |
-| CH₃OH | pure liquid @ activity 1 (usual for methanol solvent) | `G(CH₃OH)_gas + ΔG_vap(exp)` OR `G(CH₃OH)_liquid` from AIMD |
+| CH₃OH | pure liquid @ activity 1 (usual for methanol solvent) | `G(CH₃OH)_gas + RT ln(p_sat(T)/p°)` (see sign note below) OR `G(CH₃OH)_liquid` from AIMD |
 | CH₃OH | gas feed | `G(CH₃OH)_gas + kT·ln(p/p⁰)` |
 | H₂ | CHE (½ μ_H₂(g) at pH=0, U=0 SHE) | `½ G(H₂)_gas` — always the gas reference |
 | CH₃O radical | auxiliary reference | `G(CH₃O)_radical` — use only if the MeOH(U) formula is unwanted |
@@ -379,11 +379,31 @@ CHE with methanol reservoir (workplan preferred for T1.19 descriptor map):
 
 CH₃OH from `CH3OH_vaspsol` gives an electronic energy in implicit methanol —
 this is NOT directly the liquid chemical potential. To use it as a liquid
-reservoir at activity 1, add a **liquid-standard-state correction**:
-`μ_CH₃OH(l) ≈ G(CH₃OH)_gas + ΔG_vap(exp = 4.1 kJ/mol)` OR extract from AIMD.
-Alternatively, take `μ_CH₃OH` as gas reference and treat the solvent role of
-methanol via VASPsol on the slab side alone. **The choice must be recorded in
-the paper_data/ metadata** — this is the biggest open decision left for T1.18.
+reservoir at activity 1, add a **liquid-standard-state correction**. Using the
+vapour-pressure relation
+
+```
+μ_CH₃OH(l, T) = μ_CH₃OH(g)°(T) + RT ln(p_sat(T)/p°)
+```
+
+with methanol `p_sat ≈ 0.169 bar` at 298.15 K (NIST Antoine parameters) and
+`p° = 1 bar`, gives
+
+```
+μ_CH₃OH(l) − μ_CH₃OH(g)°  ≈  RT ln(0.169) ≈ −4.40 kJ/mol   (NEGATIVE at 298 K)
+```
+
+That is, liquid methanol at activity 1 has a **lower** chemical potential than
+the 1 bar ideal gas reference at ambient T, because the saturation vapour
+pressure is below the standard pressure. **Do not add +ΔG_vap** as an earlier
+draft of this doc suggested — the sign is negative.
+
+Alternative: extract μ_CH₃OH(l) from AIMD of liquid methanol, which bypasses
+the ideal-gas approximation but costs an extra simulation.
+
+Take `μ_CH₃OH` as gas reference if the experiment supplies methanol from a
+gas phase. **The choice must be recorded in the paper_data/ metadata** — this
+is the biggest open decision left for T1.18.
 
 **Not required**: matching `env` between adsorbed slab and reservoir. The
 requirement is matching `env` between adsorbed and clean slab. Mixing a
