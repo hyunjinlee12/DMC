@@ -16,5 +16,6 @@
   "LSOL": false,
   "KPOINTS": "Gamma-only (explicit file)",
   "purpose": "Gas-phase CH3OH reference for T1.18 adsorption energy (vacuum convention).",
-  "note": "methanol, closed-shell singlet. Convention note: G(CH3OH) here is the ISOLATED-GAS reference; if the T1.18 formula requires a liquid/solution standard state, a \u0394\u03bc_solvation correction must be added post-hoc."
+  "note": "methanol, closed-shell singlet. Convention note: G(CH3OH) here is the ISOLATED-GAS reference; if the T1.18 formula requires a liquid/solution standard state, a \u0394\u03bc_solvation correction must be added post-hoc.",
+  "LREAL": ".FALSE. (per VASP docs recommendation for small molecules; negligible cost, better accuracy)"
 }

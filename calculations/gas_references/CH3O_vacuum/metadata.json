@@ -16,5 +16,6 @@
   "LSOL": false,
   "KPOINTS": "Gamma-only (explicit file)",
   "purpose": "Gas-phase CH3O reference for T1.18 adsorption energy (vacuum convention).",
-  "note": "CH3O radical (open-shell doublet, S=1/2). POSCAR sort=True order = C H H H O; MAGMOM places unpaired \u03bc on O. NUPDOWN=1 enforces total moment = 1 \u03bc_B."
+  "note": "CH3O radical (open-shell doublet, S=1/2). POSCAR sort=True order = C H H H O; MAGMOM places unpaired \u03bc on O. NUPDOWN=1 enforces total moment = 1 \u03bc_B.",
+  "LREAL": ".FALSE. (per VASP docs recommendation for small molecules; negligible cost, better accuracy)"
 }

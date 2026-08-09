@@ -96,10 +96,10 @@ for d in sorted((seed_dir/'magnetic_seed_test').iterdir()):
         purpose = 'S1/CO high-moment seed (Pd 1.0 μB, C/O = 0); T1.16 default reproduction.'
     elif 'S3_clean' in name and 'nonmag' in name:
         purpose = 'S3 clean nonmagnetic (ISPIN=1); PdO low-spin baseline.'
+    elif 'S3_clean' in name and 'afm' in name:
+        purpose = 'S3 clean AFM-like seed (Pd ±0.5, balanced 32/32 by frac-x order; electronic-basin probe, not a crystallographic AFM order).'
     elif 'S3_clean' in name and 'fm' in name:
         purpose = 'S3 clean FM seed (Pd 0.5 μB).'
-    elif 'S3_clean' in name and 'afm' in name:
-        purpose = 'S3 clean AFM seed (Pd ±0.5, exactly 32/32 by frac-x).'
     elif 'CH3O' in name and 'doublet' in name:
         purpose = 'S3/CH3O radical doublet (NUPDOWN=1, MAGMOM on ads O).'
     elif 'CH3O' in name and 'unconstrained' in name:
@@ -121,7 +121,7 @@ for d in sorted((seed_dir/'magnetic_seed_test').iterdir()):
     magmom = next((l.split('=',1)[1].strip() for l in incar.splitlines()
                    if l.strip().startswith('MAGMOM')), '')
     manifest_rows.append({'dir':d.name, 'ISPIN':ispin, 'NUPDOWN':nupdown,
-                          'MAGMOM': (magmom[:80] + '...') if len(magmom) > 80 else magmom,
+                          'MAGMOM_full': magmom,   # no truncation
                           'source': meta.get('source',''), 'purpose': meta.get('purpose','')})
 
 # Verify S3 AFM balance in manifest
@@ -139,19 +139,18 @@ assert p == 32 and m == 32, f'S3 AFM not balanced: +={p}, -={m}'
 print(f'  S3 AFM balance verified: +0.5 × {p}, -0.5 × {m}')
 
 with open(seed_dir/'manifest.csv', 'w', newline='') as fh:
-    w = csv.DictWriter(fh, fieldnames=['dir','ISPIN','NUPDOWN','MAGMOM','source','purpose'])
+    w = csv.DictWriter(fh, fieldnames=['dir','ISPIN','NUPDOWN','MAGMOM_full','source','purpose'])
     w.writeheader()
     for r in manifest_rows: w.writerow(r)
 
-# Analysis helper script
-(seed_dir/'analyze_seed_results.py').write_text('''"""After all 11 seed dirs finish, run this to summarize:
-- final energy(sigma->0)
-- final total magnetization
-- per-orbital tot magnetization (s, p, d)
-- convergence status
+# Analysis helper — uses electronic-convergence marker (static, NSW=0)
+(seed_dir/'analyze_seed_results.py').write_text('''"""Static-calc analyzer for magnetic seed test.
 
-Usage:
-    python analyze_seed_results.py > summary.txt
+For NSW=0 static calcs, VASP does NOT print "reached required accuracy"
+(that is the ionic-loop marker). Electronic convergence prints
+"aborting loop because EDIFF is reached" (or an equivalent).
+
+Usage:  python analyze_seed_results.py > summary.txt
 """
 import re
 from pathlib import Path
@@ -162,13 +161,20 @@ for d in sorted(Path('magnetic_seed_test').iterdir()):
     if not outcar.exists():
         print(f'{d.name:<38} STATUS = not yet run')
         continue
-    text = outcar.read_text()
+    text = outcar.read_text(errors='replace')
+    ediff_reached = 'aborting loop because EDIFF is reached' in text
+    finished = ('General timing and accounting informations' in text
+                or 'Total CPU time used' in text)
+    fatal = any(re.search(p, text) for p in
+                [r'ZBRENT', r'BRMIX', r'Sub-Space-Matrix is not hermitian'])
     E = re.findall(r'energy\\(sigma->0\\)\\s*=\\s*(-?\\d+\\.\\d+)', text)
-    mag_line = re.findall(r'number of electron.*?magnetization\\s+(-?\\d+\\.\\d+)', text)
-    conv = 'reached required accuracy' in text
+    mag = re.findall(r'number of electron.*?magnetization\\s+(-?\\d+\\.\\d+)', text)
     E_final = float(E[-1]) if E else None
-    m_final = float(mag_line[-1]) if mag_line else None
-    print(f'{d.name:<38} E={E_final} μ_tot={m_final} conv={conv}')
+    m_final = float(mag[-1]) if mag else None
+    status = ('OK' if (ediff_reached and finished and not fatal)
+              else 'FATAL' if fatal else 'INCOMPLETE')
+    print(f'{d.name:<38} status={status:<10} E={E_final} '
+          f'mu_tot={m_final} EDIFF_reached={ediff_reached} finished={finished}')
 ''')
 
 # README
