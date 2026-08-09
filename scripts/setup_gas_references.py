@@ -198,12 +198,18 @@ def build_dir(mol_name, variant, box_A=15.0, suffix='', static_only=False):
     }
     if static_only:
         meta['workflow_before_submit'] = (
-            f'This is a STATIC (NSW=0) box-size sanity check. Before submitting, '
-            f'copy the CONTCAR from ../{mol_name}_vacuum/ (the 15 Å relaxed '
-            f'geometry) into this dir\'s POSCAR, then submit. This isolates '
-            f'the cell-size effect from any geometry drift. Target: '
-            f'|E({box_A} Å) − E(15 Å)| < 5 meV.'
+            f'This dir is a STATIC (IBRION=-1, NSW=0) box-size sanity check '
+            f'in a {box_A} Å cubic box. DO NOT copy CONTCAR directly from '
+            f'../{mol_name}_vacuum/ — that would carry the 15 Å lattice too. '
+            f'Run scripts/prepare_static_from_relax.py after '
+            f'{mol_name}_vacuum finishes; it extracts positions only and '
+            f'rewrites POSCAR here with the correct {box_A} Å cell + relaxed '
+            f'coordinates centered. Then submit. Target: '
+            f'|E(20 Å) − E(15 Å)| < 5 meV.'
         )
+        meta['paired_with'] = (f'{mol_name}_vacuum_15A_static and '
+                                f'{mol_name}_vacuum_20A_static — same relaxed '
+                                f'coordinates, different cell.')
     (dest/'metadata.json').write_text(json.dumps(meta, indent=2))
     return dest
 
@@ -215,16 +221,25 @@ def main():
             d = build_dir(mol, variant, box_A=15.0)
             dirs.append(d)
             print(f'  {d.name}')
-    # 2 box-size sanity checks for polar molecules (Δμ_finite_cell < 5 meV target).
-    # Per reviewer request: same relaxed geometry must be used in both boxes to
-    # isolate cell-size effect from geometry drift. Therefore 20 Å variants are
-    # STATIC (IBRION=-1, NSW=0). The POSCAR here has ideal geometry; before
-    # submitting, replace POSCAR with CONTCAR from the corresponding 15 Å
-    # relaxation output (see 20A dir's metadata.json for the workflow).
+    # Paired static box-size sanity check for polar molecules
+    # (Δμ_finite_cell < 5 meV target).
+    #
+    # Reviewer 2026-07-17 round 3:
+    #   Copying CONTCAR from CH3O_vacuum/ (15 Å relaxed) into a 20 Å dir would
+    #   carry the 15 Å lattice too → both boxes end up at 15 Å, test is void.
+    #   The paired-static design fixes this: both statics read the SAME relaxed
+    #   coordinates but use different box sizes. `scripts/prepare_static_from_relax.py`
+    #   handles the coordinate extraction correctly (positions only, not cell).
+    #
+    # After CH3O_vacuum (and CH3OH_vacuum) primary relaxation finishes:
+    #   python scripts/prepare_static_from_relax.py
+    # populates POSCAR of both statics with the correct geometry + cell pair.
     for mol in ['CH3OH','CH3O']:
-        d = build_dir(mol, 'vacuum', box_A=20.0, suffix='_20A', static_only=True)
-        dirs.append(d)
-        print(f'  {d.name}  (20 Å static — post-15Å CONTCAR replacement required)')
+        d15 = build_dir(mol, 'vacuum', box_A=15.0, suffix='_15A_static', static_only=True)
+        d20 = build_dir(mol, 'vacuum', box_A=20.0, suffix='_20A_static', static_only=True)
+        dirs.extend([d15, d20])
+        print(f'  {d15.name}  (paired 15 Å static — POSCAR filled by prepare_static_from_relax.py)')
+        print(f'  {d20.name}  (paired 20 Å static)')
 
     readme = """# gas_references — isolated-molecule DFT (T1.18 references)
 

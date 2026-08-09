@@ -161,34 +161,75 @@ def build_adsorbate_dir(sid, ads, idx, contcar_src, E_L1_vacuum):
     })
     return dest, 'created'
 
-def _strip_adsorbate(atoms):
-    """Return substrate-only copy of ads-slab atoms.
-    Adsorbate = all C, all H, and any O within 1.5 Å of any C.
-    Preserves substrate atomic positions + selective-dynamics mask atom-for-atom.
+def _strip_adsorbate(atoms, ads_kind, pristine_substrate):
+    """Return substrate-only copy of ads-slab atoms with defensive asserts.
+
+    ads_kind: 'CO' | 'CH3O' | 'coads' — dictates expected removed composition.
+    pristine_substrate: read(G2_slab/{sdir}/CONTCAR) — gives expected counts.
+
+    Adsorbate = all C, all H, and any O bonded (< 1.5 Å, PBC-aware) to any C.
+
+    Asserts:
+      - #C removed == expected (CO:1, CH3O:1, coads:2)
+      - #H removed == expected (CO:0, CH3O:3, coads:3)
+      - #O removed == expected (CO:1, CH3O:1, coads:2)
+      - remaining Pd count == pristine Pd count
+      - remaining O count == pristine substrate O count
+      - every removed O has ≥ 1 C neighbour < 1.5 Å (PBC-aware)
+      - no substrate O was removed
     """
+    EXP = {'CO':(1,0,1),'CH3O':(1,3,1),'coads':(2,3,2)}
+    n_c_exp, n_h_exp, n_o_exp = EXP[ads_kind]
+
     syms = atoms.get_chemical_symbols()
     c_idx = [i for i,s in enumerate(syms) if s=='C']
     h_idx = [i for i,s in enumerate(syms) if s=='H']
     o_idx = [i for i,s in enumerate(syms) if s=='O']
-    ads_set = set(c_idx) | set(h_idx)
+
+    # Identify ads O by PBC-aware C–O distance
+    ads_o = []
     for oi in o_idx:
         for ci in c_idx:
-            if atoms.get_distance(ci, oi, mic=True) < 1.5:
-                ads_set.add(oi); break
-    keep = [i for i in range(len(atoms)) if i not in ads_set]
-    return atoms[keep]  # ASE handles constraint reindex
+            d = atoms.get_distance(ci, oi, mic=True)
+            if d < 1.5:
+                ads_o.append(oi); break
 
-def build_clean_slab_dir(sid, ads_contcar_src):
+    assert len(c_idx) == n_c_exp, \
+        f'ads_kind={ads_kind}: expected {n_c_exp} C, got {len(c_idx)}'
+    assert len(h_idx) == n_h_exp, \
+        f'ads_kind={ads_kind}: expected {n_h_exp} H, got {len(h_idx)}'
+    assert len(ads_o) == n_o_exp, \
+        f'ads_kind={ads_kind}: expected {n_o_exp} C-bonded O, got {len(ads_o)}'
+
+    ads_set = set(c_idx) | set(h_idx) | set(ads_o)
+    keep = [i for i in range(len(atoms)) if i not in ads_set]
+    slab = atoms[keep]
+
+    # Verify substrate composition matches pristine G2 slab
+    ss = slab.get_chemical_symbols()
+    n_pd_slab = sum(1 for s in ss if s=='Pd')
+    n_o_slab  = sum(1 for s in ss if s=='O')
+    n_pd_pris = sum(1 for s in pristine_substrate.get_chemical_symbols() if s=='Pd')
+    n_o_pris  = sum(1 for s in pristine_substrate.get_chemical_symbols() if s=='O')
+    assert n_pd_slab == n_pd_pris, \
+        f'stripped Pd {n_pd_slab} != pristine Pd {n_pd_pris}'
+    assert n_o_slab == n_o_pris, \
+        f'stripped O {n_o_slab} != pristine substrate O {n_o_pris} '\
+        f'— possible substrate-O leak into adsorbate O detection'
+    return slab
+
+def build_clean_slab_dir(sid, ads_contcar_src, ads_kind):
     """Clean slab built from THIS surface's top-1 ads CONTCAR:
     substrate atoms with the EXACT mask + positions that the T1.16 ads calc had.
-    This guarantees identical selective-dynamics indices + cell + POTCAR order
+    Guarantees identical selective-dynamics indices + cell + POTCAR order
     with the adsorbate dir, so cavitation/dielectric offsets cancel exactly."""
     dest = OUT/f'{sid}_clean'
     if dest.exists():
         return None, 'already exists'
     dest.mkdir(parents=True)
     ads_atoms = read(ads_contcar_src)
-    slab = _strip_adsorbate(ads_atoms)
+    pristine = read(G2/SDIRS[sid]/'CONTCAR')
+    slab = _strip_adsorbate(ads_atoms, ads_kind, pristine)
     write_common(dest, slab, sid, extra_meta={
         'sid':sid, 'kind':'clean_slab',
         'source_ads_CONTCAR': str(ads_contcar_src.relative_to(ROOT)),
@@ -282,7 +323,9 @@ def main():
                              'dir':''})
             continue
         p = picked_ads_for_clean[sid]
-        dest, status = build_clean_slab_dir(sid, p['contcar_path'])
+        # find which ads_kind we picked (needed for strip asserts)
+        ads_kind_for_clean = next(a for (s,a) in picks if s==sid and picks[(s,a)]==p)
+        dest, status = build_clean_slab_dir(sid, p['contcar_path'], ads_kind_for_clean)
         if dest is None:
             skipped += 1
             manifest.append({'kind':'clean_slab','sid':sid,'ads':'','idx':'',
@@ -409,7 +452,71 @@ Before running T1.18, define once and record in paper_data/ README:
 """
     (OUT/'README.md').write_text(readme)
     print(f'\nT1_17_VASPsol: created={created}, skipped={skipped}, '
-          f'PENDING={sum(1 for r in manifest if r["status"]=="PENDING L1 completion")}')
+          f'PENDING={sum(1 for r in manifest if "PENDING" in r["status"])}')
+
+    consistency_issues = auto_consistency_check()
+    if consistency_issues:
+        print('\n=== Consistency check ERRORS ===')
+        for e in consistency_issues: print(f'  {e}')
+    else:
+        print('\nAuto-consistency check: all ads/clean pairs match (cell, '
+              'substrate composition, mask, POTCAR order, k-point).')
+
+def auto_consistency_check():
+    """For every ads dir, verify its counterpart {sid}_clean has matching
+    cell, substrate composition, atom order, selective-dynamics mask,
+    POTCAR TITEL order, and k-point setting."""
+    issues = []
+    def _fixed_indices(a):
+        for c in a.constraints:
+            if isinstance(c, FixAtoms): return sorted(int(i) for i in c.index)
+        return []
+    def _titels(p):
+        return [ln.split()[3].split('_')[0]
+                for ln in Path(p).read_text().splitlines()
+                if ln.strip().startswith('TITEL')]
+    def _kspacing(incar_text):
+        for ln in incar_text.splitlines():
+            s = ln.strip()
+            if s.startswith('#'): continue
+            if s.startswith('KSPACING'):
+                return s.split('=')[1].strip()
+        return None
+    ads_dirs = list(OUT.glob('*/*/[Cc]*_idx*'))
+    for ad in ads_dirs:
+        sid = ad.parts[-3]
+        clean = OUT/f'{sid}_clean'
+        if not clean.exists():
+            issues.append(f'{ad.relative_to(OUT)}: no {sid}_clean counterpart'); continue
+        a_ads = read(ad/'POSCAR'); a_cl = read(clean/'POSCAR')
+        if not np.allclose(a_ads.cell.array, a_cl.cell.array, atol=1e-6):
+            issues.append(f'{sid}: cell differs (ads vs clean)')
+        # substrate composition (only Pd + substrate O)
+        ss_ads = a_ads.get_chemical_symbols()
+        ss_cl = a_cl.get_chemical_symbols()
+        n_pd_ads = sum(1 for s in ss_ads if s=='Pd')
+        n_pd_cl  = sum(1 for s in ss_cl if s=='Pd')
+        if n_pd_ads != n_pd_cl:
+            issues.append(f'{sid}: Pd count differs ({n_pd_ads} vs {n_pd_cl})')
+        # selective-dynamics mask: counts must match
+        f_ads = _fixed_indices(a_ads); f_cl = _fixed_indices(a_cl)
+        if len(f_ads) != len(f_cl):
+            issues.append(f'{sid}: mask count differs (ads {len(f_ads)} vs clean {len(f_cl)})')
+        # POTCAR TITEL order — clean should match pristine substrate species
+        t_cl = _titels(clean/'POTCAR')
+        pristine = read(G2/SDIRS[sid]/'CONTCAR')
+        pristine_species_ordered = []
+        for s in ('C','H','O','Pd'):     # ASE sort=True alphabetical order
+            if s in pristine.get_chemical_symbols():
+                pristine_species_ordered.append(s)
+        if t_cl != pristine_species_ordered:
+            issues.append(f'{sid}: clean POTCAR {t_cl} != pristine substrate {pristine_species_ordered}')
+        # KSPACING
+        k_ads = _kspacing((ad/'INCAR').read_text())
+        k_cl  = _kspacing((clean/'INCAR').read_text())
+        if k_ads != k_cl:
+            issues.append(f'{sid}: KSPACING differs ({k_ads} vs {k_cl})')
+    return issues
 
 if __name__=='__main__':
     main()

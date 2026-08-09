@@ -1,7 +1,7 @@
 {
   "molecule": "CH3OH",
   "variant": "vacuum",
-  "box_A": 20.0,
+  "box_A": 15.0,
   "static_only": true,
   "natoms": 6,
   "poscar_species_order": [
@@ -17,5 +17,6 @@
   "KPOINTS": "Gamma-only (explicit file)",
   "purpose": "Gas-phase CH3OH reference for T1.18 adsorption energy (vacuum convention).",
   "note": "methanol, closed-shell singlet. Convention note: G(CH3OH) here is the ISOLATED-GAS reference; if the T1.18 formula requires a liquid/solution standard state, a \u0394\u03bc_solvation correction must be added post-hoc.",
-  "workflow_before_submit": "This is a STATIC (NSW=0) box-size sanity check. Before submitting, copy the CONTCAR from ../CH3OH_vacuum/ (the 15 \u00c5 relaxed geometry) into this dir's POSCAR, then submit. This isolates the cell-size effect from any geometry drift. Target: |E(20.0 \u00c5) \u2212 E(15 \u00c5)| < 5 meV."
+  "workflow_before_submit": "This dir is a STATIC (IBRION=-1, NSW=0) box-size sanity check in a 15.0 \u00c5 cubic box. DO NOT copy CONTCAR directly from ../CH3OH_vacuum/ \u2014 that would carry the 15 \u00c5 lattice too. Run scripts/prepare_static_from_relax.py after CH3OH_vacuum finishes; it extracts positions only and rewrites POSCAR here with the correct 15.0 \u00c5 cell + relaxed coordinates centered. Then submit. Target: |E(20 \u00c5) \u2212 E(15 \u00c5)| < 5 meV.",
+  "paired_with": "CH3OH_vacuum_15A_static and CH3OH_vacuum_20A_static \u2014 same relaxed coordinates, different cell."
 }
