@@ -7,7 +7,10 @@
   ],
   "sid": "S3",
   "kind": "clean_slab",
-  "source_CONTCAR": "calculations/G2_slab/S3_PdO100/CONTCAR",
-  "purpose": "Clean-slab VASPsol reference. Required for \u0394G_ads^sol = G(slab+ads)_sol \u2212 G(slab)_sol \u2212 \u03bc_ads(reference).",
-  "note": "Uses IDENTICAL VASPsol INCAR settings as the adsorbate dirs so cavity/dielectric offsets cancel in the difference."
+  "source_ads_CONTCAR": "calculations/T1_16_DFT_L2/S3/CH3O/00_CH3O_idx00315/CONTCAR",
+  "derived_by": "strip C, H, and any O within 1.5 \u00c5 of C from ads CONTCAR. Preserves substrate positions + selective-dynamics mask so \u0394G_ads = G(slab+ads) \u2212 G(slab) \u2212 \u03bc_ads has exact substrate cancellation.",
+  "n_atoms_total": 128,
+  "n_atoms_fixed": 64,
+  "purpose": "Clean-slab VASPsol reference (Convention A: fully relax).",
+  "note": "One clean slab per surface. Mask inherited from that surface's top-1 ads CONTCAR \u2014 matches that top-1 exactly. Other ads candidates on the same surface may have slightly different masks (differ by a few atoms in layer 3) due to per-candidate MLIP relaxation. Effect on \u0394G is expected within 10-50 meV."
 }

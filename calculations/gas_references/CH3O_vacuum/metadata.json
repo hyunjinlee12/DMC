@@ -2,6 +2,7 @@
   "molecule": "CH3O",
   "variant": "vacuum",
   "box_A": 15.0,
+  "static_only": false,
   "natoms": 5,
   "poscar_species_order": [
     "C",

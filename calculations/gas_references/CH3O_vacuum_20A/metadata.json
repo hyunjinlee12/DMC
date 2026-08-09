@@ -2,6 +2,7 @@
   "molecule": "CH3O",
   "variant": "vacuum",
   "box_A": 20.0,
+  "static_only": true,
   "natoms": 5,
   "poscar_species_order": [
     "C",
@@ -15,5 +16,6 @@
   "LSOL": false,
   "KPOINTS": "Gamma-only (explicit file)",
   "purpose": "Gas-phase CH3O reference for T1.18 adsorption energy (vacuum convention).",
-  "note": "CH3O radical (open-shell doublet, S=1/2). POSCAR sort=True order = C H H H O; MAGMOM places unpaired \u03bc on O. NUPDOWN=1 enforces total moment = 1 \u03bc_B."
+  "note": "CH3O radical (open-shell doublet, S=1/2). POSCAR sort=True order = C H H H O; MAGMOM places unpaired \u03bc on O. NUPDOWN=1 enforces total moment = 1 \u03bc_B.",
+  "workflow_before_submit": "This is a STATIC (NSW=0) box-size sanity check. Before submitting, copy the CONTCAR from ../CH3O_vacuum/ (the 15 \u00c5 relaxed geometry) into this dir's POSCAR, then submit. This isolates the cell-size effect from any geometry drift. Target: |E(20.0 \u00c5) \u2212 E(15 \u00c5)| < 5 meV."
 }

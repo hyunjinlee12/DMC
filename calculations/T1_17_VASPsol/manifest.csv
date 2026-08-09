@@ -1,20 +1,20 @@
-kind,sid,ads,idx,E_L1_vacuum,status,dir
-ads_top1,S1,CO,3,-451.4141,created,calculations/T1_17_VASPsol/S1/CO/CO_idx00003
-ads_top1,S3,CH3O,315,-749.9231,created,calculations/T1_17_VASPsol/S3/CH3O/CH3O_idx00315
-clean_slab,S1,,,,created,calculations/T1_17_VASPsol/S1_clean
-clean_slab,S2,,,,created,calculations/T1_17_VASPsol/S2_clean
-clean_slab,S3,,,,created,calculations/T1_17_VASPsol/S3_clean
-clean_slab,S3b,,,,created,calculations/T1_17_VASPsol/S3b_clean
-clean_slab,S4,,,,created,calculations/T1_17_VASPsol/S4_clean
-ads_top1,S1,CH3O,,,PENDING L1 completion,
-ads_top1,S1,coads,,,PENDING L1 completion,
-ads_top1,S2,CO,,,PENDING L1 completion,
-ads_top1,S2,CH3O,,,PENDING L1 completion,
-ads_top1,S2,coads,,,PENDING L1 completion,
-ads_top1,S3,CO,,,PENDING L1 completion,
-ads_top1,S3,coads,,,PENDING L1 completion,
-ads_top1,S3b,CO,,,PENDING L1 completion,
-ads_top1,S3b,CH3O,,,PENDING L1 completion,
-ads_top1,S3b,coads,,,PENDING L1 completion,
-ads_top1,S4,CO,,,PENDING L1 completion,
-ads_top1,S4,CH3O,,,PENDING L1 completion,
+kind,sid,ads,idx,E_L1_vacuum,status,dir,derived_from
+ads_top1,S1,CO,3,-451.4141,created,calculations/T1_17_VASPsol/S1/CO/CO_idx00003,
+ads_top1,S3,CH3O,315,-749.9231,created,calculations/T1_17_VASPsol/S3/CH3O/CH3O_idx00315,
+clean_slab,S1,,,,created,calculations/T1_17_VASPsol/S1_clean,calculations/T1_16_DFT_L2/S1/CO/01_CO_idx00003/CONTCAR
+clean_slab,S2,,,,PENDING (no DONE ads on this surface yet),,
+clean_slab,S3,,,,created,calculations/T1_17_VASPsol/S3_clean,calculations/T1_16_DFT_L2/S3/CH3O/00_CH3O_idx00315/CONTCAR
+clean_slab,S3b,,,,PENDING (no DONE ads on this surface yet),,
+clean_slab,S4,,,,PENDING (no DONE ads on this surface yet),,
+ads_top1,S1,CH3O,,,PENDING L1 completion,,
+ads_top1,S1,coads,,,PENDING L1 completion,,
+ads_top1,S2,CO,,,PENDING L1 completion,,
+ads_top1,S2,CH3O,,,PENDING L1 completion,,
+ads_top1,S2,coads,,,PENDING L1 completion,,
+ads_top1,S3,CO,,,PENDING L1 completion,,
+ads_top1,S3,coads,,,PENDING L1 completion,,
+ads_top1,S3b,CO,,,PENDING L1 completion,,
+ads_top1,S3b,CH3O,,,PENDING L1 completion,,
+ads_top1,S3b,coads,,,PENDING L1 completion,,
+ads_top1,S4,CO,,,PENDING L1 completion,,
+ads_top1,S4,CH3O,,,PENDING L1 completion,,

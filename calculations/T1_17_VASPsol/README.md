@@ -19,7 +19,7 @@ ICHARG = 2
 
 ```
 T1_17_VASPsol/
-├── S4/CH3O/CH3O_idxXXXXX/     ← adsorbate slabs (top-1 per group)
+├── S4/coads/coads_idxXXXXX/     ← adsorbate slabs (top-1 per group)
 ├── S4_clean/                    ← clean-slab VASPsol references (5)
 └── manifest.csv
 ```
@@ -45,17 +45,46 @@ grep -E "VASPsol|LSOL|EB_K" OUTCAR
 ```
 If unknown-INCAR-tag warnings appear, the binary needs to be rebuilt.
 
-## Status
+## Status (this run)
 
 - **2 adsorbate dirs created** (from L1-DONE groups).
-- **5 clean-slab dirs created**.
-- **12 PENDING** L1 completion.
+- **2 clean-slab dirs created** (one per surface with any DONE ads).
+- **15 PENDING** L1 completion (adsorbate groups + surfaces without a DONE ads).
 - Re-run this script after new L1 completions to add L2 dirs and, if a
   lower-E winner emerges, mark the previous dir SUPERSEDED.
+
+At full L1 completion this will grow to **14 adsorbate + 5 clean = 19 dirs total**.
+Combined with 10 `gas_references/` dirs → 29 total planned.
 
 ## Current top-1 candidates are PROVISIONAL
 
 Only 7/86 L1 candidates are DONE. Any current top-1 selection here is a
-**pilot** for verifying VASPsol behavior (LSOL recognized, solvation output
-present, no unknown-tag warnings). The final T1.17 winners for the descriptor
-map (T1.19) must be re-evaluated after all 86 L1 finish.
+**pilot** for verifying VASPsol behavior. The final T1.17 winners for the
+descriptor map (T1.19) must be re-evaluated after all 86 L1 finish.
+
+## Pilot acceptance criteria (first submission)
+
+Before submitting all dirs at once, run **one** pilot (e.g. `S1_clean` — cheap,
+no adsorbate) and confirm from OUTCAR:
+
+- `LSOL`, `EB_K=32.6`, `TAU=0` are recognised (grep OUTCAR).
+- Solvation-energy output present (e.g. "solvation energy", "cavity").
+- No `unknown INCAR tag` warnings.
+- `LAMBDA_D_K` is inactive (grep OUTCAR shows no Debye length).
+- `ISTART=0`, `ICHARG=2` confirmed in OUTCAR header.
+- Electronic SCF converged.
+- Ionic relaxation reaches `reached required accuracy` under EDIFFG=-0.03.
+
+Only after this passes, submit the remaining T1.17 dirs.
+
+## Chemical-reservoir decisions still owed (analysis-time)
+
+Before running T1.18, define once and record in paper_data/ README:
+
+- CO reservoir: gas feed (μ_CO(g)) or dissolved CO? — affects reference choice.
+- CH₃OH reservoir: gas reference (μ_CH3OH(g)) or liquid methanol at activity 1?
+  If liquid, must add Δμ_solvation correction to G(CH3OH_vaspsol).
+- H₂ reservoir: CHE gas reference (½ G_H2(g)) — standard.
+- CH₃O radical: auxiliary reference; MeOH(U) formula is preferred.
+- Never mix vacuum and vaspsol references in the same ΔG expression —
+  choose the phase (vacuum or solvated) for the whole formula.

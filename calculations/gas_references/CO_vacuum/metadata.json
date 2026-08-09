@@ -2,6 +2,7 @@
   "molecule": "CO",
   "variant": "vacuum",
   "box_A": 15.0,
+  "static_only": false,
   "natoms": 2,
   "poscar_species_order": [
     "C",

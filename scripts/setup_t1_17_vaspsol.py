@@ -26,7 +26,9 @@ No jobs submitted.
 """
 import json, csv
 from pathlib import Path
+import numpy as np
 from ase.io import read, write
+from ase.constraints import FixAtoms
 
 ROOT = Path('/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc')
 OUT = ROOT/'calculations/T1_17_VASPsol'
@@ -159,21 +161,51 @@ def build_adsorbate_dir(sid, ads, idx, contcar_src, E_L1_vacuum):
     })
     return dest, 'created'
 
-def build_clean_slab_dir(sid):
-    """Clean slab VASPsol reference — 5 total."""
+def _strip_adsorbate(atoms):
+    """Return substrate-only copy of ads-slab atoms.
+    Adsorbate = all C, all H, and any O within 1.5 Å of any C.
+    Preserves substrate atomic positions + selective-dynamics mask atom-for-atom.
+    """
+    syms = atoms.get_chemical_symbols()
+    c_idx = [i for i,s in enumerate(syms) if s=='C']
+    h_idx = [i for i,s in enumerate(syms) if s=='H']
+    o_idx = [i for i,s in enumerate(syms) if s=='O']
+    ads_set = set(c_idx) | set(h_idx)
+    for oi in o_idx:
+        for ci in c_idx:
+            if atoms.get_distance(ci, oi, mic=True) < 1.5:
+                ads_set.add(oi); break
+    keep = [i for i in range(len(atoms)) if i not in ads_set]
+    return atoms[keep]  # ASE handles constraint reindex
+
+def build_clean_slab_dir(sid, ads_contcar_src):
+    """Clean slab built from THIS surface's top-1 ads CONTCAR:
+    substrate atoms with the EXACT mask + positions that the T1.16 ads calc had.
+    This guarantees identical selective-dynamics indices + cell + POTCAR order
+    with the adsorbate dir, so cavitation/dielectric offsets cancel exactly."""
     dest = OUT/f'{sid}_clean'
     if dest.exists():
         return None, 'already exists'
     dest.mkdir(parents=True)
-    src = G2/SDIRS[sid]/'CONTCAR'
-    a = read(src)
-    write_common(dest, a, sid, extra_meta={
+    ads_atoms = read(ads_contcar_src)
+    slab = _strip_adsorbate(ads_atoms)
+    write_common(dest, slab, sid, extra_meta={
         'sid':sid, 'kind':'clean_slab',
-        'source_CONTCAR': str(src.relative_to(ROOT)),
-        'purpose': 'Clean-slab VASPsol reference. Required for ΔG_ads^sol = '
-                   'G(slab+ads)_sol − G(slab)_sol − μ_ads(reference).',
-        'note': 'Uses IDENTICAL VASPsol INCAR settings as the adsorbate dirs '
-                'so cavity/dielectric offsets cancel in the difference.',
+        'source_ads_CONTCAR': str(ads_contcar_src.relative_to(ROOT)),
+        'derived_by': ('strip C, H, and any O within 1.5 Å of C from ads CONTCAR. '
+                       'Preserves substrate positions + selective-dynamics mask '
+                       'so ΔG_ads = G(slab+ads) − G(slab) − μ_ads has exact '
+                       'substrate cancellation.'),
+        'n_atoms_total': len(slab),
+        'n_atoms_fixed': sum(len(c.index) for c in slab.constraints
+                              if isinstance(c, FixAtoms)),
+        'purpose': 'Clean-slab VASPsol reference (Convention A: fully relax).',
+        'note': ('One clean slab per surface. Mask inherited from that '
+                 "surface's top-1 ads CONTCAR — matches that top-1 exactly. "
+                 'Other ads candidates on the same surface may have '
+                 'slightly different masks (differ by a few atoms in layer 3) '
+                 'due to per-candidate MLIP relaxation. Effect on ΔG is '
+                 'expected within 10-50 meV.'),
     })
     return dest, 'created'
 
@@ -233,9 +265,24 @@ def main():
                          'dir':str(dest.relative_to(ROOT))})
         print(f'  ads   {sid}/{ads} idx={p["idx"]} → {dest.relative_to(ROOT)}')
 
-    # ---- clean slab references (5) ----
+    # ---- clean slab references — one per surface, derived from any DONE ads
+    # candidate on that surface. Prefers CO > CH3O > coads (in that order) for
+    # least substrate distortion; falls back to whichever ads type is DONE. ----
+    picked_ads_for_clean = {}
+    ads_pref = ['CO','CH3O','coads']
     for sid in ['S1','S2','S3','S3b','S4']:
-        dest, status = build_clean_slab_dir(sid)
+        for ads in ads_pref:
+            if (sid, ads) in picks:
+                picked_ads_for_clean[sid] = picks[(sid, ads)]
+                break
+    for sid in ['S1','S2','S3','S3b','S4']:
+        if sid not in picked_ads_for_clean:
+            manifest.append({'kind':'clean_slab','sid':sid,'ads':'','idx':'',
+                             'E_L1_vacuum':'','status':'PENDING (no DONE ads on this surface yet)',
+                             'dir':''})
+            continue
+        p = picked_ads_for_clean[sid]
+        dest, status = build_clean_slab_dir(sid, p['contcar_path'])
         if dest is None:
             skipped += 1
             manifest.append({'kind':'clean_slab','sid':sid,'ads':'','idx':'',
@@ -245,8 +292,10 @@ def main():
         created += 1
         manifest.append({'kind':'clean_slab','sid':sid,'ads':'','idx':'',
                          'E_L1_vacuum':'','status':'created',
-                         'dir':str(dest.relative_to(ROOT))})
-        print(f'  clean {sid} → {dest.relative_to(ROOT)}')
+                         'dir':str(dest.relative_to(ROOT)),
+                         'derived_from':str(p['contcar_path'].relative_to(ROOT))})
+        print(f'  clean {sid} → {dest.relative_to(ROOT)} '
+              f'(from {p["contcar_path"].parent.name})')
 
     # ---- pending groups ----
     all_groups = [('S1','CO'),('S1','CH3O'),('S1','coads'),
@@ -261,9 +310,11 @@ def main():
                              'dir':''})
 
     with open(OUT/'manifest.csv','w',newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=['kind','sid','ads','idx','E_L1_vacuum','status','dir'])
+        w = csv.DictWriter(fh, fieldnames=['kind','sid','ads','idx','E_L1_vacuum','status','dir','derived_from'])
         w.writeheader()
-        for r in manifest: w.writerow(r)
+        for r in manifest:
+            r.setdefault('derived_from','')
+            w.writerow(r)
 
     readme = f"""# T1_17_VASPsol — Level-2 methanol implicit solvation
 
@@ -312,20 +363,49 @@ grep -E "VASPsol|LSOL|EB_K" OUTCAR
 ```
 If unknown-INCAR-tag warnings appear, the binary needs to be rebuilt.
 
-## Status
+## Status (this run)
 
 - **{sum(1 for r in manifest if r['kind']=='ads_top1' and r['status']=='created')} adsorbate dirs created** (from L1-DONE groups).
-- **{sum(1 for r in manifest if r['kind']=='clean_slab' and r['status']=='created')} clean-slab dirs created**.
-- **{sum(1 for r in manifest if r['status']=='PENDING L1 completion')} PENDING** L1 completion.
+- **{sum(1 for r in manifest if r['kind']=='clean_slab' and r['status']=='created')} clean-slab dirs created** (one per surface with any DONE ads).
+- **{sum(1 for r in manifest if 'PENDING' in r['status'])} PENDING** L1 completion (adsorbate groups + surfaces without a DONE ads).
 - Re-run this script after new L1 completions to add L2 dirs and, if a
   lower-E winner emerges, mark the previous dir SUPERSEDED.
+
+At full L1 completion this will grow to **14 adsorbate + 5 clean = 19 dirs total**.
+Combined with 10 `gas_references/` dirs → 29 total planned.
 
 ## Current top-1 candidates are PROVISIONAL
 
 Only 7/86 L1 candidates are DONE. Any current top-1 selection here is a
-**pilot** for verifying VASPsol behavior (LSOL recognized, solvation output
-present, no unknown-tag warnings). The final T1.17 winners for the descriptor
-map (T1.19) must be re-evaluated after all 86 L1 finish.
+**pilot** for verifying VASPsol behavior. The final T1.17 winners for the
+descriptor map (T1.19) must be re-evaluated after all 86 L1 finish.
+
+## Pilot acceptance criteria (first submission)
+
+Before submitting all dirs at once, run **one** pilot (e.g. `S1_clean` — cheap,
+no adsorbate) and confirm from OUTCAR:
+
+- `LSOL`, `EB_K=32.6`, `TAU=0` are recognised (grep OUTCAR).
+- Solvation-energy output present (e.g. "solvation energy", "cavity").
+- No `unknown INCAR tag` warnings.
+- `LAMBDA_D_K` is inactive (grep OUTCAR shows no Debye length).
+- `ISTART=0`, `ICHARG=2` confirmed in OUTCAR header.
+- Electronic SCF converged.
+- Ionic relaxation reaches `reached required accuracy` under EDIFFG=-0.03.
+
+Only after this passes, submit the remaining T1.17 dirs.
+
+## Chemical-reservoir decisions still owed (analysis-time)
+
+Before running T1.18, define once and record in paper_data/ README:
+
+- CO reservoir: gas feed (μ_CO(g)) or dissolved CO? — affects reference choice.
+- CH₃OH reservoir: gas reference (μ_CH3OH(g)) or liquid methanol at activity 1?
+  If liquid, must add Δμ_solvation correction to G(CH3OH_vaspsol).
+- H₂ reservoir: CHE gas reference (½ G_H2(g)) — standard.
+- CH₃O radical: auxiliary reference; MeOH(U) formula is preferred.
+- Never mix vacuum and vaspsol references in the same ΔG expression —
+  choose the phase (vacuum or solvated) for the whole formula.
 """
     (OUT/'README.md').write_text(readme)
     print(f'\nT1_17_VASPsol: created={created}, skipped={skipped}, '

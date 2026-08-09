@@ -2,6 +2,7 @@
   "molecule": "CH3OH",
   "variant": "vaspsol",
   "box_A": 15.0,
+  "static_only": false,
   "natoms": 6,
   "poscar_species_order": [
     "C",

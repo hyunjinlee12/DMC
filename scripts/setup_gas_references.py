@@ -68,7 +68,7 @@ MOLECULES = {
               'note': 'molecular hydrogen (for ½ E(H2) in CHE reference)'},
 }
 
-def incar_common(spin, nupdown, magmom, solvate):
+def incar_common(spin, nupdown, magmom, solvate, static_only=False):
     lines = [
         "SYSTEM = gas reference (T1.18 μ_gas)",
         "ENCUT = 520",
@@ -93,14 +93,23 @@ def incar_common(spin, nupdown, magmom, solvate):
         "LWAVE = .FALSE.",
         "LCHARG = .FALSE.",
         "ISYM = 0",
-        "IBRION = 2",
-        "NSW = 200",
-        "ISIF = 2",
+    ]
+    if static_only:
+        lines += [
+            "IBRION = -1",     # static, no ionic movement
+            "NSW = 0",
+        ]
+    else:
+        lines += [
+            "IBRION = 2",
+            "NSW = 200",
+            "ISIF = 2",
+        ]
+    lines += [
         "ISMEAR = 0",
         "SIGMA = 0.01",
         "EDIFFG = -0.01",
-        # KPOINTS handled via explicit file (Γ-only); do NOT set KSPACING here
-        # to avoid mesh ambiguity.
+        # Γ-only via explicit KPOINTS file — no KSPACING (avoid mesh ambiguity).
     ]
     if solvate:
         lines += ["",
@@ -153,7 +162,7 @@ mpirun --bind-to none -np ${NPROCS} ${VASP_BIN}
 echo "End: $(date)"
 """
 
-def build_dir(mol_name, variant, box_A=15.0, suffix=''):
+def build_dir(mol_name, variant, box_A=15.0, suffix='', static_only=False):
     m = MOLECULES[mol_name]
     a = m['atoms_fn']()
     a.set_cell([box_A, box_A, box_A]); a.center()
@@ -161,16 +170,18 @@ def build_dir(mol_name, variant, box_A=15.0, suffix=''):
     dest = OUT/f'{mol_name}_{variant}{suffix}'
     dest.mkdir(exist_ok=True)
     write(str(dest/'POSCAR'), a, format='vasp', direct=True, sort=True, vasp5=True)
-    (dest/'INCAR').write_text(incar_common(m['spin'], m['nupdown'], m['magmom'], solvate))
+    (dest/'INCAR').write_text(incar_common(m['spin'], m['nupdown'], m['magmom'],
+                                            solvate, static_only=static_only))
     (dest/'KPOINTS').write_text(KPOINTS_GAMMA)
     species = (dest/'POSCAR').read_text().splitlines()[5].split()
     potcar = ''.join((POT_LIB/POT_FOLDER[s]/'POTCAR').read_text() for s in species)
     (dest/'POTCAR').write_text(potcar)
     (dest/'submit_vasp.sh').write_text(SUBMIT)
-    (dest/'metadata.json').write_text(json.dumps({
+    meta = {
         'molecule': mol_name,
         'variant': variant,
         'box_A': box_A,
+        'static_only': static_only,
         'natoms': len(a),
         'poscar_species_order': species,
         'ISPIN': 2 if m['spin'] else 1,
@@ -184,7 +195,16 @@ def build_dir(mol_name, variant, box_A=15.0, suffix=''):
         'purpose': (f'Gas-phase {mol_name} reference for T1.18 adsorption energy '
                     f'({"solvated" if solvate else "vacuum"} convention).'),
         'note': m['note'],
-    }, indent=2))
+    }
+    if static_only:
+        meta['workflow_before_submit'] = (
+            f'This is a STATIC (NSW=0) box-size sanity check. Before submitting, '
+            f'copy the CONTCAR from ../{mol_name}_vacuum/ (the 15 Å relaxed '
+            f'geometry) into this dir\'s POSCAR, then submit. This isolates '
+            f'the cell-size effect from any geometry drift. Target: '
+            f'|E({box_A} Å) − E(15 Å)| < 5 meV.'
+        )
+    (dest/'metadata.json').write_text(json.dumps(meta, indent=2))
     return dest
 
 def main():
@@ -195,11 +215,16 @@ def main():
             d = build_dir(mol, variant, box_A=15.0)
             dirs.append(d)
             print(f'  {d.name}')
-    # 2 box-size sanity checks for polar molecules (Δμ_finite_cell < 5 meV target)
+    # 2 box-size sanity checks for polar molecules (Δμ_finite_cell < 5 meV target).
+    # Per reviewer request: same relaxed geometry must be used in both boxes to
+    # isolate cell-size effect from geometry drift. Therefore 20 Å variants are
+    # STATIC (IBRION=-1, NSW=0). The POSCAR here has ideal geometry; before
+    # submitting, replace POSCAR with CONTCAR from the corresponding 15 Å
+    # relaxation output (see 20A dir's metadata.json for the workflow).
     for mol in ['CH3OH','CH3O']:
-        d = build_dir(mol, 'vacuum', box_A=20.0, suffix='_20A')
+        d = build_dir(mol, 'vacuum', box_A=20.0, suffix='_20A', static_only=True)
         dirs.append(d)
-        print(f'  {d.name}  (20 Å sanity check)')
+        print(f'  {d.name}  (20 Å static — post-15Å CONTCAR replacement required)')
 
     readme = """# gas_references — isolated-molecule DFT (T1.18 references)
 
