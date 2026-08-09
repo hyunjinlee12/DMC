@@ -1,30 +1,44 @@
-"""T1.17 setup — VASPsol Level-2 solvation for each (sid, ads) group top-1.
+"""T1.17 setup — VASPsol Level-2 solvation for each (sid, ads) group top-1
+                 + clean-slab VASPsol references (required for consistent Gibbs).
 
 Reads paper_data/07_dft_results.csv, picks the lowest-E_DFT candidate per
-(sid, ads) group among DONE entries, and builds a T1_17_VASPsol dir with:
-  POSCAR                  ← from L1 CONTCAR (already relaxed in vacuum PBE-D3)
-  INCAR                   ← same as L1 + LSOL block
-  POTCAR                  ← rebuilt from library to match POSCAR order
-  submit_vasp_sol.sh      ← same env as L1 but expects VASP_SOL_BIN (VASPsol build)
-  metadata.json           ← provenance
+(sid, ads) group among DONE entries, and builds:
 
-Idempotent: re-running only adds groups that newly turned DONE. Does not
-touch existing L2 dirs or T1_16_DFT_L2/. No jobs submitted.
+  T1_17_VASPsol/{sid}/{ads}/{ads}_idx{XXXXX}/    ← 14 adsorbate-slab groups
+  T1_17_VASPsol/{sid}_clean/                     ← 5 clean-slab VASPsol references
+
+Each dir contains: POSCAR, INCAR, POTCAR, KPOINTS (Γ-only via KSPACING),
+submit_vasp.sh, metadata.json.
+
+CONVENTIONS (post-review 2026-07-17):
+- Baseline VASPsol INCAR: LSOL=.TRUE., EB_K=32.6, TAU=0. NO LAMBDA_D_K
+  (that turns on electrolyte Debye screening, which is NOT what "methanol
+  implicit solvent" means).
+- ISTART=0 explicitly. L1 CONTCAR only carries geometry (L1 wrote LWAVE=
+  .FALSE. so no WAVECAR to restart electronically). This is a geometric
+  restart, not an electronic one — documented in metadata.
+- clean slab dirs use G2_slab/*/CONTCAR + identical VASPsol settings.
+- top-1 marking: if a later L1 completion shows lower E, this script
+  creates the new dir AND writes `.SUPERSEDED` marker in the old dir's
+  metadata.
+
+No jobs submitted.
 """
-import json, shutil, csv
+import json, csv
 from pathlib import Path
 from ase.io import read, write
-from ase.constraints import FixAtoms
-import numpy as np
 
 ROOT = Path('/home/hyunjin/CLAUDE/Pd_DMC/research-pd-dmc')
 OUT = ROOT/'calculations/T1_17_VASPsol'
 OUT.mkdir(exist_ok=True)
+G2 = ROOT/'calculations/G2_slab'
 POT_LIB = Path('/home/hyunjin/POTENTIAL/potpaw_PBE')
 POT_FOLDER = {'C':'C','H':'H','O':'O','Pd':'Pd_pv'}
+SDIRS = {'S1':'S1_Pd100','S2':'S2_PdO101_Pd100','S3':'S3_PdO100',
+         'S3b':'S3b_PdO100_PdOterm','S4':'S4_PdO2_110'}
 
-# ---------- INCAR: same as L1 vacuum + VASPsol block ----------
-INCAR_METAL = """SYSTEM = pddmc T1.17 VASPsol
+# ---------- INCAR templates (post-review baseline) ----------
+INCAR_METAL = """SYSTEM = pddmc T1.17 VASPsol (methanol implicit solvent)
 ENCUT = 520
 PREC = Accurate
 LASPH = .TRUE.
@@ -51,17 +65,27 @@ LDIPOL = .TRUE.
 IDIPOL = 3
 KSPACING = 0.25
 
-# --- VASPsol (methanol) ---
+# ---- Fresh electronic start (L1 wrote LWAVE=.FALSE., no WAVECAR to restart)
+ISTART = 0
+ICHARG = 2
+
+# ---- VASPsol (methanol implicit solvent) ----
+# EB_K = static dielectric of methanol; TAU = 0 excludes cavitation term.
+# Electrolyte screening tag intentionally not set — see README for rationale.
 LSOL = .TRUE.
 EB_K = 32.6
 TAU = 0
-LAMBDA_D_K = 3.0
 """
 INCAR_OXIDE = INCAR_METAL.replace("ISMEAR = 1\nSIGMA = 0.1",
                                    "ISMEAR = 0\nSIGMA = 0.05")
 
+# ---------- KPOINTS Γ-only via KSPACING already; keep KSPACING in INCAR ----------
+# Explicit KPOINTS file not needed for slab (KSPACING sufficient), but we still
+# write one so users on servers with different defaults get an unambiguous mesh.
+# For 15+ Å slabs, KSPACING=0.25 gives ~3x3x1 mesh — same as L1.
+# (No file emitted; INCAR KSPACING is authoritative.)
+
 # ---------- submit script ----------
-# same env as L1 but VASP_BIN → VASP_SOL_BIN (VASPsol build must exist on target server)
 SUBMIT_SCRIPT = """#!/bin/bash
 #SBATCH --partition=debug
 #SBATCH --nodes=1
@@ -72,12 +96,10 @@ SUBMIT_SCRIPT = """#!/bin/bash
 #SBATCH --output=slurm.%j.out
 #SBATCH --error=slurm.%j.err
 
-# --- Clean conda/python from environment ---
 unset PYTHONPATH PYTHONHOME CONDA_PREFIX CONDA_DEFAULT_ENV
 unset CONDA_SHLVL CONDA_PROMPT_MODIFIER
 export LD_LIBRARY_PATH=""
 
-# --- NVHPC compiler + MPI ---
 export NVHPC=$HOME/nvhpc
 export NVARCH=Linux_x86_64
 export NVVERSION=25.9
@@ -92,132 +114,222 @@ export LD_LIBRARY_PATH=/usr/local/cuda-13.0/lib64:$LD_LIBRARY_PATH
 export OMP_NUM_THREADS=4
 export MKL_NUM_THREADS=1
 
-# ==============================================================
-# IMPORTANT: VASPsol build (vasp_std_sol) required, not vanilla vasp_std
-# ==============================================================
-VASP_SOL_BIN=${VASP_SOL_BIN:-/home/hyunjin/vasp.6.4.3_sol/bin/vasp_std}
+# NOTE: VASP >=5.4.1 standard builds support solvation via LSOL — a separate
+# vasp_std_sol binary is NOT required if your build has LSOL compiled in.
+# Verify on first pilot run:
+#   grep -E "VASPsol|LSOL|EB_K" OUTCAR
+# should show solvation is active. If unknown-INCAR-tag warnings appear,
+# rebuild VASP with the solvation source.
+VASP_BIN=${VASP_BIN:-/home/hyunjin/vasp.6.4.3/bin/vasp_std}
 
 NPROCS=${SLURM_NTASKS:-1}
-echo "Job: ${SLURM_JOB_NAME} | Dir: $(pwd) | MPI ranks: ${NPROCS} | GPUs: ${SLURM_GPUS_ON_NODE:-1}"
-echo "VASP binary: ${VASP_SOL_BIN}"
+echo "Job: ${SLURM_JOB_NAME} | Dir: $(pwd) | VASP: ${VASP_BIN}"
 echo "Start: $(date)"
-
-mpirun --bind-to none -np ${NPROCS} ${VASP_SOL_BIN}
-
+mpirun --bind-to none -np ${NPROCS} ${VASP_BIN}
 echo "End: $(date)"
 """
 
-def build_l2_dir(sid, ads, idx, contcar_src, E_L1_vacuum):
-    """Create one L2 VASPsol dir for a group's top-1 candidate."""
-    dest = OUT/sid/ads/f'{ads}_idx{idx:05d}'
-    if dest.exists():
-        return None, 'already exists'
-    dest.mkdir(parents=True)
-    a = read(contcar_src)   # already has FixAtoms constraint from L1 relaxation
-    write(str(dest/'POSCAR'), a, format='vasp', direct=True, sort=True, vasp5=True)
+def write_common(dest, atoms, sid, extra_meta):
+    write(str(dest/'POSCAR'), atoms, format='vasp', direct=True, sort=True, vasp5=True)
     (dest/'INCAR').write_text(INCAR_METAL if sid=='S1' else INCAR_OXIDE)
     species = (dest/'POSCAR').read_text().splitlines()[5].split()
     potcar = ''.join((POT_LIB/POT_FOLDER[s]/'POTCAR').read_text() for s in species)
     (dest/'POTCAR').write_text(potcar)
-    (dest/'submit_vasp_sol.sh').write_text(SUBMIT_SCRIPT)
+    (dest/'submit_vasp.sh').write_text(SUBMIT_SCRIPT)
     (dest/'metadata.json').write_text(json.dumps({
-        'sid':sid,'ads':ads,'idx':int(idx),
+        'level': 'T1.17 VASPsol (methanol, LSOL=T, EB_K=32.6, TAU=0)',
+        'restart_kind': 'geometric only (ISTART=0, ICHARG=2). L1 had LWAVE=.FALSE. → no WAVECAR to restart electronically.',
+        'poscar_species': species,
+        **extra_meta,
+    }, indent=2))
+
+def build_adsorbate_dir(sid, ads, idx, contcar_src, E_L1_vacuum):
+    dest = OUT/sid/ads/f'{ads}_idx{idx:05d}'
+    if dest.exists():
+        return None, 'already exists'
+    dest.mkdir(parents=True)
+    a = read(contcar_src)
+    write_common(dest, a, sid, extra_meta={
+        'sid':sid, 'ads':ads, 'idx':int(idx),
         'source_L1_dir': str(contcar_src.parent.relative_to(ROOT)),
         'source_L1_CONTCAR': str(contcar_src.relative_to(ROOT)),
         'E_L1_vacuum_eV': E_L1_vacuum,
-        'poscar_species': species,
-        'level': 'T1.17 VASPsol (methanol, EB_K=32.6, TAU=0)',
-        'purpose': 'Level-2 solvation single-point relaxation of L1 vacuum minimum '
-                   'for adsorption energy in solvated environment (T1.18 input).',
-        'note': 'Restart from L1 CONTCAR — do NOT re-relax from raw POSCAR.',
-    }, indent=2))
+        'purpose': 'Level-2 solvated adsorbate slab for T1.18 ΔG_ads computation.',
+        'pair_reference': f'clean slab: T1_17_VASPsol/{sid}_clean/',
+    })
+    return dest, 'created'
+
+def build_clean_slab_dir(sid):
+    """Clean slab VASPsol reference — 5 total."""
+    dest = OUT/f'{sid}_clean'
+    if dest.exists():
+        return None, 'already exists'
+    dest.mkdir(parents=True)
+    src = G2/SDIRS[sid]/'CONTCAR'
+    a = read(src)
+    write_common(dest, a, sid, extra_meta={
+        'sid':sid, 'kind':'clean_slab',
+        'source_CONTCAR': str(src.relative_to(ROOT)),
+        'purpose': 'Clean-slab VASPsol reference. Required for ΔG_ads^sol = '
+                   'G(slab+ads)_sol − G(slab)_sol − μ_ads(reference).',
+        'note': 'Uses IDENTICAL VASPsol INCAR settings as the adsorbate dirs '
+                'so cavity/dielectric offsets cancel in the difference.',
+    })
     return dest, 'created'
 
 def pick_top1_per_group():
-    """From paper_data/07_dft_results.csv, pick lowest-E_DFT candidate per (sid, ads) DONE."""
     picks = {}
     for r in csv.DictReader(open(ROOT/'paper_data/07_dft_results.csv')):
         if r['DFT_status'] != 'DONE': continue
         key = (r['sid'], r['ads'])
         E = float(r['E_DFT_sigma0_eV'])
         if key not in picks or E < picks[key]['E']:
-            picks[key] = {
-                'idx': int(r['idx']),
-                'E': E,
-                'contcar_path': ROOT/r['contcar_path'],
-            }
+            picks[key] = {'idx': int(r['idx']), 'E': E,
+                          'contcar_path': ROOT/r['contcar_path']}
     return picks
 
+def mark_superseded_if_stale(sid, ads, current_idx):
+    """If a T1.17 dir exists for the same group with a DIFFERENT idx than
+    the new top-1, mark it SUPERSEDED in its metadata.json."""
+    parent = OUT/sid/ads
+    if not parent.exists(): return
+    for d in parent.iterdir():
+        if not d.is_dir(): continue
+        m = d/'metadata.json'
+        if not m.exists(): continue
+        meta = json.loads(m.read_text())
+        old_idx = meta.get('idx')
+        if old_idx is not None and old_idx != current_idx and not meta.get('SUPERSEDED'):
+            meta['SUPERSEDED'] = True
+            meta['SUPERSEDED_by'] = f'{sid}/{ads}/{ads}_idx{current_idx:05d}'
+            meta['SUPERSEDED_note'] = (f'A later L1 completion at idx={current_idx} '
+                                       f'gave lower E_DFT than idx={old_idx}. '
+                                       f'This dir is retained for reproducibility '
+                                       f'but should not be re-submitted or included '
+                                       f'in the final descriptor map.')
+            m.write_text(json.dumps(meta, indent=2))
+            print(f'  SUPERSEDED marker set in {d.relative_to(ROOT)}')
+
 def main():
-    picks = pick_top1_per_group()
     manifest = []
+    picks = pick_top1_per_group()
     created = 0; skipped = 0
+
+    # ---- adsorbate top-1 per group ----
     for (sid, ads), p in sorted(picks.items()):
+        mark_superseded_if_stale(sid, ads, p['idx'])
         contcar_src = p['contcar_path']
-        if not contcar_src.exists():
-            print(f'  MISSING CONTCAR: {contcar_src}')
-            continue
-        dest, status = build_l2_dir(sid, ads, p['idx'], contcar_src, p['E'])
+        if not contcar_src.exists(): continue
+        dest, status = build_adsorbate_dir(sid, ads, p['idx'], contcar_src, p['E'])
         if dest is None:
             skipped += 1
-            manifest.append({'sid':sid,'ads':ads,'idx':p['idx'],'E_L1':p['E'],
-                             'dir':str((OUT/sid/ads/f'{ads}_idx{p["idx"]:05d}').relative_to(ROOT)),
-                             'status':'skipped (exists)'})
+            manifest.append({'kind':'ads_top1','sid':sid,'ads':ads,'idx':p['idx'],
+                             'E_L1_vacuum':p['E'],'status':'skipped (exists)',
+                             'dir':str((OUT/sid/ads/f'{ads}_idx{p["idx"]:05d}').relative_to(ROOT))})
             continue
         created += 1
-        manifest.append({'sid':sid,'ads':ads,'idx':p['idx'],'E_L1':p['E'],
-                         'dir':str(dest.relative_to(ROOT)), 'status':'created'})
-        print(f'  {sid}/{ads} idx={p["idx"]} → {dest.relative_to(ROOT)}')
+        manifest.append({'kind':'ads_top1','sid':sid,'ads':ads,'idx':p['idx'],
+                         'E_L1_vacuum':p['E'],'status':'created',
+                         'dir':str(dest.relative_to(ROOT))})
+        print(f'  ads   {sid}/{ads} idx={p["idx"]} → {dest.relative_to(ROOT)}')
 
-    # Placeholder rows for groups without L1 DONE
-    groups_all = [('S1','CO'),('S1','CH3O'),('S1','coads'),
+    # ---- clean slab references (5) ----
+    for sid in ['S1','S2','S3','S3b','S4']:
+        dest, status = build_clean_slab_dir(sid)
+        if dest is None:
+            skipped += 1
+            manifest.append({'kind':'clean_slab','sid':sid,'ads':'','idx':'',
+                             'E_L1_vacuum':'','status':'skipped (exists)',
+                             'dir':str((OUT/f'{sid}_clean').relative_to(ROOT))})
+            continue
+        created += 1
+        manifest.append({'kind':'clean_slab','sid':sid,'ads':'','idx':'',
+                         'E_L1_vacuum':'','status':'created',
+                         'dir':str(dest.relative_to(ROOT))})
+        print(f'  clean {sid} → {dest.relative_to(ROOT)}')
+
+    # ---- pending groups ----
+    all_groups = [('S1','CO'),('S1','CH3O'),('S1','coads'),
                   ('S2','CO'),('S2','CH3O'),('S2','coads'),
                   ('S3','CO'),('S3','CH3O'),('S3','coads'),
                   ('S3b','CO'),('S3b','CH3O'),('S3b','coads'),
-                  ('S4','CO'),('S4','CH3O')]     # S4 coads excluded
-    for g in groups_all:
+                  ('S4','CO'),('S4','CH3O')]
+    for g in all_groups:
         if g not in picks:
-            manifest.append({'sid':g[0],'ads':g[1],'idx':'','E_L1':'',
-                             'dir':'','status':'PENDING L1 completion'})
+            manifest.append({'kind':'ads_top1','sid':g[0],'ads':g[1],'idx':'',
+                             'E_L1_vacuum':'','status':'PENDING L1 completion',
+                             'dir':''})
 
     with open(OUT/'manifest.csv','w',newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=['sid','ads','idx','E_L1','dir','status']); w.writeheader()
+        w = csv.DictWriter(fh, fieldnames=['kind','sid','ads','idx','E_L1_vacuum','status','dir'])
+        w.writeheader()
         for r in manifest: w.writerow(r)
 
-    readme = f"""# T1_17_VASPsol — Level-2 solvation setup
+    readme = f"""# T1_17_VASPsol — Level-2 methanol implicit solvation
 
-Regenerate: `python scripts/setup_t1_17_vaspsol.py` (idempotent).
+**Regenerate**: `python scripts/setup_t1_17_vaspsol.py` (idempotent + SUPERSEDED aware).
 
-Each candidate dir contains:
-- POSCAR (copied from L1 CONTCAR — already relaxed in vacuum PBE-D3)
-- INCAR (L1 settings + `LSOL=.TRUE., EB_K=32.6, TAU=0, LAMBDA_D_K=3.0`)
-- POTCAR (rebuilt from library, matches POSCAR species order)
-- submit_vasp_sol.sh (requires **VASPsol-enabled VASP build**; set
-  `VASP_SOL_BIN` env var or edit the script before submitting)
-- metadata.json (provenance + L1 vacuum energy)
+## VASPsol baseline INCAR (post-review 2026-07-17)
 
-## Current bundle status (auto-populated on rerun)
+```
+LSOL = .TRUE.
+EB_K = 32.6      # methanol static dielectric
+TAU = 0          # exclude cavitation / non-electrostatic (workplan)
+# LAMBDA_D_K deliberately omitted — enabling it activates the linearised
+# Poisson–Boltzmann electrolyte model (Debye screening), which is a
+# separate physical effect from a neutral methanol dielectric.
+ISTART = 0       # fresh electronic start (L1 wrote LWAVE=.FALSE., no WAVECAR)
+ICHARG = 2
+```
 
-- L1-DONE groups get L2 dirs immediately.
-- L1-PENDING groups are noted in `manifest.csv` with status=PENDING and no dir.
-- Re-run this script after new L1 completions to add L2 dirs.
+## Dir layout
 
-## Convention
+```
+T1_17_VASPsol/
+├── {sid}/{ads}/{ads}_idxXXXXX/     ← adsorbate slabs (top-1 per group)
+├── {sid}_clean/                    ← clean-slab VASPsol references (5)
+└── manifest.csv
+```
 
-- **1 candidate per (sid, ads) group** — the L1 global-minimum only.
-- Restart from L1 CONTCAR to avoid convergence instability that occurs
-  if LSOL is turned on from the raw initial guess.
+## Convention used in T1.18 (post-computation)
 
-## Naming
+```
+ΔG_ads(sol) = G(slab+ads)_sol − G(slab)_sol − μ_ads(reference in matching phase)
+```
 
-- v4 T1_16_DFT_L2/ dir kept as-is (misnamed — L2 here is shortlist version, not solvation level).
-- T1_17_VASPsol/ is the actual solvation level.
+The clean-slab VASPsol dirs (S1_clean, S2_clean, …, S4_clean) provide
+`G(slab)_sol`. Both must be computed with **identical INCAR flags** so the
+cavitation/dielectric offsets cancel in the difference.
 
-Manifest: {len(manifest)} rows total, {created} L2 dirs created, {skipped} skipped (existed).
+**Do not mix vacuum-slab and solvated-adsorbate energies in one formula.**
+
+## VASP binary
+
+Any VASP ≥ 5.4.1 build compiled with solvation source is fine — the standard
+`vasp_std` may already support `LSOL`. Verify on the first pilot:
+```
+grep -E "VASPsol|LSOL|EB_K" OUTCAR
+```
+If unknown-INCAR-tag warnings appear, the binary needs to be rebuilt.
+
+## Status
+
+- **{sum(1 for r in manifest if r['kind']=='ads_top1' and r['status']=='created')} adsorbate dirs created** (from L1-DONE groups).
+- **{sum(1 for r in manifest if r['kind']=='clean_slab' and r['status']=='created')} clean-slab dirs created**.
+- **{sum(1 for r in manifest if r['status']=='PENDING L1 completion')} PENDING** L1 completion.
+- Re-run this script after new L1 completions to add L2 dirs and, if a
+  lower-E winner emerges, mark the previous dir SUPERSEDED.
+
+## Current top-1 candidates are PROVISIONAL
+
+Only 7/86 L1 candidates are DONE. Any current top-1 selection here is a
+**pilot** for verifying VASPsol behavior (LSOL recognized, solvation output
+present, no unknown-tag warnings). The final T1.17 winners for the descriptor
+map (T1.19) must be re-evaluated after all 86 L1 finish.
 """
     (OUT/'README.md').write_text(readme)
-    print(f'\nT1_17_VASPsol: {created} created, {skipped} skipped, '
-          f'{len([m for m in manifest if m["status"]=="PENDING L1 completion"])} PENDING')
+    print(f'\nT1_17_VASPsol: created={created}, skipped={skipped}, '
+          f'PENDING={sum(1 for r in manifest if r["status"]=="PENDING L1 completion")}')
 
 if __name__=='__main__':
     main()

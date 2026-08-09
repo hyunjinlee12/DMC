@@ -1,15 +1,19 @@
 {
   "molecule": "CH3OH",
   "variant": "vacuum",
+  "box_A": 15.0,
   "natoms": 6,
-  "species": [
+  "poscar_species_order": [
     "C",
     "H",
     "O"
   ],
-  "box_A": 15.0,
   "ISPIN": 1,
+  "NUPDOWN": null,
   "MAGMOM": null,
+  "MAGMOM_atom_by_atom_note": null,
+  "LSOL": false,
+  "KPOINTS": "Gamma-only (explicit file)",
   "purpose": "Gas-phase CH3OH reference for T1.18 adsorption energy (vacuum convention).",
-  "note": "methanol (closed-shell)"
+  "note": "methanol, closed-shell singlet. Convention note: G(CH3OH) here is the ISOLATED-GAS reference; if the T1.18 formula requires a liquid/solution standard state, a \u0394\u03bc_solvation correction must be added post-hoc."
 }

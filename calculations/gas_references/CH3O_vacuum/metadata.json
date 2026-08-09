@@ -1,15 +1,19 @@
 {
   "molecule": "CH3O",
   "variant": "vacuum",
+  "box_A": 15.0,
   "natoms": 5,
-  "species": [
+  "poscar_species_order": [
     "C",
     "H",
     "O"
   ],
-  "box_A": 15.0,
   "ISPIN": 2,
+  "NUPDOWN": 1,
   "MAGMOM": "0 0 0 0 1",
+  "MAGMOM_atom_by_atom_note": "MAGMOM entries correspond to POSCAR sort=True order = ['C', 'H', 'O'].",
+  "LSOL": false,
+  "KPOINTS": "Gamma-only (explicit file)",
   "purpose": "Gas-phase CH3O reference for T1.18 adsorption energy (vacuum convention).",
-  "note": "CH3O radical (open-shell, S=1/2), spin-polarised. MAGMOM per POSCAR order [C H H H O]: unpaired electron on O."
+  "note": "CH3O radical (open-shell doublet, S=1/2). POSCAR sort=True order = C H H H O; MAGMOM places unpaired \u03bc on O. NUPDOWN=1 enforces total moment = 1 \u03bc_B."
 }

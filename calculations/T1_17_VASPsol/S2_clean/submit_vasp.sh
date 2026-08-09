@@ -8,12 +8,10 @@
 #SBATCH --output=slurm.%j.out
 #SBATCH --error=slurm.%j.err
 
-# --- Clean conda/python from environment ---
 unset PYTHONPATH PYTHONHOME CONDA_PREFIX CONDA_DEFAULT_ENV
 unset CONDA_SHLVL CONDA_PROMPT_MODIFIER
 export LD_LIBRARY_PATH=""
 
-# --- NVHPC compiler + MPI ---
 export NVHPC=$HOME/nvhpc
 export NVARCH=Linux_x86_64
 export NVVERSION=25.9
@@ -28,16 +26,16 @@ export LD_LIBRARY_PATH=/usr/local/cuda-13.0/lib64:$LD_LIBRARY_PATH
 export OMP_NUM_THREADS=4
 export MKL_NUM_THREADS=1
 
-# ==============================================================
-# IMPORTANT: VASPsol build (vasp_std_sol) required, not vanilla vasp_std
-# ==============================================================
-VASP_SOL_BIN=${VASP_SOL_BIN:-/home/hyunjin/vasp.6.4.3_sol/bin/vasp_std}
+# NOTE: VASP >=5.4.1 standard builds support solvation via LSOL — a separate
+# vasp_std_sol binary is NOT required if your build has LSOL compiled in.
+# Verify on first pilot run:
+#   grep -E "VASPsol|LSOL|EB_K" OUTCAR
+# should show solvation is active. If unknown-INCAR-tag warnings appear,
+# rebuild VASP with the solvation source.
+VASP_BIN=${VASP_BIN:-/home/hyunjin/vasp.6.4.3/bin/vasp_std}
 
 NPROCS=${SLURM_NTASKS:-1}
-echo "Job: ${SLURM_JOB_NAME} | Dir: $(pwd) | MPI ranks: ${NPROCS} | GPUs: ${SLURM_GPUS_ON_NODE:-1}"
-echo "VASP binary: ${VASP_SOL_BIN}"
+echo "Job: ${SLURM_JOB_NAME} | Dir: $(pwd) | VASP: ${VASP_BIN}"
 echo "Start: $(date)"
-
-mpirun --bind-to none -np ${NPROCS} ${VASP_SOL_BIN}
-
+mpirun --bind-to none -np ${NPROCS} ${VASP_BIN}
 echo "End: $(date)"

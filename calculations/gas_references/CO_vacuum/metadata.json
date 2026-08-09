@@ -1,14 +1,18 @@
 {
   "molecule": "CO",
   "variant": "vacuum",
+  "box_A": 15.0,
   "natoms": 2,
-  "species": [
+  "poscar_species_order": [
     "C",
     "O"
   ],
-  "box_A": 15.0,
   "ISPIN": 1,
+  "NUPDOWN": null,
   "MAGMOM": null,
+  "MAGMOM_atom_by_atom_note": null,
+  "LSOL": false,
+  "KPOINTS": "Gamma-only (explicit file)",
   "purpose": "Gas-phase CO reference for T1.18 adsorption energy (vacuum convention).",
-  "note": "CO, linear"
+  "note": "CO, linear (closed-shell singlet)"
 }

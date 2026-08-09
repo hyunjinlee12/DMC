@@ -11,7 +11,6 @@
 unset PYTHONPATH PYTHONHOME CONDA_PREFIX CONDA_DEFAULT_ENV
 unset CONDA_SHLVL CONDA_PROMPT_MODIFIER
 export LD_LIBRARY_PATH=""
-
 export NVHPC=$HOME/nvhpc
 export NVARCH=Linux_x86_64
 export NVVERSION=25.9
@@ -22,12 +21,12 @@ export LD_LIBRARY_PATH=$NVHPC/$NVARCH/$NVVERSION/compilers/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$NVHPC/$NVARCH/$NVVERSION/compilers/extras/qd/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$HOME/fftw/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-13.0/lib64:$LD_LIBRARY_PATH
-
 export OMP_NUM_THREADS=4
 export MKL_NUM_THREADS=1
 
-VASP_SOL_BIN=${VASP_SOL_BIN:-/home/hyunjin/vasp.6.4.3_sol/bin/vasp_std}
-VASP_BIN=${VASP_SOL_BIN}
+# VASP ≥5.4.1 standard builds typically include LSOL support. If this run's
+# OUTCAR shows "unknown INCAR tag" for LSOL/EB_K/TAU, rebuild with solvation.
+VASP_BIN=${VASP_BIN:-/home/hyunjin/vasp.6.4.3/bin/vasp_std}
 NPROCS=${SLURM_NTASKS:-1}
 echo "Job: ${SLURM_JOB_NAME} | Dir: $(pwd) | VASP: ${VASP_BIN}"
 echo "Start: $(date)"

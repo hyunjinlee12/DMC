@@ -1,9 +1,10 @@
-SYSTEM = gas reference
+SYSTEM = gas reference (T1.18 μ_gas)
 ENCUT = 520
 PREC = Accurate
 LASPH = .TRUE.
 ADDGRID = .TRUE.
 ISPIN = 2
+NUPDOWN = 1
 MAGMOM = 0 0 0 0 1
 IVDW = 12
 EDIFF = 1e-06
@@ -21,10 +22,8 @@ ISIF = 2
 ISMEAR = 0
 SIGMA = 0.01
 EDIFFG = -0.01
-KSPACING = 1.0
 
-# --- VASPsol (methanol) ---
+# ---- VASPsol (methanol implicit solvent) ----
 LSOL = .TRUE.
 EB_K = 32.6
 TAU = 0
-LAMBDA_D_K = 3.0

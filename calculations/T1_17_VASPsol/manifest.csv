@@ -1,15 +1,20 @@
-sid,ads,idx,E_L1,dir,status
-S1,CO,3,-451.4141,calculations/T1_17_VASPsol/S1/CO/CO_idx00003,created
-S3,CH3O,315,-749.9231,calculations/T1_17_VASPsol/S3/CH3O/CH3O_idx00315,created
-S1,CH3O,,,,PENDING L1 completion
-S1,coads,,,,PENDING L1 completion
-S2,CO,,,,PENDING L1 completion
-S2,CH3O,,,,PENDING L1 completion
-S2,coads,,,,PENDING L1 completion
-S3,CO,,,,PENDING L1 completion
-S3,coads,,,,PENDING L1 completion
-S3b,CO,,,,PENDING L1 completion
-S3b,CH3O,,,,PENDING L1 completion
-S3b,coads,,,,PENDING L1 completion
-S4,CO,,,,PENDING L1 completion
-S4,CH3O,,,,PENDING L1 completion
+kind,sid,ads,idx,E_L1_vacuum,status,dir
+ads_top1,S1,CO,3,-451.4141,created,calculations/T1_17_VASPsol/S1/CO/CO_idx00003
+ads_top1,S3,CH3O,315,-749.9231,created,calculations/T1_17_VASPsol/S3/CH3O/CH3O_idx00315
+clean_slab,S1,,,,created,calculations/T1_17_VASPsol/S1_clean
+clean_slab,S2,,,,created,calculations/T1_17_VASPsol/S2_clean
+clean_slab,S3,,,,created,calculations/T1_17_VASPsol/S3_clean
+clean_slab,S3b,,,,created,calculations/T1_17_VASPsol/S3b_clean
+clean_slab,S4,,,,created,calculations/T1_17_VASPsol/S4_clean
+ads_top1,S1,CH3O,,,PENDING L1 completion,
+ads_top1,S1,coads,,,PENDING L1 completion,
+ads_top1,S2,CO,,,PENDING L1 completion,
+ads_top1,S2,CH3O,,,PENDING L1 completion,
+ads_top1,S2,coads,,,PENDING L1 completion,
+ads_top1,S3,CO,,,PENDING L1 completion,
+ads_top1,S3,coads,,,PENDING L1 completion,
+ads_top1,S3b,CO,,,PENDING L1 completion,
+ads_top1,S3b,CH3O,,,PENDING L1 completion,
+ads_top1,S3b,coads,,,PENDING L1 completion,
+ads_top1,S4,CO,,,PENDING L1 completion,
+ads_top1,S4,CH3O,,,PENDING L1 completion,
