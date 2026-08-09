@@ -1,0 +1,5 @@
+material,functional,ENCUT_eV,k_mesh,a_A,b_A,c_A,alpha_deg,beta_deg,gamma_deg,volume_A3,natoms,E_bulk_eV_sigma0,E_per_atom_eV,reached_accuracy,exp_a_A,exp_c_A,dev_a_percent,dev_c_percent,notes
+Pd,PBE-D3(BJ),520,12x12x12,3.8907,3.8907,3.8907,90.0,90.0,90.0,58.898,4,-23.46349463,-5.8659,True,3.891,,-0.008,,"fcc, expt (Owen 1927, refined many times)"
+PdO,PBE-D3(BJ),520,8x8x6,3.0536,3.0536,5.4058,90.0,90.0,90.0,50.406,4,-23.44864172,-5.8622,True,3.043,5.336,0.348,1.308,tetragonal P4₂/mmc
+PdO2,PBE-D3(BJ),520,6x6x8,4.5424,4.5424,3.1772,90.0,90.0,90.0,65.556,6,-33.53991757,-5.59,True,4.437,3.089,2.375,2.855,rutile P4₂/mnm (calc. reference)
+PdO2_PBE,PBE (no D3),520,6x6x8,4.574,4.574,3.1914,90.0,90.0,90.0,66.769,6,-32.16509445,-5.3608,True,4.437,3.089,3.088,3.315,rutile P4₂/mnm (calc. reference)

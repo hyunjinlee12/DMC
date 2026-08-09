@@ -1,0 +1,11 @@
+kind,name,E_MACE_D3_eV,note
+slab,S1,-389.557084,"MACE-MH+D3(BJ)+cueq, MACE-relaxed slab, bottom-half fixed"
+slab,S2,-559.947466,"MACE-MH+D3(BJ)+cueq, MACE-relaxed slab, bottom-half fixed"
+slab,S3,-673.254793,"MACE-MH+D3(BJ)+cueq, MACE-relaxed slab, bottom-half fixed"
+slab,S3b,-531.026831,"MACE-MH+D3(BJ)+cueq, MACE-relaxed slab, bottom-half fixed"
+slab,S4,-738.907684,"MACE-MH+D3(BJ)+cueq, MACE-relaxed slab, bottom-half fixed"
+gas,CO,-14.363872,MACE-relaxed CO in vacuum
+gas,CH3OH,-29.819219,MACE-relaxed methanol
+gas,H2,-6.926646,MACE-relaxed H2
+gas,CH3O_ref,-26.355896,"derived: E(CH3OH) − ½ E(H2), MeOH(U)-style reference"
+gas,CH3O_radical,-24.154864,MACE-relaxed CH3O radical (spin-polarised)

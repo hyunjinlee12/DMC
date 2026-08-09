@@ -1,0 +1,6 @@
+sid,model,oxidation_state,natoms,n_Pd,n_O,top_layer,rumpling_top_A,d_PdO_min_top_A,d_PdO_avg_top_A,E_slab_eV_sigma0,F_max_free_eV_per_A,reached_accuracy,vacuum_A,ISMEAR,SIGMA_eV,LDIPOL,IDIPOL
+S1,"Pd(100), p(4×4), 5 layers, bottom 2 fixed",Pd⁰,80,80,0,Pd:16,0.0,,,-434.3801,0.0194,True,20,1,0.1,True,3
+S2,"1 ML PdO(101)/Pd(100), (√5×√5)R27°, 4 layers Pd + oxide top",Pd²⁺ interface,112,96,16,"O:16, Pd:16",1.124,1.999,2.008,-618.5652,0.0261,True,20,0,0.05,True,3
+S3,"PdO(100) O-rich, mixed termination, 128 atoms",Pd²⁺ oxide,128,64,64,"O:16, Pd:16",1.367,2.003,2.015,-724.1027,0.0232,True,20,0,0.05,True,3
+S3b,"PdO(100) Pd-terminated, 104 atoms",Pd²⁺ oxide (Pd-term),104,56,48,Pd:8,0.0,2.126,2.126,-570.7719,0.0275,True,20,0,0.05,True,3
+S4,"PdO₂(110) stoichiometric, 144 atoms",Pd⁴⁺,144,48,96,"O:18, Pd:12",1.307,2.006,2.009,-788.4928,0.0246,True,20,0,0.05,True,3
